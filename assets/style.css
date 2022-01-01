@@ -1,0 +1,8 @@
+.red4 {
+    color: rgb(204, 0, 0);
+}
+
+#bg-search {
+    height: 15em;
+    background: url('../assets/img/timthumb.jpg') center / cover no-repeat;
+}

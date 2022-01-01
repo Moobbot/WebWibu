@@ -12,7 +12,8 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Link fontawesome -->
     <script src="https://kit.fontawesome.com/a4208f5cfb.js" crossorigin="anonymous"></script>
-
+    <!-- <link rel="stylesheet" href="/assets/style.css"> -->
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
