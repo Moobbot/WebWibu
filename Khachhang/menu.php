@@ -8,9 +8,15 @@
             </a>
 
             <ul class="nav col-10 col-md-auto mb-2 justify-content-center mb-md-0 h5">
-                <li><a href="#" class="nav-link px-4 red4">Trang chủ</a></li>
-                <li><a href="#" class="nav-link px-4 red4">Món ăn nổi bật</a></li>
-                <li><a href="#" class="nav-link px-4 red4">Danh sách món ăn</a></li>
+                <li class="nav-item">
+                    <a href="./" class="nav-link px-4 red4">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./foodtop.php" class="nav-link px-4 red4">Món ăn nổi bật</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./listfood.php" class="nav-link px-4 red4">Danh sách món ăn</a>
+                </li>
             </ul>
 
             <div class="col-md-2 me-lg-5" style="width: 160px;">

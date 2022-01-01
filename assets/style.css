@@ -6,3 +6,7 @@
     height: 15em;
     background: url('../assets/img/timthumb.jpg') center / cover no-repeat;
 }
+
+body #bg-all {
+    background: url('../assets/img/wibu.jpg');
+}
