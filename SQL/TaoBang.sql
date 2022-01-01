@@ -1,4 +1,5 @@
-﻿CREATE DATABASE DB_Wibu;
+﻿CREATE DATABASE DB_Wibu
+
 GO
 
 USE DB_Wibu;
@@ -16,7 +17,8 @@ CREATE TABLE TaiKhoan(
 	TENTAIKHOAN CHAR(20) NOT NULL,
 	MATKHAU NVARCHAR(20) NOT NULL,
 	NGAYTAO DATETIME,
-	CAPDO TINYINT
+	CAPDO TINYINT NOT NULL,
+	TRANGTHAI BIT
 )
 -- Cấp độ: Có 3 cấp độ. 1.Quản lý, 2.Nhân viên, 3. Khách hàng
 -- Tài khoản khoản Quản lý cấp độ 1. Chỉ có  1 tài khoản là
@@ -60,16 +62,18 @@ CREATE TABLE KhachHang (
 
 --Bảng Loại món ăn
 --CREATE TABLE LoaiMonAn (
---  MALOAIMON int IDENTITY(1,1) NOT NULL,
+--  MALOAIMON INT IDENTITY(1,1) NOT NULL,
 --  TENLOAIMON NVARCHAR(50) NOT NULL
 --)
 
 -- Bảng Món ăn
 CREATE TABLE MonAn (
-  MAMONAN int IDENTITY(1,1) NOT NULL,
+  MAMONAN INT IDENTITY(1,1) NOT NULL,
   TENMONAN NVARCHAR(50) NOT NULL,
-  SOLUONG int NOT NULL,
-  GIATHANHPHAM MONEY NOT NULL --Là giá khi hoàn thiện món(gồm giá nguyên liệu, giá nhân công)
+  HINHANH NVARCHAR(100),
+  SOLUONG INT NOT NULL,
+  GIATHANHPHAM MONEY NOT NULL, --Là giá khi hoàn thiện món(gồm giá nguyên liệu, giá nhân công)
+  HANSUDUNG DATE NOT NULL
 )
 
 -- Bảng Đơn đặt hàng
@@ -90,10 +94,10 @@ CREATE TABLE DonDatHang (
 -- Bảng chi tiết đặt hàng
 
 CREATE TABLE ChiTietDatHang (
-  SOHOADON int NOT NULL,
-  MAMON int NOT NULL,
-  GIABAN MONEY,
-  SOLUONG int,
+  SOHOADON INT NOT NULL,
+  MAMON INT NOT NULL,
+  GIABAN MONEY NOT NULL,
+  SOLUONG INT NOT NULL,
   MUCGIAGIAM MONEY
 )
 -- Giá bán = 150% Giá thành phẩm
@@ -110,6 +114,11 @@ ADD DEFAULT getdate() FOR THOIGIANDATDON;
 --Thêm thời gian mặc định ngày bắt đầu làm việc
 ALTER TABLE NhanVien
 ADD DEFAULT getdate() FOR NGAYBATDAULAMVIEC;	
+
+--Thêm trạng thái mặc định khi tạo tài khoản
+
+ALTER TABLE TaiKhoan
+ADD DEFAULT 0 FOR TRANGTHAI;
 
 --Thêm điều kiện check cấp độ: 1-ADMIN; 2-Nhân viên; 3: Khách hàng
 ALTER TABLE TaiKhoan
