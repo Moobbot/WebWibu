@@ -26,30 +26,30 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Home</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Admin</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">  
                         <a class="nav-link custom-color fw-bold" href="admin-category.php">Category</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Food</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Order</a>
-                    </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="#">Logout</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
     <!-- End Nav -->
 
-    <div class="container-fluid custom-background pb-5">
+    <div class="container-fluid custom-background pb-5 h-100">
         <div class="container pb-5">
             <h3 class="pt-5 pb-4 fw-bold">Dashboard</h3>
         </div>
@@ -62,7 +62,7 @@
                         <h2 class="text-center fw-bold">4</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Categories</p>
+                        <p class="text-center">Loại</p>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                         <h2 class="text-center fw-bold">6</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Foods</p>
+                        <p class="text-center">Món ăn</p>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@
                         <h2 class="text-center fw-bold">3</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Total Orders</p>
+                        <p class="text-center">Đơn hàng</p>
                     </div>
                 </div>
 
@@ -89,17 +89,18 @@
                         <h2 class="text-center fw-bold">$36.000</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Revenue Generated</p>
+                        <p class="text-center">Doanh thu</p>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
+    
     <!-- Start Footer -->
     <div class="footer">
         <div class="container">
-            <p class="text-center pt-3 pb-3">2020 All rights reserved. Food House. Developed By <a href="#">CSE.TLU</a>
+            <p class="text-center pt-3 pb-3">footer <a href="#">CSE.TLU</a>
             </p>
         </div>
     </div>

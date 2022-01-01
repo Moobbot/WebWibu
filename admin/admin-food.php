@@ -26,23 +26,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Home</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Admin</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-category.php">Category</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Food</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Order</a>
-                    </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="#">Logout</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -53,9 +53,11 @@
     <!-- Start Main -->
     <div class="container-fluid custom-background">
         <div class="container pb-5">
-            <h3 class="pt-5 pb-4 fw-bold">Manage Food</h3>
+            <h3 class="pt-5 pb-4 fw-bold">Quản lý món</h3>
 
-            <button type="button" class="btn btn-primary">Add Food</button>
+            <button type="button" class="btn btn-primary">Thêm món</button>
+
+            
         </div>
         <!-- 
         <div class="container">
@@ -309,12 +311,11 @@
                 <thead>
                     <tr>
                         <th scope="col">S.N</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Feature</th>
-                        <th scope="col">Active</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Tên món</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Hình ảnh</th>
+                        <th scope="col">Tình trạng</th>
+                        <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -323,11 +324,11 @@
                         <td>Dumplings Specials</td>
                         <td>$5.00</td>
                         <td><a href="#"><img src="../images/menu-momo.jpg" class="img-custom" alt=""></a></td>
-                        <td>Yes</td>
+
                         <td>Yes</td>
                         <td>
-                            <button type="button" class="btn btn-success">Update Food</button>
-                            <button type="button" class="btn btn-danger">Delete Food</button>
+                            <button type="button" class="btn btn-success">Sửa thông tin</button>
+                            <button type="button" class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
                     <tr class="align-middle">
@@ -336,10 +337,9 @@
                         <td>$4.00</td>
                         <td><a href="#"><img src="../images/menu-burger.jpg" class="img-custom" alt=""></a></td>
                         <td>Yes</td>
-                        <td>Yes</td>
                         <td>
-                            <button type="button" class="btn btn-success">Update Food</button>
-                            <button type="button" class="btn btn-danger">Delete Food</button>
+                            <button type="button" class="btn btn-success">Sửa thông tin</button>
+                            <button type="button" class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
                     <tr class="align-middle">
@@ -348,10 +348,9 @@
                         <td>$6.00</td>
                         <td><a href="#"><img src="../images/menu-pizza.jpg" class="img-custom" alt=""></a></td>
                         <td>No</td>
-                        <td>Yes</td>
                         <td>
-                            <button type="button" class="btn btn-success">Update Food</button>
-                            <button type="button" class="btn btn-danger">Delete Food</button>
+                            <button type="button" class="btn btn-success">Sửa thông tin</button>
+                            <button type="button" class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
                     <tr class="align-middle">
@@ -360,10 +359,9 @@
                         <td>$6.00</td>
                         <td><a href="#"><img src="../images/menu-momo.jpg" class="img-custom" alt=""></a></td>
                         <td>Yes</td>
-                        <td>Yes</td>
                         <td>
-                            <button type="button" class="btn btn-success">Update Food</button>
-                            <button type="button" class="btn btn-danger">Delete Food</button>
+                            <button type="button" class="btn btn-success">Sửa thông tin</button>
+                            <button type="button" class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
                     <tr class="align-middle">
@@ -372,22 +370,20 @@
                         <td>$10.00</td>
                         <td><a href="#"><img src="../images/menu-pizza.jpg" class="img-custom" alt=""></a></td>
                         <td>Yes</td>
-                        <td>Yes</td>
                         <td>
-                            <button type="button" class="btn btn-success">Update Food</button>
-                            <button type="button" class="btn btn-danger">Delete Food</button>
+                            <button type="button" class="btn btn-success">Sửa thông tin</button>
+                            <button type="button" class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
                     <tr class="align-middle">
                         <th scope="row">6</th>
                         <td>Sed ipsum cillum in</td>
                         <td>$52.00</td>
-                        <td><a href="#">Image not Added</a></td>
-                        <td>Yes</td>
+                        <td><a href="#">Chưa được thêm</a></td>
                         <td>Yes</td>
                         <td>
-                            <button type="button" class="btn btn-success">Update Food</button>
-                            <button type="button" class="btn btn-danger">Delete Food</button>
+                            <button type="button" class="btn btn-success">Sửa thông tin</button>
+                            <button type="button" class="btn btn-danger">Xóa</button>
                         </td>
                     </tr>
                 </tbody>
