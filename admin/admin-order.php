@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/2b6d70a29b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,25 +24,25 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <img src="https://raw.githubusercontent.com/Moobbot/WebWibu/main/assets/img/Logo.jpg" width="100"
+                height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Home</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-home.php"><i class="fas fa-home"></i>Trang
+                            chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Admin</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Category</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Nhân viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Food</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Order</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Logout</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
                     </li>
                 </ul>
             </div>
@@ -52,24 +53,24 @@
     <!-- Start Main -->
     <div class="container-fluid custom-background pb-5">
         <div class="container">
-            <h3 class="pt-5 pb-4 fw-bold">Manage Order</h3>
+            <h3 class="pt-5 pb-4 fw-bold">Quản lý đơn hàng</h3>
         </div>
         <div class="container">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">S.N</th>
-                        <th scope="col">Food</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Qty.</th>
-                        <th scope="col">Total</th>
-                        <th scope="col">Order Date</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Customer Name</th>
-                        <th scope="col">Contact</th>
+                        <th scope="col">Tên món</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Ngày đặt</th>
+                        <th scope="col">Tình trạng</th>
+                        <th scope="col">Tên khách</th>
+                        <th scope="col">Liên hệ</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>

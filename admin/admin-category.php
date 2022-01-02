@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/2b6d70a29b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,25 +24,25 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <img src="https://raw.githubusercontent.com/Moobbot/WebWibu/main/assets/img/Logo.jpg" width="100"
+                height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Home</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-home.php"><i class="fas fa-home"></i>Trang
+                            chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Admin</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Category</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Nhân viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Food</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Order</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Logout</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
                     </li>
                 </ul>
             </div>
@@ -106,7 +107,9 @@
                         <tr class="align-middle">
                             <th scope="row">1</th>
                             <td>Quia est ipsum id id</td>
-                            <td><a href="#"><img src="https://i.ytimg.com/vi/ZBgTzx46B8s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAa0nHwe2IPTnNom6wXgyL1jrbn_g" class="img-custom1" alt=""></a></td>
+                            <td><a href="#"><img
+                                        src="https://i.ytimg.com/vi/ZBgTzx46B8s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAa0nHwe2IPTnNom6wXgyL1jrbn_g"
+                                        class="img-custom1" alt=""></a></td>
                             <td>No</td>
                             <td>Yes</td>
                             <td>

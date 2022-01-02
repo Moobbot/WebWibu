@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/2b6d70a29b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,26 +24,26 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <img src="https://raw.githubusercontent.com/Moobbot/WebWibu/main/assets/img/Logo.jpg" width="100"
+                height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Trang chủ</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-home.php"><i class="fas fa-home"></i>Trang
+                            chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Category</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Nhân viên</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Logout</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -55,9 +56,40 @@
         <div class="container pb-5">
             <h3 class="pt-5 pb-4 fw-bold">Quản lý món</h3>
 
-            <button type="button" class="btn btn-primary">Thêm món</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-food-modal">Thêm
+                món</button>
 
-            
+            <div class="modal fade" id="add-food-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Thêm người dùng</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="abc">
+                                <label for="floatingInput">Tên món</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com">
+                                <label for="floatingInput">Giá</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword"
+                                    placeholder="Password">
+                                <label for="floatingPassword">Mật khẩu</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Thêm</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- 
         <div class="container">

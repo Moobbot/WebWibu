@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/2b6d70a29b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,26 +24,26 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <img src="https://raw.githubusercontent.com/Moobbot/WebWibu/main/assets/img/Logo.jpg" width="100"
+                height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php">Trang chủ</a>
+                        <a class="nav-link custom-color fw-bold" href="admin-home.php"><i class="fas fa-home"></i>Trang
+                            chủ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
                     </li>
-                    <!-- <li class="nav-item">  
-                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Category</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Nhân viên</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Logout</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -62,7 +63,7 @@
                         <h2 class="text-center fw-bold">4</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Loại</p>
+                        <p class="text-center"><i class="fas fa-user"></i> Tài khoản</p>
                     </div>
                 </div>
 
@@ -71,7 +72,7 @@
                         <h2 class="text-center fw-bold">6</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Món ăn</p>
+                        <p class="text-center"><i class="fas fa-utensils"></i> Món ăn</p>
                     </div>
                 </div>
 
@@ -80,23 +81,23 @@
                         <h2 class="text-center fw-bold">3</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Đơn hàng</p>
+                        <p class="text-center"><i class="fas fa-users"></i> Nhân viên</p>
                     </div>
                 </div>
 
                 <div class="rounded bg-white col-2 offset-md-1">
                     <div class="container pt-3">
-                        <h2 class="text-center fw-bold">$36.000</h2>
+                        <h2 class="text-center fw-bold">100</h2>
                     </div>
                     <div class="container pt-1">
-                        <p class="text-center">Doanh thu</p>
+                        <p class="text-center"><i class="fas fa-cart-plus"></i> Đơn hàng</p>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-    
+
     <!-- Start Footer -->
     <div class="footer">
         <div class="container">
