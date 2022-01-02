@@ -1,4 +1,4 @@
-<footer class="bd-footer py-5 mt-5 bg-light">
+<footer class="bd-footer py-5 bg-light">
     <div class="container py-2">
         <p class="text-center h4">
             Designed By <a href="https://github.com/Moobbot/WebWibu">Wibu</a>

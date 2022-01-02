@@ -7,6 +7,10 @@
     background: url('../assets/img/timthumb.jpg') center / cover no-repeat;
 }
 
-body #bg-all {
+#bg-all {
     background: url('../assets/img/wibu.jpg');
+}
+
+.bg-wood {
+    background: url('../assets/img/nengo.jpg') center / cover no-repeat !important;
 }
