@@ -28,21 +28,21 @@
                 height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-home.php"><i class="fas fa-home"></i>Trang
+                <li class="nav-item">
+                        <a class="nav-link custom-color fw-bold" href="index.php"><i class="fas fa-home"></i>Trang
                             chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-admin.php">Tài khoản</a>
+                        <a class="nav-link custom-color fw-bold" href="accounts.php">Tài khoản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-category.php">Nhân viên</a>
+                        <a class="nav-link custom-color fw-bold" href="#">Nhân viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-food.php">Món ăn</a>
+                        <a class="nav-link custom-color fw-bold" href="foods.php">Món ăn</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="admin-order.php">Đơn hàng</a>
+                        <a class="nav-link custom-color fw-bold" href="orders.php">Đơn hàng</a>
                     </li>
                 </ul>
             </div>
