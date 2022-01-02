@@ -16,13 +16,13 @@
                         aria-selected="true">Trang chủ</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link red4" id="pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                    <button class="nav-link red4" id="pills-foodtop-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-foodtop" type="button" role="tab" aria-controls="pills-foodtop"
                         aria-selected="false">Món ăn nổi bật</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link red4" id="pills-contact-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                    <button class="nav-link red4" id="pills-listfood-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-listfood" type="button" role="tab" aria-controls="pills-listfood"
                         aria-selected="false">Danh sách món ăn</button>
                 </li>
             </ul>
