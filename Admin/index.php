@@ -50,7 +50,7 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <?php include('./home.php') ?>
         </div>
-        <div class="tab-pane fade show active" id="pills-acc" role="tabpanel" aria-labelledby="pills-acc-tab">
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
             <?php include('./accounts.php') ?>
         </div>
     </div>
@@ -62,9 +62,8 @@
 
 <script>
     $(document).ready( function () {
-        $("#pills-home" ).click(function() {
         $('#table_acc').DataTable();
-    });
+        $('#table_home').DataTable();
     
 } );
 </script>

@@ -12,14 +12,7 @@
     </thead>
     <tbody>
         <tr>
-            <td>01</td>
-            <td>loofeht</td>
-            <td>123456</td>
-            <td>Nguyễn Văn A</td>
-            <td class="d-flex justify-content-evenly">
-                <button type="button" class="btn btn-warning px-4">Sửa</button>
-                <button type="button" class="btn btn-danger px-4">Xoá</button>
-            </td>
+            
         </tr>
         
    
