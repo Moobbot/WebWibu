@@ -1,6 +1,6 @@
 <div class="container mt-5">
 <button type="button" class="btn btn-primary mb-3"><i class="fa-solid fa-user-plus"></i>Thêm tài khoản</button>
-<table id="table_home" class="cell-border table-bordered">
+<table id="table_acc" class="cell-border table-bordered">
     <thead>
         <tr>
             <th>STT</th>

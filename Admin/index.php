@@ -18,8 +18,8 @@
                             aria-selected="true">Trang chủ</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link red4" id="pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        <button class="nav-link red4" id="pills-acc-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-acc"
                             aria-selected="false">Tài khoản</button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -40,8 +40,7 @@
                 </ul>
 
                 <div class="col-md-2 me-lg-5" style="width: 160px;">
-                    <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                    <button type="button" class="btn btn-primary">Sign-up</button>
+                   
                 </div>
             </header>
         </div>
@@ -51,7 +50,9 @@
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <?php include('./home.php') ?>
         </div>
-
+        <div class="tab-pane fade show active" id="pills-acc" role="tabpanel" aria-labelledby="pills-acc-tab">
+            <?php include('./accounts.php') ?>
+        </div>
     </div>
 
     </body>
@@ -61,6 +62,9 @@
 
 <script>
     $(document).ready( function () {
-    $('#table_id').DataTable();
-    } );
+        $("#pills-home" ).click(function() {
+        $('#table_acc').DataTable();
+    });
+    
+} );
 </script>
