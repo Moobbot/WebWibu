@@ -33,8 +33,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary">Thêm</button>
+                        <button type="button" class="btn btn-primary" onclick="funcAdd()">Đồng ý</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -70,7 +70,7 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -80,7 +80,8 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +91,8 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +102,8 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+
                     </td>
                 </tr>
                 <tr>
@@ -110,7 +113,8 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+
                     </td>
                 </tr>
                 <tr>
@@ -120,7 +124,8 @@
                     <td>Nguyễn Văn A</td>
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+
                     </td>
                 </tr>
             </tbody>
@@ -156,29 +161,13 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="funcUpd()">Đồng ý</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                        <button type="button" class="btn btn-primary">Đồng ý</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h4>Bạn chắc chắn muốn xóa tài khoản ?</h4>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                        <button type="button" class="btn btn-primary">Đồng ý</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <!-- End Admin Menu -->
     <?php include 'footer.php' ?>
@@ -187,4 +176,24 @@
         $(document).ready(function() {
             $('#table_acc').DataTable();
         });
+    </script>
+
+    <script>
+        function funcDel() {
+            if (confirm("Bạn có chắc muốn xoá tài khoản này không? dữ liệu sẽ không thể khôi phục.") == true) {
+                alert("Xoá thành công!");
+            }
+        }
+
+        function funcUpd() {
+            if (confirm("Bạn có chắc muốn thực hiện việc thay đổi thông tin này không?") == true) {
+                location.reload()
+                alert("Cập nhật thành công!");
+            }
+        }
+
+        function funcAdd() {
+            location.reload()
+            alert("Thêm tài khoản thành công!")
+        }
     </script>

@@ -40,8 +40,8 @@
                     </div>
 
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="funcAddSuccess()">Đồng ý</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                        <button type="button" class="btn btn-primary">Đồng ý</button>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +90,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -104,7 +104,20 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Mochi</td>
+                    <td>Image</td>
+                    <td class="text-end">10000</td>
+                    <td class="text-end">100</td>
+                    <td>Bột gạo</td>
+                    <td>Món ăn ngọt truyền thống Nhật Bản</td>
+
+                    <td class="d-flex justify-content-evenly">
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -118,7 +131,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -132,7 +145,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -146,7 +159,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -160,7 +173,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -174,21 +187,7 @@
 
                     <td class="d-flex justify-content-evenly">
                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>01</td>
-                    <td>Mochi</td>
-                    <td>Image</td>
-                    <td class="text-end">10000</td>
-                    <td class="text-end">100</td>
-                    <td>Bột gạo</td>
-                    <td>Món ăn ngọt truyền thống Nhật Bản</td>
-
-                    <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Xóa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
             </tbody>
@@ -224,29 +223,13 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="funcUpd()">Đồng ý</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                        <button type="button" class="btn btn-primary">Đồng ý</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h4>Bạn chắc chắn muốn xóa món ăn này không ?</h4>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
-                        <button type="button" class="btn btn-primary">Đồng ý</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 
@@ -259,4 +242,24 @@
     $(document).ready(function() {
         $('#table_acc').DataTable();
     });
+</script>
+
+<script>
+    function funcDel() {
+        if (confirm("Bạn có chắc muốn xoá món ăn này không? dữ liệu sẽ không thể khôi phục.") == true) {
+            alert("Xoá thành công!");
+        }
+    }
+
+    function funcUpd() {
+        if (confirm("Bạn có chắc muốn cập món ăn này không?") == true) {
+            location.reload()
+            alert("Cập nhật thành công!");
+        }
+    }
+
+    function funcAddSuccess() {
+        location.reload()
+        alert("Thêm món ăn thành công!")
+    }
 </script>
