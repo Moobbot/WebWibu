@@ -33,7 +33,7 @@
                         <button class="nav-link red4" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
                             data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
                             aria-controls=<?= $typefood ?> aria-selected="false">
-                            <img src="./assets/img/mochi.png " class="me-2"
+                            <img src="./assets/img/mochi.png" class="me-2"
                                 style="width: 10%; height: 10%; border-radius: 50%; min-width: 1.375em;">
                             Mochi
                         </button>

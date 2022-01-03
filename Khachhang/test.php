@@ -5,8 +5,8 @@
         for ($i = 1; $i <= $mon; $i++) {
         ?>
         <div class="col-xl-3 col-lg-4 col-md-6 px-2 py-2 d-flex justify-content-evenly">
-            <div class="card text-center" style="width: 16.25em;">
-                <img src="./assets/img/timthumb.jpg" class="card-img-top" alt="...">
+            <div class="card text-center" style="width: 16.25em; max-height: 17.75em;">
+                <img src="./assets/img/food<?= $i ?>.jpg" class="card-img-top" alt="..." style="max-height: 8.875em;">
                 <div class="card-body">
                     <h5 class="card-title">Tên món</h5>
                     <p class="card-text">999.000</p>
