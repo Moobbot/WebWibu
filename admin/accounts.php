@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 
 <!-- Start Menu Admin -->
-<div class="container-fluid custom-background">
+<div class="container-fluid custom-background" style="min-height: 100vh;">
     <div class="container pb-5">
         <h3 class="pt-5 pb-4 fw-bold">Quản lý tài khoản</h3>
 
