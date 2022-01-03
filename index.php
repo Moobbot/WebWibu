@@ -13,6 +13,9 @@
         <div class="tab-pane fade" id="pills-listfood" role="tabpanel" aria-labelledby="pills-listfood-tab">
             <?php include('./Khachhang/listfood.php') ?>
         </div>
+        <div class="tab-pane fade" id="pills-chitietmonan" role="tabpanel" aria-labelledby="pills-chitietmonan-tab">
+            <?php include('./Khachhang/chitietmonan.php') ?>
+        </div>
     </div>
 </body>
 

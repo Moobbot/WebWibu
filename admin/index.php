@@ -28,7 +28,7 @@
                 height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
-                <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="index.php"><i class="fas fa-home"></i>Trang
                             chủ</a>
                     </li>

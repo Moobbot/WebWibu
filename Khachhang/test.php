@@ -10,7 +10,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Tên món</h5>
                     <p class="card-text">999.000</p>
-                    <a href="#" class="btn btn-primary">Chi tiết</a>
+                    <!-- <a href="./Khachhang/chitietmonan.php" class="btn btn-primary">Chi tiết</a> -->
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link btn btn-primary text-white" id="pills-chitietmonan-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-chitietmonan" type="button" role="tab"
+                                aria-controls="pills-chitietmonan" aria-selected="false">Chi tiết</button>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
