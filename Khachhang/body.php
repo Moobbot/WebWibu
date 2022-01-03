@@ -45,12 +45,12 @@
             </div>
             <div class="my-3">
                 <h4 class="border ps-2 py-2" style="border-radius: 15%;">Fanpage</h4>
-                <div class="fb-page" data-href="https://www.facebook.com/giaoducsom.CERD/" data-tabs="timeline"
+                <div class="fb-page" data-href="https://www.facebook.com/dongotvatrangmieng" data-tabs="timeline"
                     data-width="208" data-height="350" data-small-header="false" data-adapt-container-width="true"
-                    data-hide-cover="false" data-show-facepile="false">
-                    <blockquote cite="https://www.facebook.com/giaoducsom.CERD/" class="fb-xfbml-parse-ignore"><a
-                            href="https://www.facebook.com/giaoducsom.CERD/">Trung tâm Nghiên cứu Phát triển Giáo dục
-                            sớm - CERD</a></blockquote>
+                    data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/dongotvatrangmieng" class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/dongotvatrangmieng">Đồ ngọt - Món tráng miệng</a>
+                    </blockquote>
                 </div>
             </div>
         </div>
