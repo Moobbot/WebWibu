@@ -2,7 +2,7 @@
 <section class="container vh-100 pt-5">
     <div class="row d-flex justify-content-xl-around mx-auto">
         <?php
-        $mon = 4;
+        $mon = 36;
         for ($i = 1; $i <= $mon; $i++) {
         ?>
         <div class="col-xl-3 col-lg-4 col-md-6 px-2 py-2">

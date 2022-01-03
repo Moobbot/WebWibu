@@ -14,6 +14,9 @@
     <script src="https://kit.fontawesome.com/a4208f5cfb.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/style.css"> -->
     <link rel="stylesheet" href="./assets/style.css">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0"
+        nonce="IxwiXkrv"></script>
 </head>
 
 <body>
