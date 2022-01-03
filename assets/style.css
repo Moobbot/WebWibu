@@ -1,3 +1,9 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 .red4 {
     color: rgb(204, 0, 0);
 }
@@ -7,6 +13,10 @@
     background: url('../assets/img/timthumb.jpg') center / cover no-repeat;
 }
 
-body #bg-all {
+#bg-all {
     background: url('../assets/img/wibu.jpg');
+}
+
+.bg-wood {
+    background: url('../assets/img/nengo.jpg') center / cover no-repeat !important;
 }
