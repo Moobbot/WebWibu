@@ -17,25 +17,29 @@
         <div class="col-lg-1 col-2" style="min-width: 208px;">
             <div class="d-flex flex-column border" style="border-radius: 15%;">
                 <!-- Điều hướng -->
-                <a class="h4 text-dark text-decoration-none mt-2 ps-2" href="./">Danh mục</a>
-                <ul class="nav nav-pills mb-2 align-items-center h5" id="pills-tab" role="tablist">
+                <a class="h4 text-dark text-decoration-none mt-2 ps-2" href="./">
+                    <i class="fas fa-bars px-2"></i> Danh mục
+                </a>
+                <ul class=" nav nav-pills mb-2 align-items-center h5" id="pills-tab" role="tablist">
                     <!-- <li class="nav-item pt-2" role="presentation">
                         <button class="nav-link active h4" id="v-pills-foodtop-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-foodtop" type="button" role="tab" aria-controls="v-pills-foodtop"
                             aria-selected="true">Danh mục</button>
                     </li> -->
                     <?php
-                    $loaimon = 4;
+                    $tenloaimon = array("Wagashi", "Dango", "Yokan", "Higashi", "Mochi", "Daifuku");
+                    $loaimon = count($tenloaimon);
                     for ($i = 1; $i <= $loaimon; $i++) {
-                        $typefood = "v-pills-typefood" . (string)$i
+                        $typefood = "v-pills-typefood" . (string)$i;
+
                     ?>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link red4" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
+                        <button class="nav-link red4 text-start ps-5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
                             data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
                             aria-controls=<?= $typefood ?> aria-selected="false">
                             <img src="./assets/img/mochi.png" class="me-2"
                                 style="width: 10%; height: 10%; border-radius: 50%; min-width: 1.375em;">
-                            Mochi
+                            <?= $tenloaimon[$i - 1] ?>
                         </button>
                     </li>
                     <?php
@@ -44,7 +48,8 @@
                 </ul>
             </div>
             <div class="my-3">
-                <h4 class="border ps-2 py-2" style="border-radius: 15%;">Fanpage</h4>
+                <h4 class="border ps-2 py-2" style="border-radius: 15%;"><i class="fas fa-bars px-2"></i> Fanpage
+                </h4>
                 <div class="fb-page" data-href="https://www.facebook.com/dongotvatrangmieng" data-tabs="timeline"
                     data-width="208" data-height="350" data-small-header="false" data-adapt-container-width="true"
                     data-hide-cover="false" data-show-facepile="true">
