@@ -66,8 +66,8 @@ ALTER TABLE DONDATHANG
 ADD CONSTRAINT fk_dondathang_nhanvien FOREIGN KEY (Manhanvien) REFERENCES NHANVIEN(Manhanvien);
 ALTER TABLE CHITIETDATHANG
 ADD CONSTRAINT fk_chitietdathang_dondathang FOREIGN KEY (Sohoadon) REFERENCES DONDATHANG(Sohoadon);
-ALTER TABLE CHITIETDATHANG
-ADD CONSTRAINT fk_chitietdathang_monan FOREIGN KEY (Mamon) REFERENCES MONAN(Mamonan);
+--ALTER TABLE CHITIETDATHANG
+--ADD CONSTRAINT fk_chitietdathang_monan FOREIGN KEY (Mamon) REFERENCES MONAN(Mamonan);
 ---------------------------------------------------------------------------------
 SELECT * FROM TAIKHOAN
 SELECT * FROM NHANVIEN
