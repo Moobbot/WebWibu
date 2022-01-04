@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-    <script src="https://kit.fontawesome.com/2b6d70a29b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<?php include 'header.php' ?>
 
 <body>
     <!-- Start Nav -->
@@ -28,7 +13,7 @@
                 height=auto alt="">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
-                <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="index.php"><i class="fas fa-home"></i>Trang
                             chủ</a>
                     </li>
@@ -127,12 +112,7 @@
     <!-- End Main -->
 
     <!-- Start Footer -->
-    <div class="footer">
-        <div class="container">
-            <p class="text-center pt-3 pb-3">2020 All rights reserved. Food House. Developed By <a href="#">CSE.TLU</a>
-            </p>
-        </div>
-    </div>
+    <?php include("./footer.php") ?>
     <!-- End Footer -->
 
 </body>
