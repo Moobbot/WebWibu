@@ -1,4 +1,6 @@
-﻿--Thêm dữ liệu
+﻿USE DB_Wibu;
+GO
+--Thêm dữ liệu
 INSERT INTO TAIKHOAN VALUES
 ('admin', '12345', '2022-1-1', 1, 1),
 ('nv01', '12345', '2022-1-1', 2, 0),
@@ -33,13 +35,16 @@ INSERT INTO KHACHHANG VALUES
 (N'Lê Văn Lương', N'Hà Nội', 'nam@gmail.com', 0348123129, 11);
 
 --SELECT * FROM KhachHang
+INSERT INTO dbo.LOAI
+VALUES
+(N'Mochi'),(N'Dango'),(N'Yokan'),(N'Wagashi'),(N'Manju'),(N'Yokan')
 
-INSERT INTO MonAn(TENMONAN, HINHANH, MOTA, SOLUONG, GIATHANHPHAM, HANSUDUNG) VALUES
-(N'Mochi Matcha', '', N'Bột gạo, Trà xanh', 10, 10000, '2022-04-30'),
-(N'Mochi Socola', '', N'Bột gạo, Socola',  10, 12000, '2022-04-30'),
-(N'Mochi Đậu Đỏ', '', N'Bột gạo, Đậu đỏ' , 10, 20000, '2022-04-30'),
-(N'Mochi Khoai Lang', '', N'Bột gạo, Khoai lang', 10, 10000, '2022-04-30'),
-(N'Mochi Kem', '', N'Bột gạo, Kem' ,10, 15000, '2022-04-30');
+INSERT INTO MonAn(TENMONAN, Maloai, HINHANH, MOTA, SOLUONG, GIATHANHPHAM, HANSUDUNG) VALUES
+(N'Mochi giọt nước', '1', '', N'Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước khiến bao người mê mẩn với vẻ ngoài đẹp mắt. Chiếc bánh với ngọt ngào, trong suốt khác hẳn với những loại bánh mochi thường biết với lớp vỏ ngoài dẻo dai ăn cùng nhân bên trong. Từ những nguyên liệu đơn giản như bột rau câu, đậu nành, đường, nước bạn có thể làm ra chiếc mochi núng nính vị ngọt dịu, thanh mát. Xắn 1 miếng bánh thôi là sảng khoái cả người, cảm nhận được miếng bánh tan trong miệng thật tuyệt vời làm sao!', 10, 10000, '2022-04-30'),
+(N'Mochi Đậu Đỏ','1', '', N'Lớp vỏ bánh nếp dẻo dai, ngọt thơm mùi cốt dừa kết hợp cùng nhân đậu đỏ bùi béo, ngọt lịm. Tất cả tạo nên món bánh mochi với vẻ ngoài đáng yêu, tròn tròn, nhỏ nhỏ cùng hương vị lôi cuốn khiến bạn ăn 1 lần sẽ nhớ mãi.' , 10, 20000, '2022-04-30'),
+(N'Mochi trà xanh nhân kem','1', '', N'Bột trà xanh "thần thánh" sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.',  10, 12000, '2022-04-30'),
+(N'Mochi nhân kem vani','1', '', N'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể "chiều lòng" vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?', 10, 10000, '2022-04-30'),
+(N'Mochi nhân kem dâu tây phô mai','1', '', N'Vẻ ngoài ngọt ngào, đáng yêu với màu hồng nhẹ nhàng dễ dàng đánh gục bất cứ ai ngay lần nhìn đầu tiên. Nhân kem phô mai béo ngậy hòa quyện cùng kem dâu tây chua chua ngọt ngọt, thơm ngon cùng lớp socola trắng ngọt dịu. Tất cả tạo nên món bánh mochi nhân kem dâu tây phô mai cực lôi cuốn, ngon miệng. Bạn có thể làm món bánh xinh xắn này để tặng cho bạn bè người thân trong những dịp lễ hay ngày đặc biệt đấy!' ,10, 15000, '2022-04-30');
 
 --select * from MonAn
 
@@ -77,8 +82,10 @@ INSERT INTO ChiTietDatHang VALUES
 (12, 1, 15000, 2, 0);
 
 --select * from ChiTietDatHang
-SELECT * FROM dbo.ChiTietDatHang
-SELECT * FROM dbo.DonDatHang
-SELECT * FROM dbo.KhachHang
-SELECT * FROM dbo.MonAn
+SELECT * FROM dbo.TAIKHOAN
 SELECT * FROM dbo.NhanVien
+SELECT * FROM dbo.KhachHang
+SELECT * FROM dbo.LOAI
+SELECT * FROM dbo.MonAn
+SELECT * FROM dbo.DonDatHang
+SELECT * FROM dbo.ChiTietDatHang
