@@ -99,12 +99,7 @@
     </div>
 
     <!-- Start Footer -->
-    <div class="footer">
-        <div class="container">
-            <p class="text-center pt-3 pb-3">footer <a href="#">CSE.TLU</a>
-            </p>
-        </div>
-    </div>
+    <?php include("./reuse/footer.php") ?>
     <!-- End Footer -->
 </body>
 
