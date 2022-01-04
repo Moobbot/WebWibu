@@ -1,4 +1,11 @@
 <!-- main -->
+
+<style>
+    .row{
+        padding-top: 40px;
+    }
+</style>
+
 <div class="container" style="min-height: 90vh;">
     <div class="row pt-3">
         <div class="col-md-6">
