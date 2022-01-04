@@ -25,17 +25,19 @@
                             aria-selected="true">Danh mục</button>
                     </li> -->
                     <?php
-                    $loaimon = 4;
+                    $tenloaimon = array("Wagashi", "Dango", "Yokan", "Higashi", "Mochi", "Daifuku");
+                    $loaimon = count($tenloaimon);
                     for ($i = 1; $i <= $loaimon; $i++) {
-                        $typefood = "v-pills-typefood" . (string)$i
+                        $typefood = "v-pills-typefood" . (string)$i;
+
                     ?>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link red4" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
+                        <button class="nav-link red4 text-start ps-5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
                             data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
                             aria-controls=<?= $typefood ?> aria-selected="false">
                             <img src="./assets/img/mochi.png" class="me-2"
                                 style="width: 10%; height: 10%; border-radius: 50%; min-width: 1.375em;">
-                            Mochi
+                            <?= $tenloaimon[$i - 1] ?>
                         </button>
                     </li>
                     <?php
