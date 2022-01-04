@@ -12,7 +12,7 @@
                     style="min-height: 8.5em; height: auto; max-height: 8.875em;">
                 <div class="card-body">
                     <h5 class="card-title"><?= $tenmon[$i - 1] ?></h5>
-                    <p class="card-text"><?= rand(100000, 999000) ?> đồng</p>
+                    <p class="card-text"><?= rand(50, 999) ?> nghìn đồng</p>
                     <!-- <a href="./Khachhang/chitietmonan.php" class="btn btn-primary">Chi tiết</a> -->
                     <ul class="nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
