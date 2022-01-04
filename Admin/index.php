@@ -1,4 +1,4 @@
-<?php include('./reuse/header.php') ?>
+<?php include('../reuse/header.php') ?>
 
 <body>
     <div class="container-fluid d-flex justify-content-center">
@@ -6,7 +6,7 @@
             <header
                 class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between border-bottom">
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/img/Logo.jpg" class="img-fluid" alt="Logo-WowFood"
+                    <img src="../assets/img/Logo.jpg" class="img-fluid" alt="Logo-WowFood"
                         style="width: 120px; height: 60px;">
                 </a>
                 <!-- Điều hướng -->
@@ -20,12 +20,22 @@
                     <li class="nav-item" role="presentation">
                         <button class="nav-link red4" id="pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">Món ăn nổi bật</button>
+                            aria-selected="false">Tài khoản</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link red4" id="pills-contact-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">Danh sách món ăn</button>
+                        <button class="nav-link red4" id="pills-emp-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-emp" type="button" role="tab" aria-controls="pills-emp"
+                            aria-selected="false">Nhân viên</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link red4" id="pills-menu-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-menu" type="button" role="tab" aria-controls="pills-menu"
+                            aria-selected="false">Món ăn</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link red4" id="pills-order-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-order" type="button" role="tab" aria-controls="pills-order"
+                            aria-selected="false">Đơn hàng</button>
                     </li>
                 </ul>
 
@@ -36,17 +46,21 @@
             </header>
         </div>
     </div>
+    <!-- contents -->
     <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <?php include('./Khachhang/body.php') ?>
+            <?php include('./home.php') ?>
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <?php include('./Khachhang/foodtop.php') ?>
-        </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <?php include('./Khachhang/listfood.php') ?>
-        </div>
-    </div>
-</body>
 
-<?php include('./reuse/footer.php') ?>
+    </div>
+
+    </body>
+
+   
+<?php include('../reuse/footer.php') ?>
+
+<script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+    } );
+</script>
