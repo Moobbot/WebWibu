@@ -9,8 +9,7 @@
             <i class="fas fa-plus pe-2"></i>Thêm
             món ăn</button>
 
-        <div class="modal fade" id="add-food-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="add-food-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -18,25 +17,41 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Tên món</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Thành phần</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Đơn giá</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Số lượng</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Mô tả</label>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Tên món</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Thành phần</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Đơn giá</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="number" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Số lượng</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        <label for="floatingInput">Mô tả</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ms-auto">
+                                    <div class="form-floating mb-3">
+                                        <img src="https://cf.shopee.vn/file/71a0d3bd42c6a7bbf54574745eebb82c" class="img-thumbnail" alt="...">
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="button" value="Hình ảnh" onclick="document.getElementById('file').click()" />
+                                        <input type="file" id="file" style="display:none" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -76,10 +91,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -92,10 +105,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -108,10 +119,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                 </tr>
                 <tr>
                     <td>01</td>
@@ -123,10 +132,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -139,10 +146,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -155,10 +160,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -171,10 +174,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -187,10 +188,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
                 <tr>
@@ -203,10 +202,8 @@
                     <td>Món ăn ngọt truyền thống Nhật Bản</td>
 
                     <td class="d-flex justify-content-evenly">
-                        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                            data-bs-target="#passchange">Sửa</button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
-                            onclick="funcDel()">Xóa</button>
+                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                     </td>
                 </tr>
             </tbody>
@@ -220,25 +217,41 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Tên món</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Thành phần</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Đơn giá</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Số lượng</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
-                            <label for="floatingInput">Mô tả</label>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Tên món</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Thành phần</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Đơn giá</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="number" class="form-control" id="floatingInput" placeholder="">
+                                        <label for="floatingInput">Số lượng</label>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        <label for="floatingInput">Mô tả</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ms-auto">
+                                    <div class="form-floating mb-3">
+                                        <img src="https://cf.shopee.vn/file/71a0d3bd42c6a7bbf54574745eebb82c" class="img-thumbnail" alt="...">
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="button" value="Hình ảnh" onclick="document.getElementById('file').click()" />
+                                        <input type="file" id="file" style="display:none" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -258,27 +271,27 @@
 <?php include("./footer.php") ?>
 
 <script>
-$(document).ready(function() {
-    $('#table_acc').DataTable();
-});
+    $(document).ready(function() {
+        $('#table_acc').DataTable();
+    });
 </script>
 
 <script>
-function funcDel() {
-    if (confirm("Bạn có chắc muốn xoá món ăn này không? dữ liệu sẽ không thể khôi phục.") == true) {
-        alert("Xoá thành công!");
+    function funcDel() {
+        if (confirm("Bạn có chắc muốn xoá món ăn này không? dữ liệu sẽ không thể khôi phục.") == true) {
+            alert("Xoá thành công!");
+        }
     }
-}
 
-function funcUpd() {
-    if (confirm("Bạn có chắc muốn cập món ăn này không?") == true) {
+    function funcUpd() {
+        if (confirm("Bạn có chắc muốn cập món ăn này không?") == true) {
+            location.reload()
+            alert("Cập nhật thành công!");
+        }
+    }
+
+    function funcAddSuccess() {
         location.reload()
-        alert("Cập nhật thành công!");
+        alert("Thêm món ăn thành công!")
     }
-}
-
-function funcAddSuccess() {
-    location.reload()
-    alert("Thêm món ăn thành công!")
-}
 </script>
