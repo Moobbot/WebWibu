@@ -11,9 +11,8 @@
             <ul class="nav nav-pills col-10 col-md-auto mb-2 justify-content-center mb-md-0 h5" id="pills-tab"
                 role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link red4 active" id="pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                        aria-selected="true">Trang chủ</button>
+                    <button class="nav-link red4" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="false">Trang chủ</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link red4" id="pills-foodtop-tab" data-bs-toggle="pill"
