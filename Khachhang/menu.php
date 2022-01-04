@@ -27,9 +27,13 @@
             </ul>
 
             <div class="col-md-2 me-lg-5" style="width: 202px;">
-                <button type="button" class="btn btn-outline-primary me-2">Đăng nhập</button>
-                <button type="button" class="btn btn-primary">Đăng ký</button>
+                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                    data-bs-target="#ModalLogin">Đăng nhập</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#ModalSignup">Đăng ký</button>
             </div>
         </header>
     </div>
 </div>
+<?php include("./modal_dangnhap.php");
+include("./modal_dangky.php") ?>

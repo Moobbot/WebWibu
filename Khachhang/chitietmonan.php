@@ -1,9 +1,9 @@
 <!-- main -->
 
 <style>
-    .row{
-        padding-top: 40px;
-    }
+.row {
+    padding-top: 40px;
+}
 </style>
 
 <div class="container" style="min-height: 90vh;">
@@ -57,7 +57,7 @@
             <div class="row align-items-sm-center">
                 <div class="col-md-3 p-0" style="font-size: 24px;"> Số lượng</div>
                 <div class="col-md-3 d-flex h-75 ">
-                   
+
                     <input type="number" class="w-50 text-end" value="1"></input>
 
                 </div>
@@ -84,18 +84,18 @@
         </div>
     </div>
     <div class="row border-bottom"></div>
-    <div class="row border-bottom ps-2 pt-4" style="font-size: 24px; font-weight: 700;"> <h2 class = "mb-4">Chi tiết sản phẩm</h2></div>
+    <div class="row border-bottom ps-2 pt-4" style="font-size: 24px; font-weight: 700;">
+        <h2 class="mb-4">Chi tiết sản phẩm</h2>
+    </div>
     <!-- mô tả -->
     <div class="row mt-4">
-        <p>Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước
+        <p>
+            Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước
             khiến bao người mê mẩn với vẻ ngoài đẹp mắt.
-
             Chiếc bánh với ngọt ngào, trong suốt khác hẳn với những loại bánh mochi thường biết với lớp vỏ ngoài dẻo dai
             ăn cùng nhân bên trong.
-
             Từ những nguyên liệu đơn giản như bột rau câu, đậu nành, đường, nước bạn có thể làm ra chiếc mochi núng nính
             vị ngọt dịu, thanh mát.
-
             Xắn 1 miếng bánh thôi là sảng khoái cả người, cảm nhận được miếng bánh tan trong miệng thật tuyệt vời làm
             sao!</p>
     </div>

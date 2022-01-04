@@ -1,5 +1,5 @@
 ﻿CREATE DATABASE DB_Wibu
-
+--DROP DATABASE DB_Wibu
 GO
 
 USE DB_Wibu;
