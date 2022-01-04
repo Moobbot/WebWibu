@@ -57,9 +57,9 @@
             <div class="row align-items-sm-center">
                 <div class="col-md-3 p-0" style="font-size: 24px;"> Số lượng</div>
                 <div class="col-md-3 d-flex h-75 ">
-                    <button class="btn-outline-secondary"><i class="fas fa-minus"></i></button>
+                   
                     <input type="number" class="w-50 text-end" value="1"></input>
-                    <button class="btn-outline-secondary"><i class="fas fa-plus"></i></button>
+
                 </div>
                 <div class="col-md-4 text-secondary ps-0">100 sản phảm hiện có</div>
             </div>
@@ -84,7 +84,7 @@
         </div>
     </div>
     <div class="row border-bottom"></div>
-    <div class="row border-bottom ps-2" style="font-size: 24px; font-weight: 700;"> Chi tiết sản phẩm</div>
+    <div class="row border-bottom ps-2 pt-4" style="font-size: 24px; font-weight: 700;"> <h2 class = "mb-4">Chi tiết sản phẩm</h2></div>
     <!-- mô tả -->
     <div class="row mt-4">
         <p>Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước
