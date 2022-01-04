@@ -16,45 +16,45 @@
                         <h5 class="modal-title" id="exampleModalLabel">Thêm món ăn</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
-                                        <label for="floatingInput">Tên món</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
-                                        <label for="floatingInput">Thành phần</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="">
-                                        <label for="floatingInput">Đơn giá</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="number" class="form-control" id="floatingInput" placeholder="">
-                                        <label for="floatingInput">Số lượng</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                                        <label for="floatingInput">Mô tả</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 ms-auto">
-                                    <div class="form-floating mb-3">
-                                        <img src="https://cf.shopee.vn/file/71a0d3bd42c6a7bbf54574745eebb82c"
-                                            class="img-thumbnail" alt="...">
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="button" value="Hình ảnh"
-                                            onclick="document.getElementById('file').click()" />
-                                        <input type="file" id="file" style="display:none" />
-                                    </div>
-                                </div>
+                    <div class="modal-body row">
+                        <!-- <div class="container-fluid"> -->
+                        <!-- <div class="row"> -->
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingFoodName" placeholder="">
+                                <label for="floatingFoodName">Tên món</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingThanhPhan" placeholder="">
+                                <label for="floatingThanhPhan">Thành phần</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingDonGia" placeholder="">
+                                <label for="floatingDonGia">Đơn giá</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingSoLuong" placeholder="">
+                                <label for="floatingSoLuong">Số lượng</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" aria-label="With textarea"></textarea>
+                                <label for="floatingInput">Mô tả</label>
                             </div>
                         </div>
+
+                        <div class="col-md-6 ms-auto">
+                            <div class="form-floating mb-3">
+                                <img src="https://cf.shopee.vn/file/71a0d3bd42c6a7bbf54574745eebb82c"
+                                    class="img-thumbnail" alt="...">
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="button" value="Hình ảnh"
+                                    onclick="document.getElementById('file').click()" />
+                                <input type="file" id="file" style="display:none" />
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <!-- </div> -->
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" onclick="funcAddSuccess()">Đồng ý</button>

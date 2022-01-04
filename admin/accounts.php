@@ -6,8 +6,8 @@
         <h3 class="pt-5 pb-4 fw-bold">Quản lý tài khoản</h3>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-modal"><i
-                class="fas fa-user-plus"></i>Thêm
-            tài khoản</button>
+                class="fas fa-user-plus"></i>Thêm tài khoản</button>
+
         <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -17,12 +17,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="abc">
-                            <label for="floatingInput">Họ và Tên</label>
+                            <input type="text" class="form-control" id="floatingName" placeholder="abc">
+                            <label for="floatingName">Họ và Tên</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Tên đăng nhập</label>
+                            <input type="email" class="form-control" id="floatingUsername"
+                                placeholder="name@example.com">
+                            <label for="floatingUsername">Tên đăng nhập</label>
                         </div>
                         <div class="form-floating">
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">

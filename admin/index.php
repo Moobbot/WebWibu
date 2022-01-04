@@ -63,7 +63,7 @@
 
     <div class="container-fluid custom-background pb-5" style="min-height:85vh; height: auto; max-height: 90vh;">
         <div class="container pb-5">
-            <h3 class="pt-5 pb-4 fw-bold">Dashboard</h3>
+            <h3 class="pt-5 pb-4 fw-bold">Thông tin cửa hàng</h3>
         </div>
 
         <div class="container">
