@@ -14,7 +14,6 @@
     <script src="https://kit.fontawesome.com/2b6d70a29b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <!-- Start Nav -->
     <nav class="navbar navbar-expand-lg navbar-light border-bottom border-1 border-dark">
@@ -49,15 +48,12 @@
         </div>
     </nav>
     <!-- End Nav -->
-
     <div class="container-fluid custom-background pb-5 h-100">
         <div class="container pb-5">
             <h3 class="pt-5 pb-4 fw-bold">Dashboard</h3>
         </div>
-
         <div class="container">
             <div class="row g2- pb-4 jutstify-content-around">
-
                 <div class="rounded bg-white col-2 offset-md-1">
                     <div class="container pt-3">
                         <h2 class="text-center fw-bold">4</h2>
@@ -66,7 +62,6 @@
                         <p class="text-center"><i class="fas fa-user"></i> Tài khoản</p>
                     </div>
                 </div>
-
                 <div class="rounded bg-white col-2 offset-md-1">
                     <div class="container pt-3">
                         <h2 class="text-center fw-bold">6</h2>
@@ -75,7 +70,6 @@
                         <p class="text-center"><i class="fas fa-utensils"></i> Món ăn</p>
                     </div>
                 </div>
-
                 <div class="rounded bg-white col-2 offset-md-1">
                     <div class="container pt-3">
                         <h2 class="text-center fw-bold">3</h2>
@@ -84,7 +78,6 @@
                         <p class="text-center"><i class="fas fa-users"></i> Nhân viên</p>
                     </div>
                 </div>
-
                 <div class="rounded bg-white col-2 offset-md-1">
                     <div class="container pt-3">
                         <h2 class="text-center fw-bold">100</h2>
@@ -93,11 +86,9 @@
                         <p class="text-center"><i class="fas fa-cart-plus"></i> Đơn hàng</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
     <!-- Start Footer -->
     <div class="footer">
         <div class="container">
@@ -107,5 +98,4 @@
     </div>
     <!-- End Footer -->
 </body>
-
 </html>
