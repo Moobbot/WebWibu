@@ -33,8 +33,8 @@ CREATE TABLE NHANVIEN (
   Ngaysinh DATE NOT NULL,
   Ngaybatdaulamviec DATE NOT NULL,
   Diachi NVARCHAR(100),
-  Dienthoai CHAR(11) NOT NULL,
-  Luongcoban MONEY NOT NULL,
+  Dienthoai CHAR(11) NOT NULL UNIQUE,
+  Luong MONEY NOT NULL,
   Tienthuong MONEY,
   Mataikhoan INT NOT NULL
 )
@@ -49,7 +49,7 @@ CREATE TABLE KHACHHANG (
   Hoten NVARCHAR(50) NOT NULL,
   Diachi NVARCHAR(100),
   Email VARCHAR(255),
-  Dienthoai CHAR(11) NOT NULL,
+  Dienthoai CHAR(11) NOT NULL UNIQUE,
   Mataikhoan INT NOT NULL
 )
 --Bảng Loại món ăn
@@ -76,7 +76,7 @@ CREATE TABLE DONDATHANG (
   Makhachhang INT NOT NULL,
   Manhanvien INT NOT NULL,
   Thoigiandatdon DATETIME NOT NULL,
-  Thoigianhegiao DATETIME,
+  Thoigianhengiao DATETIME,
   Thoigiangiaodon DATETIME,
   Noigiaohang NVARCHAR(100) NOT NULL
 
