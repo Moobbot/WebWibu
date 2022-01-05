@@ -14,9 +14,9 @@ GO
 --Tài khoản
 CREATE TABLE TAIKHOAN(
 	Mataikhoan INT IDENTITY(1,1) NOT NULL,
-	Tentaikhoan CHAR(20) NOT NULL,
+	Tentaikhoan VARCHAR(20) NOT NULL,
 	Matkhau NVARCHAR(20) NOT NULL,
-	Ngaytao DATETIME,
+	Ngaytao DATE,
 	Capdo TINYINT NOT NULL,
 	Trangthai BIT
 )
@@ -33,7 +33,7 @@ CREATE TABLE NHANVIEN (
   Ngaysinh DATE NOT NULL,
   Ngaybatdaulamviec DATE NOT NULL,
   Diachi NVARCHAR(100),
-  Dienthoai CHAR(11) NOT NULL UNIQUE,
+  Dienthoai VARCHAR(12) NOT NULL UNIQUE,
   Luong MONEY NOT NULL,
   Tienthuong MONEY,
   Mataikhoan INT NOT NULL
@@ -49,20 +49,20 @@ CREATE TABLE KHACHHANG (
   Hoten NVARCHAR(50) NOT NULL,
   Diachi NVARCHAR(100),
   Email VARCHAR(255),
-  Dienthoai CHAR(11) NOT NULL UNIQUE,
+  Dienthoai VARCHAR(12) NOT NULL UNIQUE,
   Mataikhoan INT NOT NULL
 )
 --Bảng Loại món ăn
 CREATE TABLE LOAI (
   Maloai INT IDENTITY(1,1) NOT NULL,
-  Tenloai NVARCHAR(50) NOT NULL
+  Tenloai NVARCHAR(50) NOT NULL UNIQUE
 )
 -- Bảng Món ăn
 CREATE TABLE MONAN (
   Mamonan INT IDENTITY(1,1) NOT NULL,
   Tenmonan NVARCHAR(50) NOT NULL,
   Maloai INT NOT NULL,
-  Hinhanh NVARCHAR(100),
+  Hinhanh TEXT,
   Mota NTEXT,
   Soluong INT NOT NULL,
   Giathanhpham MONEY NOT NULL,
@@ -75,16 +75,14 @@ CREATE TABLE DONDATHANG (
   Sohoadon INT IDENTITY(1,1) NOT NULL,
   Makhachhang INT NOT NULL,
   Manhanvien INT NOT NULL,
-  Thoigiandatdon DATETIME NOT NULL,
+  Thoigiandatdon DATETIME,
   Thoigianhengiao DATETIME,
   Thoigiangiaodon DATETIME,
-  Noigiaohang NVARCHAR(100) NOT NULL
+  Noigiaohang NTEXT NOT NULL
 
 )
 -- Thời gian đặt đơn là thời gian đơn hàng được tạo GETDATE()
--- Thời gian nhận đơn do khách hàng hẹn.
--- Thời gian gian giao hàng không quá 60 phút so với thời gian nhận đơn
--- Nơi giao hàng chỉ nhận đơn trong bán kính 10km
+-- Thời gian hẹn giao do khách hàng hẹn.
 
 -- Bảng chi tiết đặt hàng
 

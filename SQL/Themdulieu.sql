@@ -1,25 +1,29 @@
 ﻿USE DB_Wibu;
 GO
 
---Thêm dữ liệu
-INSERT INTO TAIKHOAN VALUES
-('admin', '12345', '2022-1-1', 1, 1),
-('nv01', '12345', '2022-1-1', 2, 0),
-('nv02', '12345', '2022-1-1', 2, 0),
-('nv03', '12345', '2022-1-1', 2, 0),
-('nv04', '12345', '2022-1-1', 2, 0),
-('nv05', '12345', '2022-1-1', 2, 0),
-('kh01', '12345', '2022-1-1', 3, 0),
-('kh02', '12345', '2022-1-1', 3, 0),
-('kh03', '12345', '2022-1-1', 3, 0),
-('kh04', '12345', '2022-1-1', 3, 0),
-('kh05', '12345', '2022-1-1', 3, 0);
-GO
 
+--Thêm dữ liệu
+INSERT INTO dbo.TAIKHOAN
+(Tentaikhoan, Matkhau, Capdo, Trangthai)
+VALUES
+('admin', '123456', 1, 1),
+('nv01', '123456',  2, 0),
+('nv02', '123456',  2, 0),
+('nv03', '123456',  2, 0),
+('nv04', '123456',  2, 0),
+('nv05', '123456',  2, 0),
+('kh01', '123456',  3, 0),
+('kh02', '123456',  3, 0),
+('kh03', '123456',  3, 0),
+('kh04', '123456',  3, 0),
+('kh05', '123456',  3, 0);
+GO
 --select * from taikhoan
 --delete from taikhoan
   
-INSERT INTO NHANVIEN VALUES
+INSERT INTO dbo.NHANVIEN
+(Hoten, Ngaysinh, Ngaybatdaulamviec, Diachi, Dienthoai,Luong,Tienthuong,Mataikhoan)
+VALUES
 ('Admin', '2001-03-08', '2022-01-01', N'Hà Nội', '0342298409', 5000000, 0, '1'),
 (N'Nguyễn Văn Một', '1999-03-08', '2022-01-01', N'Hà Nam', '0345492120', 1000000, 0, '2'),
 (N'Nguyễn Văn Hai', '1999-03-08', '2022-01-01', N'Nam Định', '0312049123', 1000000, 0, '3'),
@@ -30,7 +34,9 @@ GO
 
 --select * from nhanvien
 
-INSERT INTO KHACHHANG VALUES
+INSERT INTO dbo.KHACHHANG
+(Hoten,Diachi,Email,Dienthoai,Mataikhoan)
+VALUES
 (N'Ngô Đức Tâm', N'Hà Nội', 'mot@gmail.com', 0348123128, 7),
 (N'Nguyễn Thu Hà', N'Hà Nam', 'hai@gmail.com', 0348123129, 8),
 (N'Lương Thị Một', N'Nam Định', 'ba@gmail.com', 0348123127, 9),
@@ -41,17 +47,17 @@ GO
 --SELECT * FROM KhachHang
 INSERT INTO dbo.LOAI
 VALUES
-(N'Mochi'),(N'Dango'),(N'Yokan'),(N'Wagashi'),(N'Manju'),(N'Yokan')
+(N'Mochi'),(N'Dango'),(N'Yokan'),(N'Wagashi'),(N'Manju')
 GO
-
+--select * from LOAI
 INSERT INTO MonAn(TENMONAN, Maloai, HINHANH, MOTA, SOLUONG, GIATHANHPHAM, HANSUDUNG) VALUES
 (N'Mochi giọt nước', '1', '', N'Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước khiến bao người mê mẩn với vẻ ngoài đẹp mắt. Chiếc bánh với ngọt ngào, trong suốt khác hẳn với những loại bánh mochi thường biết với lớp vỏ ngoài dẻo dai ăn cùng nhân bên trong. Từ những nguyên liệu đơn giản như bột rau câu, đậu nành, đường, nước bạn có thể làm ra chiếc mochi núng nính vị ngọt dịu, thanh mát. Xắn 1 miếng bánh thôi là sảng khoái cả người, cảm nhận được miếng bánh tan trong miệng thật tuyệt vời làm sao!'
 , 10, 10000, '2022-04-30'),
 (N'Mochi Đậu Đỏ','1', '', N'Lớp vỏ bánh nếp dẻo dai, ngọt thơm mùi cốt dừa kết hợp cùng nhân đậu đỏ bùi béo, ngọt lịm. Tất cả tạo nên món bánh mochi với vẻ ngoài đáng yêu, tròn tròn, nhỏ nhỏ cùng hương vị lôi cuốn khiến bạn ăn 1 lần sẽ nhớ mãi.'
 , 10, 20000, '2022-04-30'),
-(N'Mochi trà xanh nhân kem','1', '', N'Bột trà xanh "thần thánh" sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.'
+(N'Mochi trà xanh nhân kem','1', '', N'Bột trà xanh thần thánh sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.'
 ,  10, 12000, '2022-04-30'),
-(N'Mochi nhân kem vani','1', '', N'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể "chiều lòng" vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?'
+(N'Mochi nhân kem vani','1', '', N'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể chiều lòng vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?'
 , 10, 10000, '2022-04-30'),
 (N'Mochi nhân kem dâu tây phô mai','1', '', N'Vẻ ngoài ngọt ngào, đáng yêu với màu hồng nhẹ nhàng dễ dàng đánh gục bất cứ ai ngay lần nhìn đầu tiên. Nhân kem phô mai béo ngậy hòa quyện cùng kem dâu tây chua chua ngọt ngọt, thơm ngon cùng lớp socola trắng ngọt dịu. Tất cả tạo nên món bánh mochi nhân kem dâu tây phô mai cực lôi cuốn, ngon miệng. Bạn có thể làm món bánh xinh xắn này để tặng cho bạn bè người thân trong những dịp lễ hay ngày đặc biệt đấy!'
 ,10, 15000, '2022-04-30');
