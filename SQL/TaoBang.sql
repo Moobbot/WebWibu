@@ -36,7 +36,7 @@ CREATE TABLE NHANVIEN (
   Dienthoai VARCHAR(12) NOT NULL UNIQUE,
   Luong MONEY NOT NULL,
   Tienthuong MONEY,
-  Mataikhoan INT NOT NULL
+  Mataikhoan INT NOT NULL UNIQUE
 )
 
 --Ngaybatdaulamviec getdate()
@@ -50,7 +50,7 @@ CREATE TABLE KHACHHANG (
   Diachi NVARCHAR(100),
   Email VARCHAR(255),
   Dienthoai VARCHAR(12) NOT NULL UNIQUE,
-  Mataikhoan INT NOT NULL
+  Mataikhoan INT NOT NULL UNIQUE
 )
 --Bảng Loại món ăn
 CREATE TABLE LOAI (
@@ -75,9 +75,9 @@ CREATE TABLE DONDATHANG (
   Sohoadon INT IDENTITY(1,1) NOT NULL,
   Makhachhang INT NOT NULL,
   Manhanvien INT NOT NULL,
-  Thoigiandatdon DATETIME,
-  Thoigianhengiao DATETIME,
-  Thoigiangiaodon DATETIME,
+  Thoigiandatdon DATE,
+  Thoigianhengiao DATE,
+  Thoigiangiaodon DATE,
   Noigiaohang NTEXT NOT NULL
 
 )
