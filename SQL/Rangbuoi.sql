@@ -76,9 +76,3 @@ SELECT * FROM LOAI
 SELECT * FROM MONAN
 SELECT * FROM DONDATHANG
 SELECT * FROM CHITIETDATHANG
-
---TRIGGER check tuổi của nhân viên 16-35 tuổi
---Ràng buộc lương tối đa là 5 triệu
---Tiền thưởng không nhập mặc định là 0, tối đa là 25% lương/năm
---Tự động cập nhật số lượng món ăn từ mỗi hóa đơn
---
