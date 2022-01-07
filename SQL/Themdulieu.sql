@@ -37,11 +37,11 @@ GO
 INSERT INTO dbo.KHACHHANG
 (Hoten,Diachi,Email,Dienthoai,Mataikhoan)
 VALUES
-(N'Ngô Đức Tâm', N'Hà Nội', 'mot@gmail.com', 0348123128, 7),
-(N'Nguyễn Thu Hà', N'Hà Nam', 'hai@gmail.com', 0348123129, 8),
-(N'Lương Thị Một', N'Nam Định', 'ba@gmail.com', 0348123127, 9),
-(N'Trần Huyền Diệp', N'Thái Bình', 'bon@gmail.com', 0348123126, 10),
-(N'Lê Văn Lương', N'Hà Nội', 'nam@gmail.com', 0348123125, 11);
+(N'Ngô Đức Tâm', N'Hà Nội', 'mot@gmail.com', '0348123128', 7),
+(N'Nguyễn Thu Hà', N'Hà Nam', 'hai@gmail.com', '0348123129', 8),
+(N'Lương Thị Một', N'Nam Định', 'ba@gmail.com', '0348123127', 9),
+(N'Trần Huyền Diệp', N'Thái Bình', 'bon@gmail.com', '0348123126', 10),
+(N'Lê Văn Lương', N'Hà Nội', 'nam@gmail.com', '0348123125', 11);
 GO
 
 --SELECT * FROM KhachHang
@@ -77,7 +77,8 @@ INSERT INTO DonDatHang VALUES
 (4, 3, '2021-06-11', '2021-06-16','2021-06-16', N'Hà Nội'),
 (5, 2, '2021-04-16', '2021-04-19','2021-04-19', N'Hà Nội'),
 (5, 4, '2021-02-01', '2021-02-19','2021-02-19', N'Hà Nội'),
-(5, 1, '2021-02-01', '2021-02-19','2021-02-19', N'Hà Nội');
+(5, 1, '2021-02-01', '2021-02-19','2021-02-19', N'Hà Nội'),
+(1, 1, GETDATE(), '2022-01-08','2022-01-08', N'Quảng Ninh');
 GO
 
 --select * from DonDatHang
@@ -108,3 +109,51 @@ SELECT * FROM dbo.LOAI
 SELECT * FROM dbo.MonAn
 SELECT * FROM dbo.DonDatHang
 SELECT * FROM dbo.ChiTietDatHang
+INSERT INTO dbo.TAIKHOAN
+(Tentaikhoan, Matkhau, Capdo, Trangthai)
+VALUES
+('kh12', '123456',  3, 0),
+('kh13', '123456',  3, 0),
+('kh14', '123456',  3, 0),
+('kh15', '123456',  3, 0),
+('kh16', '123456',  3, 0),
+('kh17', '123456',  3, 0),
+('kh18', '123456',  3, 0),
+('kh19', '123456',  3, 0),
+('kh20', '123456',  3, 0),
+('kh21', '123456',  3, 0),
+('kh22', '123456',  3, 0),
+('kh23', '123456',  3, 0),
+('kh24', '123456',  3, 0),
+('kh25', '123456',  3, 0),
+('kh26', '123456',  3, 0),
+('kh27', '123456',  3, 0),
+('kh28', '123456',  3, 0),
+('kh29', '123456',  3, 0),
+('kh30', '123456',  3, 0);
+GO
+SELECT * FROM TAIKHOAN
+GO
+INSERT INTO dbo.KHACHHANG
+(Hoten,Diachi,Email,Dienthoai,Mataikhoan)
+VALUES
+(N'Nguyễn Văn Hoàng', N'Hà Nội', 'hoangnv@gmail.com', 0348123321, 12),
+(N'Nguyễn Văn Dương', N'Thái Bình', 'duongnv@gmail.com', 0348123322, 13),
+(N'Nguyễn Văn Tùng', N'Hà Nội', 'tungnv@gmail.com', 0348123323, 14),
+(N'Nguyễn Văn Phú', N'Hà Nội', 'phunv@gmail.com', 0348123324, 15),
+(N'Nguyễn Văn Chiến', N'Thái Bình', 'chiennv@gmail.com', 0348123325, 16),
+(N'Nguyễn Văn Công', N'Hà Nội', 'congnv@gmail.com', 0348123326, 17),
+(N'Nguyễn Văn Lâm', N'Thái Bình', 'lamnv@gmail.com', 0348123327, 18),
+(N'Đỗ Văn Thái', N'Nghệ An', 'thaidv@gmail.com', 0348123328, 19),
+(N'Kiều Văn Mạnh', N'Thái Bình', 'manhkv@gmail.com', 0348123329, 20),
+(N'Đỗ Thị Lan', N'Hà Nội', 'landt@gmail.com', 0348123330, 21),
+(N'Đỗ Thị Mai', N'Hà Nội', 'maidt@gmail.com', 0348123331, 22),
+(N'Đỗ Thị Ngân', N'Thái Bình', 'ngandt@gmail.com', 0348123332, 23),
+(N'Nguyễn Văn Vở', N'Nghệ An', 'vonv@gmail.com', 0348123333, 24),
+(N'Nguyễn Hoàng Anh', N'Hà Nội', 'anhnh@gmail.com', 0348123334, 25),
+(N'Nguyễn Văn Chí', N'Thái Bình', 'chinv@gmail.com', 0348123335, 26),
+(N'Nguyễn Văn Duy', N'Hà Nội', 'duynv@gmail.com', 0348123336, 27),
+(N'Nguyễn Văn Đức', N'Thái Bình', 'ducnv@gmail.com', 0348123337, 28),
+(N'Nguyễn Văn Tâm', N'Nghệ An', 'tamnv@gmail.com', 0348123338, 29),
+(N'Nguyễn Văn Lợi', N'Nghệ An', 'loinv@gmail.com', 0348123339, 30);
+SELECT * FROM KHACHHANG
