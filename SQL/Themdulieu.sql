@@ -49,11 +49,11 @@ INSERT INTO dbo.NHANVIEN
 (Hoten, Ngaysinh, Ngaybatdaulamviec, Diachi, Dienthoai,Luong,Tienthuong,Mataikhoan)
 VALUES
 ('Admin', '2001-03-08', '2022-01-01', N'Hà Nội', '0342298409', 5000000, 0, '1'),
-(N'Nguyễn Văn Một', '1999-03-08', '2022-01-01', N'Hà Nam', '0345492120', 1000000, 0, '2'),
-(N'Nguyễn Văn Hai', '1999-03-08', '2022-01-01', N'Nam Định', '0312049123', 1000000, 0, '3'),
-(N'Lương Văn Ba', '1999-03-08', '2022-01-01', N'Quảng Nam', '0342238534', 1000000, 0, '4'),
-(N'Trần Văn Tư', '1999-03-08', '2022-01-01', N'Thái Nguyên', '0342204569', 1000000, 0, '5'),
-(N'Trần Văn Ngũ', '1999-03-08', '2022-01-01', N'Hà Nội', '0342290795', 1000000, 0, '6');
+(N'Nguyễn Văn Một', '1999-03-08', '2022-01-01', N'Hà Nam', '0345492120', 1100000, 0, '2'),
+(N'Nguyễn Văn Hai', '1999-03-08', '2022-01-01', N'Nam Định', '0312049123', 1200000, 0, '3'),
+(N'Lương Văn Ba', '1999-03-08', '2022-01-01', N'Quảng Nam', '0342238534', 1300000, 0, '4'),
+(N'Trần Văn Tư', '1999-03-08', '2022-01-01', N'Thái Nguyên', '0342204569', 1400000, 0, '5'),
+(N'Trần Văn Ngũ', '1999-03-08', '2022-01-01', N'Hà Nội', '0342290795', 1500000, 0, '6');
 GO
 
 --select * from nhanvien
@@ -61,29 +61,29 @@ GO
 INSERT INTO dbo.KHACHHANG
 (Hoten,Diachi,Email,Dienthoai,Mataikhoan)
 VALUES
-(N'Ngô Đức Tâm', N'Hà Nội', 'mot@gmail.com', 0348123128, 7),
-(N'Nguyễn Thu Hà', N'Hà Nam', 'hai@gmail.com', 0348123129, 8),
-(N'Lương Thị Một', N'Nam Định', 'ba@gmail.com', 0348123127, 9),
-(N'Trần Huyền Diệp', N'Thái Bình', 'bon@gmail.com', 0348123126, 10),
-(N'Nguyễn Văn Hoàng', N'Hà Nội', 'hoangnv@gmail.com', 0348123381, 12),
-(N'Nguyễn Văn Dương', N'Thái Bình', 'duongnv@gmail.com', 0348123322, 13),
-(N'Nguyễn Văn Tùng', N'Hà Nội', 'tungnv@gmail.com', 0348123373, 14),
-(N'Nguyễn Văn Phú', N'Hà Nội', 'phunv@gmail.com', 0348123324, 15),
-(N'Nguyễn Văn Chiến', N'Thái Bình', 'chiennv@gmail.com', 0348123325, 16),
-(N'Nguyễn Văn Công', N'Hà Nội', 'congnv@gmail.com', 0348123326, 17),
-(N'Nguyễn Văn Lâm', N'Thái Bình', 'lamnv@gmail.com', 0348123327, 18),
-(N'Đỗ Văn Thái', N'Nghệ An', 'thaidv@gmail.com', 0348123328, 19),
-(N'Kiều Văn Mạnh', N'Thái Bình', 'manhkv@gmail.com', 0348123329, 20),
-(N'Đỗ Thị Lan', N'Hà Nội', 'landt@gmail.com', 0348123330, 21),
-(N'Đỗ Thị Mai', N'Hà Nội', 'maidt@gmail.com', 0348123331, 22),
-(N'Đỗ Thị Ngân', N'Thái Bình', 'ngandt@gmail.com', 0348123332, 23),
-(N'Nguyễn Văn Vở', N'Nghệ An', 'vonv@gmail.com', 0348123333, 24),
-(N'Nguyễn Hoàng Anh', N'Hà Nội', 'anhnh@gmail.com', 0348123334, 25),
-(N'Nguyễn Văn Chí', N'Thái Bình', 'chinv@gmail.com', 0348123335, 26),
-(N'Nguyễn Văn Duy', N'Hà Nội', 'duynv@gmail.com', 0348123336, 27),
-(N'Nguyễn Văn Đức', N'Thái Bình', 'ducnv@gmail.com', 0348123337, 28),
-(N'Nguyễn Văn Tâm', N'Nghệ An', 'tamnv@gmail.com', 0348123338, 29),
-(N'Nguyễn Văn Lợi', N'Nghệ An', 'loinv@gmail.com', 0348123339, 30);
+(N'Ngô Đức Tâm', N'Hà Nội', 'mot@gmail.com','0348123128', 7),
+(N'Nguyễn Thu Hà', N'Hà Nam', 'hai@gmail.com','0348123129', 8),
+(N'Lương Thị Một', N'Nam Định', 'ba@gmail.com','0348123127', 9),
+(N'Trần Huyền Diệp', N'Thái Bình', 'bon@gmail.com','0348123126', 10),
+(N'Nguyễn Văn Hoàng', N'Hà Nội', 'hoangnv@gmail.com','0348123381', 12),
+(N'Nguyễn Văn Dương', N'Thái Bình', 'duongnv@gmail.com','0348123322', 13),
+(N'Nguyễn Văn Tùng', N'Hà Nội', 'tungnv@gmail.com','0348123373', 14),
+(N'Nguyễn Văn Phú', N'Hà Nội', 'phunv@gmail.com','0348123324', 15),
+(N'Nguyễn Văn Chiến', N'Thái Bình', 'chiennv@gmail.com','0348123325', 16),
+(N'Nguyễn Văn Công', N'Hà Nội', 'congnv@gmail.com','0348123326', 17),
+(N'Nguyễn Văn Lâm', N'Thái Bình', 'lamnv@gmail.com','0348123327', 18),
+(N'Đỗ Văn Thái', N'Nghệ An', 'thaidv@gmail.com','0348123328', 19),
+(N'Kiều Văn Mạnh', N'Thái Bình', 'manhkv@gmail.com','0348123329', 20),
+(N'Đỗ Thị Lan', N'Hà Nội', 'landt@gmail.com','0348123330', 21),
+(N'Đỗ Thị Mai', N'Hà Nội', 'maidt@gmail.com','0348123331', 22),
+(N'Đỗ Thị Ngân', N'Thái Bình', 'ngandt@gmail.com','0348123332', 23),
+(N'Nguyễn Văn Vở', N'Nghệ An', 'vonv@gmail.com','0348123333', 24),
+(N'Nguyễn Hoàng Anh', N'Hà Nội', 'anhnh@gmail.com','0348123334', 25),
+(N'Nguyễn Văn Chí', N'Thái Bình', 'chinv@gmail.com','0348123335', 26),
+(N'Nguyễn Văn Duy', N'Hà Nội', 'duynv@gmail.com','0348123336', 27),
+(N'Nguyễn Văn Đức', N'Thái Bình', 'ducnv@gmail.com','0348123337', 28),
+(N'Nguyễn Văn Tâm', N'Nghệ An', 'tamnv@gmail.com','0348123338', 29),
+(N'Nguyễn Văn Lợi', N'Nghệ An', 'loinv@gmail.com','0348123339', 30);
 GO
 
 --SELECT * FROM KhachHang
@@ -98,11 +98,13 @@ INSERT INTO MonAn(TENMONAN, Maloai, HINHANH, MOTA, SOLUONG, GIATHANHPHAM, HANSUD
 (N'Mochi Đậu Đỏ','1', '', N'Lớp vỏ bánh nếp dẻo dai, ngọt thơm mùi cốt dừa kết hợp cùng nhân đậu đỏ bùi béo, ngọt lịm. Tất cả tạo nên món bánh mochi với vẻ ngoài đáng yêu, tròn tròn, nhỏ nhỏ cùng hương vị lôi cuốn khiến bạn ăn 1 lần sẽ nhớ mãi.'
 , 10, 20000, '2022-04-30'),
 (N'Mochi trà xanh nhân kem','1', '', N'Bột trà xanh thần thánh sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.'
-,  10, 12000, '2022-04-30'),
+,  4, 12000, '2022-04-30'),
 (N'Mochi nhân kem vani','1', '', N'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể chiều lòng vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?'
 , 10, 10000, '2022-04-30'),
 (N'Mochi nhân kem dâu tây phô mai','1', '', N'Vẻ ngoài ngọt ngào, đáng yêu với màu hồng nhẹ nhàng dễ dàng đánh gục bất cứ ai ngay lần nhìn đầu tiên. Nhân kem phô mai béo ngậy hòa quyện cùng kem dâu tây chua chua ngọt ngọt, thơm ngon cùng lớp socola trắng ngọt dịu. Tất cả tạo nên món bánh mochi nhân kem dâu tây phô mai cực lôi cuốn, ngon miệng. Bạn có thể làm món bánh xinh xắn này để tặng cho bạn bè người thân trong những dịp lễ hay ngày đặc biệt đấy!'
-,10, 15000, '2022-04-30');
+,10, 15000, '2022-04-30'),
+(N'Mochi nhân kem sầu riêng','1', '', N'Các tín đồ của sầu riêng chắc chắn không thể bỏ qua món bánh mochi nhân kem sầu riêng này đâu nha. Nhân sầu riêng ngọt lịm, béo bùi, thơm lừng hòa quyện với phần kem tươi mát lạnh được bọc bên ngoài là lớp vỏ bánh dẻo, mịn thật ngon làm sao! Cắn 1 miếng là cảm nhận ngay được hương vị tuyệt hảo của chiếc bánh này sẽ khiến bạn vấn vương mãi trên đầu lưỡi không thôi.'
+,10, 15000, '2022-01-15');
 GO
 
 --select * from MonAn
