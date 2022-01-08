@@ -26,19 +26,14 @@ EXEC sp_addlogin 'Admin1','123';
 EXEC sp_addlogin 'Quanly','123';
 EXEC sp_addlogin 'Nhanvien','123';
 EXEC sp_addlogin 'Khach','123';
----Tạo người dùng
+--Tạo người dùng
 --USE DB_Wibu
 EXEC sp_grantdbaccess 'Admin1', 'Wibu_admin'
 EXEC sp_grantdbaccess 'Quanly', 'QuanlyA'
 EXEC sp_grantdbaccess 'Nhanvien', 'NhanvienA'
 EXEC sp_grantdbaccess 'Khach', 'KhachhangA'
+--Tạo role
 --Phân quyền
-	--Tạo role quyền Quản lý
-	EXEC  sp_addrole 'Wibu_Quanly';
-	--Tạo role quyền Nhân viên
-	EXEC sp_addrole 'Wibu_Nhanvien';
-	--Tạo role quyền Khách hàng
-	EXEC sp_addrole 'Wibu_Khach'
 	--Cấp quyền role
 		--Cấp quyền role Wibu_Quanly
 		GRANT INSERT, UPDATE, DELETE ON LOAI TO Wibu_Quanly
