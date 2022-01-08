@@ -16,6 +16,7 @@ AS BEGIN
 	GROUP BY NHANVIEN.Manhanvien, NHANVIEN.Hoten
 	HAVING  COUNT(DONDATHANG.Sohoadon) > @soluong
 END
+
 EXEC sp_Nhanvien_Soluongdon '2'
 --5.1.3.	Thủ tục tăng lương cho nhân viên
 CREATE PROC sp_Nhanvien_Tangluong (@manhanvien int, @sotien money)
@@ -29,6 +30,7 @@ AS BEGIN
 		UPDATE NHANVIEN SET Luong += @sotien WHERE Manhanvien = @manhanvien;
 	END
 END
+
 
 EXEC sp_Nhanvien_Tangluong '1', '900000'
 --5.1.4.	Thủ tục đưa ra các món ăn đã gần hết hàng (hàng tồn <=5)
@@ -49,14 +51,16 @@ EXEC sp_Donhang_Thongtin '2022-01-07'
 CREATE PROC sp_Monan_Donhang_Ngay(@ngay DATE)
 AS 
 BEGIN
-SELECT MONAN.Mamonan, Tenmonan, SUM(CHITIETDATHANG.Soluong) as TongSoDaBan FROM MONAN
-INNER JOIN CHITIETDATHANG ON MONAN.Mamonan = CHITIETDATHANG.Mamon
-INNER JOIN DONDATHANG ON DONDATHANG.Sohoadon = CHITIETDATHANG.Sohoadon
-WHERE Thoigiandatdon = @ngay
-GROUP BY MONAN.Mamonan, Tenmonan
+	SELECT MONAN.Mamonan, Tenmonan, SUM(CHITIETDATHANG.Soluong) as TongSoDaBan FROM MONAN
+	INNER JOIN CHITIETDATHANG ON MONAN.Mamonan = CHITIETDATHANG.Mamon
+	INNER JOIN DONDATHANG ON DONDATHANG.Sohoadon = CHITIETDATHANG.Sohoadon
+	WHERE Thoigiandatdon = @ngay
+	GROUP BY MONAN.Mamonan, Tenmonan
 END
+select * from DONDATHANG
+EXEC sp_Monan_Donhang_Ngay '2021-08-03'
 ----5.1.7.	Thủ tục lấy ra thông tin và tổng số lượng món ăn được đặt theo (tháng, năm)
-CREATE OR ALTER PROC sp_Monan_Donhang_ThangNam(@thang int, @nam int)
+CREATE PROC sp_Monan_Donhang_ThangNam(@thang int, @nam int)
 AS
 BEGIN
     SELECT Mamon, Tenmonan, Tenloai, SUM(CHITIETDATHANG.Soluong) AS Soluongdat FROM dbo.MONAN
@@ -66,6 +70,7 @@ BEGIN
 				AND MONTH(Thoigiandatdon) = @thang AND YEAR(Thoigiandatdon) = @nam
 	GROUP BY Mamon, Tenmonan, Tenloai
 END
+EXEC sp_Monan_Donhang_ThangNam '10','2021'
 
 SELECT * FROM dbo.DONDATHANG
 SELECT * FROM dbo.CHITIETDATHANG
@@ -74,14 +79,14 @@ EXEC sp_monan_donhang_thangnam '10', '2021'
 GO
 
 ----5.1.8.	Thủ tục tìm đơn hàng theo số điện thoại của khách hàng
-CREATE OR ALTER PROC sp_Donhang_Khachhang (@dienthoai varchar(12))
+CREATE PROC sp_Donhang_Khachhang (@dienthoai varchar(12))
 AS
 BEGIN
     SELECT Hoten, Dienthoai, Sohoadon, Manhanvien, Thoigiandatdon, Thoigianhengiao, Thoigiangiaodon, Noigiaohang FROM dbo.DONDATHANG
 	INNER JOIN dbo.KHACHHANG ON KHACHHANG.Makhachhang = DONDATHANG.Makhachhang
 	WHERE dbo.KHACHHANG.Dienthoai LIKE @dienthoai;
 END
-sp_Donhang_Khachhang '0348123128';
+EXEC sp_Donhang_Khachhang '348123126'
 SELECT * FROM dbo.KHACHHANG;
 SELECT * FROM dbo.DONDATHANG;
 GO
@@ -95,6 +100,8 @@ BEGIN
 	SET Soluong = @soluong
 	WHERE Sohoadon = @shd AND Mamon = @mamon;
 END
+
+EXEC sp_Chitietdathang_Update_Soluong '5', '1', '10'
 GO
 
 -------------------- HÀM --------------------------
@@ -105,6 +112,9 @@ AS BEGIN
 	INSERT INTO @danhsach SELECT Manhanvien, (DATEPART(YEAR,GETDATE()) - DATEPART(YEAR,Ngaysinh) ) AS tuoi FROM NHANVIEN
 	RETURN
 END
+
+SELECT * FROM fn_Nhanvien_Sotuoi()
+
 --5.2.2.	Hàm tính thời gian làm việc của 1 nhân viên đầu vào là mã nhân viên
 CREATE FUNCTION fn_Nhanvien_Tongthoigian(@manhanvien int)
 RETURNS @danhsach TABLE(MaNhanVien int, ThoiGianDaLam int)
@@ -112,6 +122,9 @@ AS BEGIN
 	INSERT INTO @danhsach SELECT Manhanvien, (DATEPART(DAY,GETDATE()) - DATEPART(DAY,Ngaybatdaulamviec) ) FROM NHANVIEN WHERE Manhanvien = @manhanvien;
 	RETURN
 END
+
+
+SELECT * FROM fn_Nhanvien_Tongthoigian('1')
 --5.2.3.	Hàm trả về danh sách các nhân viên có lương cao hơn lương trung bình(trừ admin).
 CREATE FUNCTION fn_Nhanvien_Luongcao()
 RETURNS @danhsach TABLE(Manhanvien int, Hoten nvarchar(30), Luong money)
@@ -121,6 +134,7 @@ AS BEGIN
 	INSERT INTO @danhsach SELECT Manhanvien, Hoten , Luong FROM NHANVIEN WHERE Luong > @luongtrungbinh AND Manhanvien != 1;
 	RETURN
 END
+SELECT * FROM fn_Nhanvien_Luongcao()
 --5.2.4.	Hàm trả về danh sách các món ăn đã mua của khách hàng
 CREATE FUNCTION fn_Monan_Khachhang(@sdt VARCHAR(12))
 RETURNS @table TABLE(MaMonAn INT, TenLoai NVARCHAR(50), TenMonAn	NVARCHAR(50))
@@ -136,6 +150,7 @@ BEGIN
 	GROUP BY MONAN.Mamonan, LOAI.Tenloai, MONAN.Tenmonan
 	RETURN
 END
+SELECT * FROM fn_Monan_Khachhang('0348123128')
 --5.2.5.	Hàm tính tổng tiền các đơn hàng của 1 khách hàng.
 CREATE FUNCTION fn_Donhang_Tongtien(@makhach INT)
 RETURNS MONEY
@@ -147,6 +162,7 @@ BEGIN
 	WHERE DONDATHANG.Sohoadon = @makhach)
 	RETURN @tongtien
 END
+PRINT dbo.fn_Donhang_Tongtien('2')
 --5.2.6.	Hàm đưa ra tổng số lượng đơn trong năm nhập vào của nhân viên nhập vào
 CREATE FUNCTION fn_Nhanvien_Soluongdon(@manv INT, @nam VARCHAR(4))
 RETURNS INT
@@ -158,6 +174,7 @@ BEGIN
 	GROUP BY Manhanvien)
 	RETURN @tong
 END
+PRINT dbo.fn_Nhanvien_Soluongdon('1', '2021')
 --5.2.7.	Hàm trả về những khách hàng thường xuyên mua nhất
 CREATE FUNCTION fn_Khachhang_Donhang()
 RETURNS TABLE
@@ -170,6 +187,7 @@ RETURN(
 	INNER JOIN dbo.DONDATHANG ON DONDATHANG.Makhachhang = KHACHHANG.Makhachhang
 	GROUP BY dbo.KHACHHANG.Makhachhang, Hoten)
 )
+SELECT * FROM fn_Khachhang_Donhang()
 --5.2.8.	Hàm tính tổng số lượng món ăn có trong 1 đơn hàng là tham số truyền vào.
 CREATE FUNCTION fn_MonAn_Chitietdathang(@Shd int)
 RETURNS INT
@@ -178,6 +196,7 @@ BEGIN
 	DECLARE @soluong INT = (SELECT COUNT(Mamon) FROM CHITIETDATHANG WHERE Sohoadon = @Shd)
 	RETURN @soluong
 END
+PRINT dbo.fn_MonAn_Chitietdathang('1')
 --5.2.9.	Hàm hàm tính tổng lãi theo từng tháng.
 CREATE FUNCTION fn_Lai_Thang()
 RETURNS TABLE
@@ -189,6 +208,7 @@ RETURN(
 	RIGHT JOIN DONDATHANG AS c ON c.Sohoadon = a.Sohoadon
 	GROUP BY MONTH(c.Thoigiandatdon)
 )
+SELECT * FROM fn_Lai_Thang()
 
 -------------------- VIEW -------------------------
 --LEfn OUTER JOIN thực hiện phép nối bên trong của hai bảng (giả sử bảng A viết trước từ khóa nối và bảng B viết sau từ khóa nối trong câu lệnh SQL) 
@@ -197,33 +217,38 @@ SELECT * FROM vw_Thongke_Cuahang
 --SELECT dbo.fn_Sinhvien_diem(MaSV) FROM SINH_VIEN
 
 --5.3.1.	View thống kê thông tin cửa hàng
-View bao gồm (Tổng số tài khoản, Tổng  số món ăn, Tổng số nhân viên, Tổng số đơn hàng)
-Tổng số hóa đơn là số hóa đơn đã giao.
+--View bao gồm (Tổng số tài khoản, Tổng  số món ăn, Tổng số nhân viên, Tổng số đơn hàng)
+--Tổng số hóa đơn là số hóa đơn đã giao.
 CREATE VIEW vw_Thongke_Cuahang
 AS
 	SELECT db1.Tongsotaikhoan, db2.Tongsomonan, db3.Tongsonhanvien, db4.Tongsohoadon FROM
 	(SELECT COUNT(TAIKHOAN.Mataikhoan) AS Tongsotaikhoan, ROW_NUMBER() OVER(ORDER BY COUNT(TAIKHOAN.Mataikhoan)) AS RowNumber  FROM TAIKHOAN) AS db1
-	LEfn OUTER JOIN
+	LEFT OUTER JOIN
 	(SELECT COUNT(MONAN.Mamonan) AS Tongsomonan, ROW_NUMBER() OVER(ORDER BY COUNT(MONAN.Mamonan)) AS RowNumber FROM MONAN) AS db2
-	ON db1.RowNumber = db2.RowNumber LEfn OUTER JOIN
+	ON db1.RowNumber = db2.RowNumber LEFT OUTER JOIN
 	(SELECT COUNT(NHANVIEN.Manhanvien) AS Tongsonhanvien, ROW_NUMBER() OVER(ORDER BY COUNT(NHANVIEN.Manhanvien)) AS RowNumber FROM NHANVIEN) AS db3
-	ON db2.RowNumber = db3.RowNumber LEfn OUTER JOIN
-	(SELECT COUNT(DONDATHANG.Thoigianhengiao) AS Tongsohoadon, ROW_NUMBER() OVER(ORDER BY COUNT(DONDATHANG.Thoigianhengiao)) AS RowNumber FROM DONDATHANG WHERE Thoigianhengiao < GETDATE()) AS db4
+	ON db2.RowNumber = db3.RowNumber LEFT OUTER JOIN
+	(SELECT COUNT(DONDATHANG.Thoigianhengiao) AS Tongsohoadon, ROW_NUMBER() OVER(ORDER BY COUNT(DONDATHANG.Thoigianhengiao)) AS RowNumber 
+	FROM DONDATHANG WHERE Thoigianhengiao < GETDATE()) AS db4
 	ON db3.RowNumber = db4.RowNumber
+SELECT * FROM vw_Thongke_Cuahang
 --5.3.2.	View thống kê thông tin tài khoản nhân viên
 CREATE VIEW vw_nhanvien_thongtin
 AS
 	SELECT Tentaikhoan, Matkhau, Hoten, Ngaybatdaulamviec, Diachi, Dienthoai FROM TAIKHOAN, NHANVIEN
 	WHERE TAIKHOAN.Mataikhoan = NHANVIEN.Mataikhoan AND TAIKHOAN.Capdo = 2;
+SELECT * FROM vw_nhanvien_thongtin
+
 --5.3.3.	View thống kê thông tin món ăn (View_monan_thongtin)
 CREATE VIEW vw_monan_thongtin
 AS
 	SELECT MONAN.Mamonan, Tenmonan, MONAN.Maloai , MONAN.Soluong AS soluongcon, tongsoluongban = SUM(CHITIETDATHANG.Soluong)
 	FROM MONAN 
-	LEfn JOIN CHITIETDATHANG ON CHITIETDATHANG.Mamon = MONAN.Mamonan
+	LEFT JOIN CHITIETDATHANG ON CHITIETDATHANG.Mamon = MONAN.Mamonan
 	GROUP BY MONAN.Mamonan, MONAN.Tenmonan, MONAN.Maloai, MONAN.Soluong
+SELECT * FROM vw_monan_thongtin
 --5.3.4.	View thống kê món ăn được ưa thích
-Các món ăn có số hóa đơn lớn hơn 10.
+--Các món ăn có số hóa đơn lớn hơn 10.
 CREATE VIEW vw_mon_thich 
 AS
 SELECT Mamon , Tenmonan, COUNT(Sohoadon) AS SoLanMua
@@ -231,16 +256,22 @@ FROM CHITIETDATHANG
 INNER JOIN MONAN ON CHITIETDATHANG.Mamon = MONAN.Mamonan
 GROUP BY Mamon, Tenmonan
 HAVING COUNT(Sohoadon)>10
+
+SELECT * FROM vw_mon_thich
 --5.3.5.	View thống kê thông tin món ăn chưa từng được bán
 CREATE VIEW vw_mon_chua_duoc_ban
 AS
 SELECT * from MONAN
 WHERE Mamonan not in (SELECT Mamon FROM CHITIETDATHANG)
+
+SELECT * FROM vw_mon_chua_duoc_ban
 --5.3.6.	View thống kê thông tin món ăn sắp hết hạn
 CREATE VIEW vw_mon_sap_het_han
 AS
 SELECT * from MONAN
 WHERE DATEDIFF(day,GETDATE(), Hansudung) < 15
+
+SELECT * FROM vw_mon_sap_het_han
 --5.3.7.	View thống kê thông tin khách hàng với tổng tiền đã bỏ ra của họ
 CREATE VIEW vw_Khachhang_Tongtientieu
 AS
@@ -265,6 +296,7 @@ AS
 	INNER JOIN MONAN AS c ON  b.Mamon = c.Mamonan
 	GROUP BY a.Sohoadon, a.Makhachhang, a.Thoigiandatdon, a.Thoigianhengiao, a.Thoigiangiaodon
 
+	SELECT * FROM vw_Donhang_Thongke
 GO
 --5.3.9.	View thống kê khách hàng đã đăng ký tài khoản nhưng chưa mua hàng
 CREATE OR ALTER VIEW vw_Khachhang_Taikhoan_Chuamuahang
@@ -384,9 +416,7 @@ BEGIN
 		DELETE FROM DONDATHANG WHERE Sohoadon = @mahd
 		
 	END
-
-	ElSE
-	BEGIN
+	ElSE BEGIN
 		DELETE FROM CHITIETDATHANG WHERE Sohoadon = @mahd
 		DELETE FROM DONDATHANG WHERE Sohoadon = @mahd
 	END
