@@ -46,7 +46,7 @@ AS
 	END
 EXEC sp_Donhang_Thongtin '2022-01-07'
 --5.1.6.	Thủ tục lấy ra thông tin và tổng số lượng được đặt theo ngày
-CREATE PROC sp_ Monan_Donhang_Ngay(@ngay DATE)
+CREATE PROC sp_Monan_Donhang_Ngay(@ngay DATE)
 AS 
 BEGIN
 SELECT MONAN.Mamonan, Tenmonan, SUM(CHITIETDATHANG.Soluong) as TongSoDaBan FROM MONAN
@@ -407,53 +407,36 @@ INSTEAD OF INSERT
 AS
 BEGIN
 	DECLARE @So_hd INT = (SELECT Sohoadon FROM INSERTED)
-	IF NOT EXISTS (SELECT * FROM DONDATHANG WHERE Sohoadon = @So_hd)
-		BEGIN
-			PRINT N'Không có hóa này'
-		END
+	IF NOT EXISTS (SELECT * FROM DONDATHANG WHERE Sohoadon = @So_hd) PRINT N'Không có hóa này'
 	ELSE
 		BEGIN
 			DECLARE @mamon INT = (SELECT Mamon FROM INSERTED)
-			IF NOT EXISTS (SELECT * FROM MONAN WHERE Mamonan = @mamon)
-				BEGIN
-					PRINT N'Không có món ăn này'
-				END
+			IF NOT EXISTS (SELECT * FROM MONAN WHERE Mamonan = @mamon) PRINT N'Không có món ăn này'
 			ELSE
 				BEGIN
-					IF EXISTS (SELECT * FROM MONAN WHERE Mamonan = @mamon AND Hansudung <= getdate())
-						BEGIN
-							PRINT N'Đồ ăn quá hạn'
-						END
+					IF EXISTS (SELECT * FROM MONAN WHERE Mamonan = @mamon AND Hansudung <= getdate()) PRINT N'Đồ ăn quá hạn'
 					ELSE
 						BEGIN
 							DECLARE @Soluongban int = (SELECT Soluong FROM INSERTED)
-							IF (@Soluongban < 1)
-								BEGIN
-									PRINT N'Số lượng đặt phải lớn hơn 0'
-								END
+
+							IF (@Soluongban < 1) PRINT N'Số lượng đặt phải lớn hơn 0'
 							ELSE
 								BEGIN
 									DECLARE @Sl_Kho int = (SELECT Soluong FROM MONAN WHERE Mamonan = @mamon)
-									IF (@Soluongban > @Sl_Kho)
-										BEGIN
-											PRINT N'Số lượng trong kho không đủ. Còn' + Convert(varchar(5), @Sl_Kho)
-										END
+
+									IF (@Soluongban > @Sl_Kho) PRINT N'Số lượng trong kho không đủ. Còn' + Convert(varchar(5), @Sl_Kho)
 									ELSE
 										BEGIN
 											DECLARE @Giaban float = (SELECT Giaban FROM INSERTED)
 											DECLARE @Giagoc float = (SELECT Soluong FROM MONAN WHERE Mamonan = @mamon)
-											IF (@Giaban < (1.5 * @Giagoc))
-												BEGIN
-													PRINT N'Giá bán >= 150% giá thành phẩm'
-												END
+
+											IF (@Giaban < (1.5 * @Giagoc)) PRINT N'Giá bán >= 150% giá thành phẩm'
 											ELSE
 												BEGIN
 													DECLARE @Giagiam float = (SELECT Mucgiagiam FROM INSERTED)
 													DECLARE @Tonggiahang float = @Giaban * @Soluongban
-													IF(@Giagiam > 0.25 * @Tonggiahang)
-														BEGIN
-															PRINT N'Mức giá giảm không quá 25%* (Giá bán * Số lượng bán)'
-														END
+
+													IF(@Giagiam > 0.25 * @Tonggiahang) PRINT N'Mức giá giảm không quá 25%* (Giá bán * Số lượng bán)'
 													ELSE
 														BEGIN
 															INSERT INTO CHITIETDATHANG SELECT * FROM INSERTED
