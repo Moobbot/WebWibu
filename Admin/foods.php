@@ -1,16 +1,17 @@
 <?php include 'header.php' ?>
 
 <!-- Start Main -->
-<div class="container-fluid custom-background" style="min-height: 100vh;">
+<div class="container-fluid custom-background" style="min-height: 85vh; height: auto; max-height: 100vh;">
     <div class="container pb-5">
         <h3 class="pt-5 pb-4 fw-bold">Quản lý món ăn</h3>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-food-modal">
             <i class="fas fa-plus pe-2"></i>Thêm món ăn</button>
         <div class="container mt-4">
-            <table id="table_acc" class="cell-border table-bordered">
+            <table id="table_acc table-responsive-md" class="cell-border table-bordered">
                 <thead>
                     <tr>
+<<<<<<< HEAD:admin/foods.php
                         <th>STT</th>
                         <th>Loại</th>
                         <th>Tên món ăn</th>
@@ -21,23 +22,28 @@
                         <th>Ngày nhập</th>
                         <th>Hạn sử dụng</th>
                         <th class="col-1.5">Chức năng</th>
+=======
+                        <th class="text-center">STT</th>
+                        <th class="text-center">Loại</th>
+                        <th class="text-center">Tên món ăn</th>
+                        <th class="text-center">Hình ảnh</th>
+                        <th class="text-center">Mức giá</th>
+                        <th class="text-center">Số lượng</th>
+                        <!-- <th class="text-center">Mô tả</th> -->
+                        <th class="text-center">Ngày nhập</th>
+                        <th class="text-center">Hạn sử dụng</th>
+                        <th class="text-center">Chức năng</th>
+>>>>>>> main:Admin/foods.php
                     </tr>
                 </thead>
                 <tbody>
                     <!-- thay đổi dữ liệu theo CSDL -->
                     <?php
-                    $anh = array(
-                        "https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-giot-nuoc-thumbnail.jpg",
-                        "https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-nhan-dau-do-thumbnail.jpg",
-                        "https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-tra-xanh-nhan-kem-thumbnail.jpg",
-                        "https://cdn.tgdd.vn/2020/08/CookRecipe/Avatar/banh-mochi-nhan-kem-huong-vani-thumbnail.jpg",
-                        "https://cdn.tgdd.vn/2020/12/CookRecipe/Avatar/banh-mochi-nhan-kem-dau-tay-pho-mai-thumbnail-2.jpg"
-                    );
                     //* B1: Gọi config
                     include '../config/constants.php';
                     //* B2: Truy vấn
-                    $i = 0;
-                    $sql = "SELECT mamonan, tenmonan, tenloai, mota, soluong, giathanhpham, ngaynhap, hansudung  FROM monan, loai where monan.maloai = loai.maloai";
+                    $i = 1;
+                    $sql = "SELECT mamonan, tenmonan, tenloai, hinhanh, mota, soluong, giathanhpham, ngaynhap, hansudung  FROM monan, loai where monan.maloai = loai.maloai";
                     //? lưu kết quả trả về $result
                     $result = mysqli_query($conn, $sql);
                     //* B3: Phân tích sử lý kết quả
@@ -45,6 +51,7 @@
                         while ($row = mysqli_fetch_assoc($result)) :
                     ?>
                             <tr>
+<<<<<<< HEAD:admin/foods.php
                                 <th scope="row"><?php echo $row['mamonan']; ?></th>
                                 <td><?php echo $row['tenloai']; ?></td>
                                 <td><?php echo $row['tenmonan']; ?></td>
@@ -55,11 +62,24 @@
                                 <td><?php echo $row['ngaynhap']; ?></td>
                                 <td><?php echo $row['hansudung']; ?></td>
                                 <td class="align-middle text-center">
+=======
+                                <th class="col-1 text-center"><?php echo  $i; ?></th>
+                                <td class="col-1"><?php echo $row['tenloai']; ?></td>
+                                <td class="col-2"><?php echo $row['tenmonan']; ?></td>
+                                <td class="col-1"><img class="img-fluid" src="<?php echo $row['hinhanh'];?>" alt=""></td> 
+                                <!-- style="width: 6em; height: 9.72em;"></td> -->
+                                <td class="col-1 text-end"><?php echo $row['giathanhpham']; ?></td>
+                                <td class="col-1 text-center"><?php echo $row['soluong']; ?></td>
+                                <!-- <td style=""></?php echo $row['mota']; ?></td> -->
+                                <td class="col-1 text-center"><?php echo $row['ngaynhap']; ?></td>
+                                <td class="col-1 text-center"><?php echo $row['hansudung']; ?></td>
+                                <!-- <td class="d-flex justify-content-evenly"> -->
+                                <td class="col-1">
+>>>>>>> main:Admin/foods.php
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                                 </td>
                             </tr>
-
                     <?php
                             $i++;
                         endwhile;

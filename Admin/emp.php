@@ -1,4 +1,8 @@
+<<<<<<< HEAD:admin/emp.php
 <?php include 'header.php' ?>
+=======
+<?php include './header.php' ?>
+>>>>>>> main:Admin/emp.php
 
 <!-- Start Menu Admin -->
 <div class="container-fluid custom-background">
@@ -24,7 +28,11 @@
                     //* B1: Gọi config
                     include '../config/constants.php';
                     //* B2: Truy vấn
+<<<<<<< HEAD:admin/emp.php
                     $sql = "SELECT manhanvien, hoten, tentaikhoan, ngaybatdaulamviec, diachi, dienthoai  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan";
+=======
+                    $sql = "SELECT manhanvien, hoten, tentaikhoan, ngaybatdaulamviec, diachi, dienthoai  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan  AND TAIKHOAN.Capdo = 2";
+>>>>>>> main:Admin/emp.php
 
                     //? lưu kết quả trả về $result
                     $result = mysqli_query($conn, $sql);
