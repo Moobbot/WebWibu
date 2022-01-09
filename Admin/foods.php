@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 
 <!-- Start Main -->
-<div class="container-fluid custom-background" style="min-height: 85vh; height: auto; max-height: 100vh;">
+<div class="container-fluid custom-background" style="min-height: 85vh; height: auto;">
     <div class="container pb-5">
         <h3 class="pt-5 pb-4 fw-bold">Quản lý món ăn</h3>
 
@@ -98,17 +98,20 @@
                                 <th class="col-1 text-center"><?php echo  $i; ?></th>
                                 <td class="col-1"><?php echo $row['tenloai']; ?></td>
                                 <td class="col-2"><?php echo $row['tenmonan']; ?></td>
-                                <td class="col-2"><img class="img-fluid" src="<?php echo $row['hinhanh'];?>" alt=""></td> 
-                                <!-- style="width: 6em; height: 9.72em;"></td> -->
+                                <td class="col-1"><img src="<?php echo $row['hinhanh'];?>" alt="" 
+                                style="width: 10.625em; height: 5.875em;">
+                            </td>
                                 <td class="col-1 text-end"><?php echo $row['giathanhpham']; ?></td>
                                 <td class="col-1 text-center"><?php echo $row['soluong']; ?></td>
                                 <!-- <td style=""></?php echo $row['mota']; ?></td> -->
                                 <td class="col-1 text-center"><?php echo $row['ngaynhap']; ?></td>
                                 <td class="col-1 text-center"><?php echo $row['hansudung']; ?></td>
                                 <!-- <td class="d-flex justify-content-evenly"> -->
-                                <td class="col d-flex justify-content-evenly">
-                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                                <td class="d-flex justify-content-evenly">
+                                    <div class="mt-4">
+                                        <button type="button" class="btn btn-warning me-lg-4" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                                    </div>
                                 </td>
                             </tr>
                     <?php
