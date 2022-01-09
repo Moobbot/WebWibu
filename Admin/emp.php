@@ -58,7 +58,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viênhân viên</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viên</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -72,12 +72,12 @@
                                     <?php
                                     //? mở kết nối
                                     include '../config/constants.php';
-                                    $sql = "SELECT * FROM taikhoan";
+                                    $sql = "SELECT * FROM taikhoan WHERE Trangthai = 0";
                                     $result = mysqli_query($conn, $sql);
                                     //? xác thực
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo '<option value="' . $row['mataikhoan'] . '">' . $row['tentaikhoan'] . '</option>';
+                                            echo '<option value="' . $row['Mataikhoan'] . '">' . $row['Tentaikhoan'] . '</option>';
                                         }
                                     }
                                     mysqli_close($conn);
