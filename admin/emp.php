@@ -71,7 +71,7 @@
                                     <!-- Lấy dữ liệu từ database -->
                                     <?php
                                     //? mở kết nối
-                                    include '../config/config.php';
+                                    include '../config/constants.php';
                                     $sql = "SELECT * FROM taikhoan";
                                     $result = mysqli_query($conn, $sql);
                                     //? xác thực
