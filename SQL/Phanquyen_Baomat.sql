@@ -57,6 +57,7 @@ EXEC sp_addrole 'Wibu_Khach';
 		GRANT  UPDATE(Thoigiangiaodon) ON DONDATHANG TO Wibu_Nhanvien;
 		--Cấp quyền role Wibu_Khach
 		GRANT INSERT ON CHITIETDATHANG TO Wibu_Khach
+		DENY SELECT[Soluong, Giathanhpham, Ngaynhap] TO Wibu_Khach
 	--Các quyền chung
 	GRANT SELECT ON LOAI TO PUBLIC
 	GRANT SELECT ON MONAN TO PUBLIC

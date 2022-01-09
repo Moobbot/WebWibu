@@ -60,7 +60,7 @@ CREATE TABLE LOAI (
 -- Bảng Món ăn
 CREATE TABLE MONAN (
   Mamonan INT IDENTITY(1,1) NOT NULL,
-  Tenmonan NVARCHAR(50) NOT NULL,
+  Tenmonan NVARCHAR(50) NOT NULL UNIQUE,
   Maloai INT NOT NULL,
   Hinhanh TEXT,
   Mota NTEXT,
@@ -79,7 +79,6 @@ CREATE TABLE DONDATHANG (
   Thoigianhengiao DATE,
   Thoigiangiaodon DATE,
   Noigiaohang NTEXT NOT NULL
-
 )
 -- Thời gian đặt đơn là thời gian đơn hàng được tạo GETDATE()
 -- Thời gian hẹn giao do khách hàng hẹn.

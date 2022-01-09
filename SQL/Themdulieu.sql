@@ -87,12 +87,12 @@ VALUES
 GO
 
 --SELECT * FROM KhachHang
-INSERT INTO dbo.LOAI
+INSERT INTO dbo.LOAI (Tenloai)
 VALUES
 (N'Mochi'),(N'Dango'),(N'Yokan'),(N'Wagashi'),(N'Manju')
 GO
 --select * from LOAI
-INSERT INTO MonAn(TENMONAN, Maloai, HINHANH, MOTA, SOLUONG, GIATHANHPHAM, HANSUDUNG) VALUES
+INSERT INTO MonAn(Tenmonan, Maloai, Hinhanh, Mota, Soluong, Giathanhpham, Hansudung) VALUES
 (N'Mochi giọt nước', '1', '', N'Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước khiến bao người mê mẩn với vẻ ngoài đẹp mắt. Chiếc bánh với ngọt ngào, trong suốt khác hẳn với những loại bánh mochi thường biết với lớp vỏ ngoài dẻo dai ăn cùng nhân bên trong. Từ những nguyên liệu đơn giản như bột rau câu, đậu nành, đường, nước bạn có thể làm ra chiếc mochi núng nính vị ngọt dịu, thanh mát. Xắn 1 miếng bánh thôi là sảng khoái cả người, cảm nhận được miếng bánh tan trong miệng thật tuyệt vời làm sao!'
 , 10, 10000, '2022-04-30'),
 (N'Mochi Đậu Đỏ','1', '', N'Lớp vỏ bánh nếp dẻo dai, ngọt thơm mùi cốt dừa kết hợp cùng nhân đậu đỏ bùi béo, ngọt lịm. Tất cả tạo nên món bánh mochi với vẻ ngoài đáng yêu, tròn tròn, nhỏ nhỏ cùng hương vị lôi cuốn khiến bạn ăn 1 lần sẽ nhớ mãi.'
@@ -109,7 +109,8 @@ GO
 
 --select * from MonAn
 
-INSERT INTO DonDatHang VALUES
+INSERT INTO DonDatHang(Makhachhang,Manhanvien,Thoigiandatdon,Thoigianhengiao,Thoigiangiaodon,Noigiaohang)
+VALUES
 (1, 1, '2022-01-01', '2022-01-04','2022-01-04', N'Hà Nội'),
 (1, 2, '2021-12-01', '2021-12-05','2021-12-05', N'Hà Nội'),
 (1, 3, '2021-12-11', '2021-12-01','2021-12-01', N'Hà Nam'),
