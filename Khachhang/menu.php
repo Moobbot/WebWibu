@@ -7,22 +7,33 @@
                     style="width: 120px; height: 60px;">
             </a>
 
-            <ul class="nav col-10 col-md-auto mb-2 justify-content-center mb-md-0 h5">
-                <li class="nav-item">
-                    <a href="./" class="nav-link px-4 red4">Trang chủ</a>
+            <!-- Điều hướng -->
+            <ul class="nav nav-pills col-10 col-md-auto mb-2 justify-content-center mb-md-0 h5" id="pills-tab"
+                role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link red4" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="false">Trang chủ</button>
                 </li>
-                <li class="nav-item">
-                    <a href="./foodtop.php" class="nav-link px-4 red4">Món ăn nổi bật</a>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link red4" id="pills-foodtop-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-foodtop" type="button" role="tab" aria-controls="pills-foodtop"
+                        aria-selected="false">Món ăn nổi bật</button>
                 </li>
-                <li class="nav-item">
-                    <a href="./listfood.php" class="nav-link px-4 red4">Danh sách món ăn</a>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link red4" id="pills-listfood-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-listfood" type="button" role="tab" aria-controls="pills-listfood"
+                        aria-selected="false">Danh sách món ăn</button>
                 </li>
             </ul>
 
-            <div class="col-md-2 me-lg-5" style="width: 160px;">
-                <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                <button type="button" class="btn btn-primary">Sign-up</button>
+            <div class="col-md-2 me-lg-5" style="width: 202px;">
+                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                    data-bs-target="#ModalLogin">Đăng nhập</button>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#ModalSignup">Đăng ký</button>
             </div>
         </header>
     </div>
 </div>
+<?php include("./modal_dangnhap.php");
+include("./modal_dangky.php") ?>

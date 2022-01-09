@@ -1,5 +1,5 @@
 ﻿CREATE DATABASE DB_Wibu
-
+--DROP DATABASE DB_Wibu
 GO
 
 USE DB_Wibu;
@@ -14,9 +14,9 @@ GO
 --Tài khoản
 CREATE TABLE TAIKHOAN(
 	Mataikhoan INT IDENTITY(1,1) NOT NULL,
-	Tentaikhoan CHAR(20) NOT NULL,
+	Tentaikhoan VARCHAR(20) NOT NULL,
 	Matkhau NVARCHAR(20) NOT NULL,
-	Ngaytao DATETIME,
+	Ngaytao DATE,
 	Capdo TINYINT NOT NULL,
 	Trangthai BIT
 )
@@ -33,10 +33,10 @@ CREATE TABLE NHANVIEN (
   Ngaysinh DATE NOT NULL,
   Ngaybatdaulamviec DATE NOT NULL,
   Diachi NVARCHAR(100),
-  Dienthoai CHAR(11) NOT NULL,
-  Luongcoban MONEY NOT NULL,
+  Dienthoai VARCHAR(12) NOT NULL UNIQUE,
+  Luong MONEY NOT NULL,
   Tienthuong MONEY,
-  Mataikhoan INT NOT NULL
+  Mataikhoan INT NOT NULL UNIQUE
 )
 
 --Ngaybatdaulamviec getdate()
@@ -49,21 +49,20 @@ CREATE TABLE KHACHHANG (
   Hoten NVARCHAR(50) NOT NULL,
   Diachi NVARCHAR(100),
   Email VARCHAR(255),
-  Dienthoai CHAR(11) NOT NULL,
-  Mataikhoan INT NOT NULL
+  Dienthoai VARCHAR(12) NOT NULL UNIQUE,
+  Mataikhoan INT NOT NULL UNIQUE
 )
-
 --Bảng Loại món ăn
---CREATE TABLE LoaiMonAn (
---  MALOAIMON INT IDENTITY(1,1) NOT NULL,
---  TENLOAIMON NVARCHAR(50) NOT NULL
---)
-
+CREATE TABLE LOAI (
+  Maloai INT IDENTITY(1,1) NOT NULL,
+  Tenloai NVARCHAR(50) NOT NULL UNIQUE
+)
 -- Bảng Món ăn
 CREATE TABLE MONAN (
   Mamonan INT IDENTITY(1,1) NOT NULL,
   Tenmonan NVARCHAR(50) NOT NULL,
-  Hinhanh NVARCHAR(100),
+  Maloai INT NOT NULL,
+  Hinhanh TEXT,
   Mota NTEXT,
   Soluong INT NOT NULL,
   Giathanhpham MONEY NOT NULL,
@@ -73,18 +72,17 @@ CREATE TABLE MONAN (
 
 -- Bảng Đơn đặt hàng
 CREATE TABLE DONDATHANG (
-  SOHOADON INT IDENTITY(1,1) NOT NULL,
-  MAKHACHHANG INT NOT NULL,
-  MANHANVIEN INT NOT NULL,
-  THOIGIANDATDON DATETIME NOT NULL,
-  THOIGIANNHANDON DATETIME,
-  THOIGIANGIAODON DATETIME,
-  NOIGIAOHANG NVARCHAR(100) NOT NULL
+  Sohoadon INT IDENTITY(1,1) NOT NULL,
+  Makhachhang INT NOT NULL,
+  Manhanvien INT NOT NULL,
+  Thoigiandatdon DATE,
+  Thoigianhengiao DATE,
+  Thoigiangiaodon DATE,
+  Noigiaohang NTEXT NOT NULL
+
 )
 -- Thời gian đặt đơn là thời gian đơn hàng được tạo GETDATE()
--- Thời gian nhận đơn do khách hàng hẹn.
--- Thời gian gian giao hàng không quá 60 phút so với thời gian nhận đơn
--- Nơi giao hàng chỉ nhận đơn trong bán kính 10km
+-- Thời gian hẹn giao do khách hàng hẹn.
 
 -- Bảng chi tiết đặt hàng
 
@@ -96,77 +94,3 @@ CREATE TABLE CHITIETDATHANG (
   Mucgiagiam MONEY
 )
 -- Giá bán = 150% Giá thành phẩm
-
---------------------------Điều kiện---------------------------------------
---Thêm thời gian mặc định tạo tài khoản
-ALTER TABLE TAIKHOAN
-ADD DEFAULT getdate() FOR Ngaytao;
-
---Thêm điều kiện check cấp độ: 1-ADMIN; 2-Nhân viên; 3: Khách hàng
-ALTER TABLE TAIKHOAN
-ADD CONSTRAINT ck_capdo CHECK(Capdo BETWEEN 1 AND 3);
-
---Thêm trạng thái mặc định khi tạo tài khoản
-ALTER TABLE TAIKHOAN
-ADD DEFAULT 0 FOR Trangthai;
-
---Thêm trạng thái mặc định tiền thưởng là 0 khi thêm nhân viên
-ALTER TABLE NHANVIEN
-ADD DEFAULT 0 FOR Tienthuong;
-
---Thêm thời gian mặc định ngày bắt đầu làm việc
-ALTER TABLE NHANVIEN
-ADD DEFAULT getdate() FOR Ngaybatdaulamviec;
-
---Thêm thời gian mặc định ngày nhập món ăn
-ALTER TABLE MONAN
-ADD DEFAULT getdate() FOR Ngaynhap;
-
---Thêm thời gian mặc định đặt đơn
-ALTER TABLE DONDATHANG
-ADD DEFAULT getdate() FOR Thoigiandatdon;
-
---Thêm mức giá giảm mặc định là 0
-ALTER TABLE CHITIETDATHANG
-ADD DEFAULT 0 FOR Mucgiagiam;
-
--------------------------Tạo khóa chính---------------------------------------
-ALTER TABLE TAIKHOAN
-ADD CONSTRAINT pk_taikhoan PRIMARY KEY (Mataikhoan);
-ALTER TABLE NHANVIEN
-ADD CONSTRAINT pk_nhanvien PRIMARY KEY (Manhanvien);
-ALTER TABLE KHACHHANG
-ADD CONSTRAINT pk_khachhang PRIMARY KEY (Makhachhang);
-ALTER TABLE MONAN
-ADD CONSTRAINT pk_monan PRIMARY KEY (Mamonan);
-ALTER TABLE DONDATHANG
-ADD CONSTRAINT pk_dondathang PRIMARY KEY (SoHoaDon);
-ALTER TABLE CHITIETDATHANG
-ADD CONSTRAINT pk_chitietdathang PRIMARY KEY (Sohoadon, Mamon);
-
--------------------------Tạo khóa ngoại---------------------------------------
-ALTER TABLE NHANVIEN
-ADD CONSTRAINT fk_nhanvien_taikhoan FOREIGN KEY (Mataikhoan) REFERENCES TAIKHOAN(Mataikhoan);
-ALTER TABLE KHACHHANG
-ADD CONSTRAINT fk_khachhang_taikhoan FOREIGN KEY (Mataikhoan) REFERENCES TAIKHOAN(Mataikhoan);
-ALTER TABLE DONDATHANG
-ADD CONSTRAINT fk_dondathang_khachhang FOREIGN KEY (Makhachhang) REFERENCES KHACHHANG(Makhachhang);
-ALTER TABLE DONDATHANG
-ADD CONSTRAINT fk_dondathang_nhanvien FOREIGN KEY (Manhanvien) REFERENCES NHANVIEN(Manhanvien);
-ALTER TABLE CHITIETDATHANG
-ADD CONSTRAINT fk_chitietdathang_dondathang FOREIGN KEY (Sohoadon) REFERENCES DONDATHANG(Sohoadon);
-ALTER TABLE CHITIETDATHANG
-ADD CONSTRAINT fk_chitietdathang_monan FOREIGN KEY (Mamon) REFERENCES MONAN(Mamonan);
----------------------------------------------------------------------------------
-SELECT * FROM ChiTietDatHang
-SELECT * FROM KhachHang
-SELECT * FROM DonDatHang
-SELECT * FROM MonAn
-SELECT * FROM NhanVien
-SELECT * FROM TaiKhoan
-
---TRIGGER check tuổi của nhân viên 16-35 tuổi
---Ràng buộc lương tối đa là 5 triệu
---Tiền thưởng không nhập mặc định là 0, tối đa là 25% lương/năm
---Tự động cập nhật số lượng món ăn từ mỗi hóa đơn
---
