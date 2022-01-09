@@ -24,7 +24,7 @@
                     //* B1: Gọi config
                     include '../config/constants.php';
                     //* B2: Truy vấn
-                    $sql = "SELECT taikhoan.mataikhoan, tentaikhoan, matkhau, hoten, ngaytao FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan";
+                    $sql = "SELECT taikhoan.mataikhoan, tentaikhoan, matkhau,hoten, ngaybatdaulamviec, diachi, dienthoai  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan AND TAIKHOAN.Capdo = 2";
 
                     //? lưu kết quả trả về $result
                     $result = mysqli_query($conn, $sql);
