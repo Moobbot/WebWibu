@@ -10,7 +10,7 @@
     </div>
 
     <div class="container pb-5" style="min-height: 65vh; height: auto; max-height: 105vh;">
-        <table id="table_acc table-responsive-md" class="cell-border table-bordered">
+        <table id="table_acc" class="cell-border table-bordered table-responsive-md">
             <thead>
                 <tr>
                     <th class="col-1">STT</th>

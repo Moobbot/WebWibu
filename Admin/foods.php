@@ -65,7 +65,7 @@
 
 
         <div class="container mt-4">
-            <table id="table_acc table-responsive-md" class="cell-border table-bordered">
+            <table id="table_acc" class="cell-border table-bordered table-responsive-md">
                 <thead>
                     <tr>
                         <th class="text-center">STT</th>
@@ -98,7 +98,7 @@
                                 <th class="col-1 text-center"><?php echo  $i; ?></th>
                                 <td class="col-1"><?php echo $row['tenloai']; ?></td>
                                 <td class="col-2"><?php echo $row['tenmonan']; ?></td>
-                                <td class="col-1"><img class="img-fluid" src="<?php echo $row['hinhanh'];?>" alt=""></td> 
+                                <td class="col-2"><img class="img-fluid" src="<?php echo $row['hinhanh'];?>" alt=""></td> 
                                 <!-- style="width: 6em; height: 9.72em;"></td> -->
                                 <td class="col-1 text-end"><?php echo $row['giathanhpham']; ?></td>
                                 <td class="col-1 text-center"><?php echo $row['soluong']; ?></td>
@@ -106,7 +106,7 @@
                                 <td class="col-1 text-center"><?php echo $row['ngaynhap']; ?></td>
                                 <td class="col-1 text-center"><?php echo $row['hansudung']; ?></td>
                                 <!-- <td class="d-flex justify-content-evenly"> -->
-                                <td class="col-1">
+                                <td class="col d-flex justify-content-evenly">
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                                 </td>
