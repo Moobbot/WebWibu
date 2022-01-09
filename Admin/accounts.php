@@ -42,16 +42,16 @@
     </div>
 
     <div class="container pb-5" style="min-height: 65vh; height: auto; max-height: 105vh;">
-        <table id="table_acc" class="cell-border table-bordered">
+        <table id="table_acc table-responsive-md" class="cell-border table-bordered">
             <thead>
                 <tr>
-                    <th>STT</th>
-                    <th>Tên tài khoản</th>
-                    <th>Mật khẩu</th>
+                    <th class="col-1">STT</th>
+                    <th class="col">Tên tài khoản</th>
+                    <th class="col-1">Mật khẩu</th>
                     <th>Họ tên</th>
-                    <th>Ngày bắt đầu làm việc</th>
+                    <th class="col-1">Ngày bắt đầu làm việc</th>
                     <th>Địa chỉ</th>
-                    <th>Điện thoại</th>
+                    <th class="col-1">Điện thoại</th>
                     <th>Hành động</th>
                 </tr>
             </thead>
@@ -61,31 +61,36 @@
                 //* B1: Gọi config
                 include '../config/constants.php';
                 //* B2: Truy vấn
-                $sql = "SELECT taikhoan.mataikhoan, tentaikhoan, matkhau,hoten, ngaybatdaulamviec, diachi, dienthoai  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan";
-
-                //? lưu kết quả trả về $result
+                $sql = "SELECT taikhoan.mataikhoan, tentaikhoan, matkhau,hoten, ngaybatdaulamviec, diachi, dienthoai  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan AND TAIKHOAN.Capdo = 2";
+                // $sql = "SELECT mataikhoan, tentaikhoan, matkhau, hoten, ngaybatdaulamviec, diachi, dienthoai  FROM vw_nhanvien_thongtin as a, vw_nhanvien_thongtin as b  WHERE a.mataikhoan = b.mataikhoan";
+            
+                // Lưu kết quả trả về $result
                 $result = mysqli_query($conn, $sql);
-
                 //* B3: Phân tích sử lý kết quả
                 if (mysqli_num_rows($result) > 0) :
-                    while ($row = mysqli_fetch_assoc($result)) :
-                ?>
-                        <tr>
-                            <th scope="row"><?php echo $row['mataikhoan']; ?></th>
-                            <td><?php echo $row['tentaikhoan']; ?></td>
-                            <td><?php echo $row['matkhau']; ?></td>
-                            <td><?php echo $row['hoten']; ?></td>
-                            <td><?php echo $row['ngaybatdaulamviec']; ?></td>
-                            <td><?php echo $row['diachi']; ?></td>
-                            <td><?php echo $row['dienthoai']; ?></td>
-                            <td class="d-flex justify-content-evenly">
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
-                            </td>
-                        </tr>
-                <?php
+                // endif;
+                    $i = 1;
+                    while ($row = mysqli_fetch_assoc($result)) :             
+                        ?>
+                            <tr>
+                                <!-- <th class="col-1"></?php echo $row['mataikhoan']; ?></th> -->
+                                <th class="col-1"><?php echo $i; ?></th>
+                                <td class="col"><?php echo $row['tentaikhoan']; ?></td>
+                                <td class="col-1"><?php echo $row['matkhau']; ?></td>
+                                <td class="col-2"><?php echo $row['hoten']; ?></td>
+                                <td class="col-1"><?php echo $row['ngaybatdaulamviec']; ?></td>
+                                <td class="col-2"><?php echo $row['diachi']; ?></td>
+                                <td class="col"><?php echo $row['dienthoai']; ?></td>
+                                <td class="d-flex justify-content-evenly">
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                                </td>
+                            </tr>
+                        <?php
+                        $i+=1;
                     endwhile;
                 endif;
+
                 //* B4: đóng kết nối
                 mysqli_close($conn);
                 ?>

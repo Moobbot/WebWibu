@@ -1,59 +1,24 @@
 <?php include("./header.php")?>
-    <!-- Start Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light border-bottom border-1 border-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <img src="https://raw.githubusercontent.com/Moobbot/WebWibu/main/assets/img/Logo.jpg" alt=""
-                class="img-fluid" style="width: 120px; height: 60px;">
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="index.php"><i class="fas fa-home"></i>Trang
-                            chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="accounts.php">Tài khoản</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Nhân viên</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="foods.php">Món ăn</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="orders.php">Đơn hàng</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Nav -->
 
     <div class="container-fluid custom-background pb-5" style="min-height:85vh; height: auto; max-height: 90vh;">
-        <div class="container pb-5">
-            <h3 class="pt-5 pb-4 fw-bold">Thông tin cửa hàng</h3>
+        <div class="container py-5">
+            <h3 class="pb-4 fw-bold">Thông tin cửa hàng</h3>
         </div>
 
         <!-- Kết nối database -->
         <?php 
-        // b1: kết nối
-include '../config/constants.php';
-// b2: Truy vấn
-$sql = "SELECT * FROM vw_Thongke_Cuahang";
-// gán biến lưu kết quả truy vấn
-$result = mysqli_query($conn, $sql);
-// b3: Phân tích kết quả
-if (mysqli_num_rows($result) > 0){
-    $row = mysqli_fetch_assoc($result);
-}
+                // b1: kết nối
+        include '../config/constants.php';
+        // b2: Truy vấn
+        $sql = "SELECT * FROM vw_Thongke_Cuahang";
+        // gán biến lưu kết quả truy vấn
+        $result = mysqli_query($conn, $sql);
+        // b3: Phân tích kết quả
+        if (mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+        }
 
-?>
+        ?>
         <div class="container">
             <div class="row g2- pb-4 jutstify-content-around">
 
