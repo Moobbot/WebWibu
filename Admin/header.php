@@ -47,7 +47,7 @@
                         <a class="nav-link custom-color fw-bold" href="accounts.php">Tài khoản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Nhân viên</a>
+                        <a class="nav-link custom-color fw-bold" href="emp.php">Nhân viên</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link custom-color fw-bold" href="foods.php">Món ăn</a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2022 at 10:08 AM
+-- Generation Time: Jan 09, 2022 at 02:37 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -228,12 +228,12 @@ CREATE TABLE `monan` (
 --
 
 INSERT INTO `monan` (`Mamonan`, `Tenmonan`, `Maloai`, `Hinhanh`, `Mota`, `Soluong`, `Giathanhpham`, `Ngaynhap`, `Hansudung`) VALUES
-(1, 'Mochi giọt nước', 1, '', 'Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước khiến bao người mê mẩn với vẻ ngoài đẹp mắt. Chiếc bánh với ngọt ngào, trong suốt khác hẳn với những loại bánh mochi thường biết với lớp vỏ ngoài dẻo dai ăn cùng nhân bên trong. Từ những nguyên liệu đơn giản như bột rau câu, đậu nành, đường, nước bạn có thể làm ra chiếc mochi núng nính vị ngọt dịu, thanh mát. Xắn 1 miếng bánh thôi là sảng khoái cả người, cảm nhận được miếng bánh tan trong miệng thật tuyệt vời làm sao!', 10, 10000, '2022-01-09', '2022-04-30'),
-(2, 'Mochi Đậu Đỏ', 1, '', 'Lớp vỏ bánh nếp dẻo dai, ngọt thơm mùi cốt dừa kết hợp cùng nhân đậu đỏ bùi béo, ngọt lịm. Tất cả tạo nên món bánh mochi với vẻ ngoài đáng yêu, tròn tròn, nhỏ nhỏ cùng hương vị lôi cuốn khiến bạn ăn 1 lần sẽ nhớ mãi.', 10, 20000, '2022-01-09', '2022-04-30'),
-(3, 'Mochi trà xanh nhân kem', 1, '', 'Bột trà xanh thần thánh sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.', 4, 12000, '2022-01-09', '2022-04-30'),
-(4, 'Mochi nhân kem vani', 1, '', 'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể chiều lòng vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?', 10, 10000, '2022-01-09', '2022-04-30'),
-(5, 'Mochi nhân kem dâu tây phô mai', 1, '', 'Vẻ ngoài ngọt ngào, đáng yêu với màu hồng nhẹ nhàng dễ dàng đánh gục bất cứ ai ngay lần nhìn đầu tiên. Nhân kem phô mai béo ngậy hòa quyện cùng kem dâu tây chua chua ngọt ngọt, thơm ngon cùng lớp socola trắng ngọt dịu. Tất cả tạo nên món bánh mochi nhân kem dâu tây phô mai cực lôi cuốn, ngon miệng. Bạn có thể làm món bánh xinh xắn này để tặng cho bạn bè người thân trong những dịp lễ hay ngày đặc biệt đấy!', 10, 15000, '2022-01-09', '2022-04-30'),
-(6, 'Mochi nhân kem sầu riêng', 1, '', 'Các tín đồ của sầu riêng chắc chắn không thể bỏ qua món bánh mochi nhân kem sầu riêng này đâu nha. Nhân sầu riêng ngọt lịm, béo bùi, thơm lừng hòa quyện với phần kem tươi mát lạnh được bọc bên ngoài là lớp vỏ bánh dẻo, mịn thật ngon làm sao! Cắn 1 miếng là cảm nhận ngay được hương vị tuyệt hảo của chiếc bánh này sẽ khiến bạn vấn vương mãi trên đầu lưỡi không thôi.', 10, 15000, '2022-01-09', '2022-01-15');
+(1, 'Mochi giọt nước', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-giot-nuoc-thumbnail.jpg', 'Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước khiến bao người mê mẩn với vẻ ngoài đẹp mắt. Chiếc bánh với ngọt ngào, trong suốt khác hẳn với những loại bánh mochi thường biết với lớp vỏ ngoài dẻo dai ăn cùng nhân bên trong. Từ những nguyên liệu đơn giản như bột rau câu, đậu nành, đường, nước bạn có thể làm ra chiếc mochi núng nính vị ngọt dịu, thanh mát. Xắn 1 miếng bánh thôi là sảng khoái cả người, cảm nhận được miếng bánh tan trong miệng thật tuyệt vời làm sao!', 10, 10000, '2022-01-09', '2022-04-30'),
+(2, 'Mochi Đậu Đỏ', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-nhan-dau-do-thumbnail.jpg', 'Lớp vỏ bánh nếp dẻo dai, ngọt thơm mùi cốt dừa kết hợp cùng nhân đậu đỏ bùi béo, ngọt lịm. Tất cả tạo nên món bánh mochi với vẻ ngoài đáng yêu, tròn tròn, nhỏ nhỏ cùng hương vị lôi cuốn khiến bạn ăn 1 lần sẽ nhớ mãi.', 10, 20000, '2022-01-09', '2022-04-30'),
+(3, 'Mochi trà xanh nhân kem', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-tra-xanh-nhan-kem-thumbnail.jpg', 'Bột trà xanh thần thánh sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.', 4, 12000, '2022-01-09', '2022-04-30'),
+(4, 'Mochi nhân kem vani', 1, 'https://cdn.tgdd.vn/2020/08/CookRecipe/Avatar/banh-mochi-nhan-kem-huong-vani-thumbnail.jpg', 'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể chiều lòng vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?', 10, 10000, '2022-01-09', '2022-04-30'),
+(5, 'Mochi nhân kem dâu tây phô mai', 1, 'https://cdn.tgdd.vn/2020/12/CookRecipe/Avatar/banh-mochi-nhan-kem-dau-tay-pho-mai-thumbnail-2.jpg', 'Vẻ ngoài ngọt ngào, đáng yêu với màu hồng nhẹ nhàng dễ dàng đánh gục bất cứ ai ngay lần nhìn đầu tiên. Nhân kem phô mai béo ngậy hòa quyện cùng kem dâu tây chua chua ngọt ngọt, thơm ngon cùng lớp socola trắng ngọt dịu. Tất cả tạo nên món bánh mochi nhân kem dâu tây phô mai cực lôi cuốn, ngon miệng. Bạn có thể làm món bánh xinh xắn này để tặng cho bạn bè người thân trong những dịp lễ hay ngày đặc biệt đấy!', 10, 15000, '2022-01-09', '2022-04-30'),
+(6, 'Mochi nhân kem sầu riêng', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-nhan-kem-sau-rieng-thumbnail.jpg', 'Các tín đồ của sầu riêng chắc chắn không thể bỏ qua món bánh mochi nhân kem sầu riêng này đâu nha. Nhân sầu riêng ngọt lịm, béo bùi, thơm lừng hòa quyện với phần kem tươi mát lạnh được bọc bên ngoài là lớp vỏ bánh dẻo, mịn thật ngon làm sao! Cắn 1 miếng là cảm nhận ngay được hương vị tuyệt hảo của chiếc bánh này sẽ khiến bạn vấn vương mãi trên đầu lưỡi không thôi.', 10, 15000, '2022-01-09', '2022-01-15');
 
 -- --------------------------------------------------------
 
@@ -258,7 +258,7 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`Manhanvien`, `Hoten`, `Ngaysinh`, `Ngaybatdaulamviec`, `Diachi`, `Dienthoai`, `Luong`, `Tienthuong`, `Mataikhoan`) VALUES
-(1, 'Admin', '2001-03-08', '2022-01-01', 'Hà Nội', '0342298409', 5000000, 0, 1),
+(1, 'Quản lý', '2001-03-08', '2022-01-01', 'Hà Nội', '0342298409', 5000000, 0, 1),
 (2, 'Nguyễn Văn Một', '1999-03-08', '2022-01-01', 'Hà Nam', '0345492120', 1100000, 0, 2),
 (3, 'Nguyễn Văn Hai', '1999-03-08', '2022-01-01', 'Nam Định', '0312049123', 1200000, 0, 3),
 (4, 'Lương Văn Ba', '1999-03-08', '2022-01-01', 'Quảng Nam', '0342238534', 1300000, 0, 4),
@@ -285,7 +285,7 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`Mataikhoan`, `Tentaikhoan`, `Matkhau`, `Ngaytao`, `Capdo`, `Trangthai`) VALUES
-(1, 'admin', '123456', '2022-01-09', '1', b'1'),
+(1, 'quanly', '123456', '2022-01-09', '1', b'1'),
 (2, 'nv01', '123456', '2022-01-09', '2', b'1'),
 (3, 'nv02', '123456', '2022-01-09', '2', b'1'),
 (4, 'nv03', '123456', '2022-01-09', '2', b'1'),
@@ -437,7 +437,8 @@ CREATE TABLE `vw_mon_thich` (
 -- (See below for the actual view)
 --
 CREATE TABLE `vw_nhanvien_thongtin` (
-`Tentaikhoan` varchar(20)
+`Mataikhoan` int(11)
+,`Tentaikhoan` varchar(20)
 ,`Matkhau` varchar(20)
 ,`Hoten` varchar(50)
 ,`Ngaybatdaulamviec` date
@@ -528,7 +529,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_nhanvien_thongtin`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_nhanvien_thongtin`  AS SELECT `taikhoan`.`Tentaikhoan` AS `Tentaikhoan`, `taikhoan`.`Matkhau` AS `Matkhau`, `nhanvien`.`Hoten` AS `Hoten`, `nhanvien`.`Ngaybatdaulamviec` AS `Ngaybatdaulamviec`, `nhanvien`.`Diachi` AS `Diachi`, `nhanvien`.`Dienthoai` AS `Dienthoai` FROM (`taikhoan` join `nhanvien`) WHERE `taikhoan`.`Mataikhoan` = `nhanvien`.`Mataikhoan` AND `taikhoan`.`Capdo` = 2 ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_nhanvien_thongtin`  AS SELECT `taikhoan`.`Mataikhoan` AS `Mataikhoan`, `taikhoan`.`Tentaikhoan` AS `Tentaikhoan`, `taikhoan`.`Matkhau` AS `Matkhau`, `nhanvien`.`Hoten` AS `Hoten`, `nhanvien`.`Ngaybatdaulamviec` AS `Ngaybatdaulamviec`, `nhanvien`.`Diachi` AS `Diachi`, `nhanvien`.`Dienthoai` AS `Dienthoai` FROM (`taikhoan` join `nhanvien`) WHERE `taikhoan`.`Mataikhoan` = `nhanvien`.`Mataikhoan` AND `taikhoan`.`Capdo` = 2 ;
 
 -- --------------------------------------------------------
 
