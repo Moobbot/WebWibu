@@ -67,7 +67,7 @@
         <div class="container mt-4">
             <table id="table_acc" class="cell-border table-bordered table-responsive-md">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>STT</th>
                         <th>Loại</th>
                         <th>Tên món ăn</th>
@@ -98,7 +98,7 @@
                                 <th><?php echo  $i; ?></th>
                                 <td><?php echo $row['tenloai']; ?></td>
                                 <td><?php echo $row['tenmonan']; ?></td>
-                                <td class="text-center"><img src="<?php echo $row['hinhanh']; ?>" alt="" style="height: 4em; width: 6em"></td>
+                                <td class="text-center"><img src="<?php echo $row['hinhanh']; ?>" alt="" style="width: 10.625em; height: 5.875em;"></td>
                                 <td class="text-end"><?php echo $row['giathanhpham']; ?></td>
                                 <td class="text-end"><?php echo $row['soluong']; ?></td>
                                 <!-- <td style=""></?php echo $row['mota']; ?></td> -->

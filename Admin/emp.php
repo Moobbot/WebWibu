@@ -8,7 +8,7 @@
         <div class="container pt-4" style="min-height: 65vh; height: auto; max-height: 105vh;">
             <table id="table_emp" class="cell-border table-bordered">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th>STT</th>
                         <th>Họ tên</th>
                         <th>Tên tài khoản</th>
@@ -34,10 +34,11 @@
 
                     //* B3: Phân tích sử lý kết quả
                     if (mysqli_num_rows($result) > 0) :
+                        $i = 1;
                         while ($row = mysqli_fetch_assoc($result)) :
                     ?>
                             <tr>
-                                <th scope="row"><?php echo $row['manhanvien']; ?></th>
+                                <th scope="row"><?php echo $i; ?></th>
                                 <td><?php echo $row['hoten']; ?></td>
                                 <td><?php echo $row['tentaikhoan']; ?></td>
                                 <td><?php echo $row['ngaysinh']; ?></td>
@@ -52,6 +53,7 @@
                                 </td>
                             </tr>
                     <?php
+                        $i += 1;
                         endwhile;
                     endif;
                     //* B4: đóng kết nối
