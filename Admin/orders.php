@@ -9,7 +9,7 @@
         <div class="container">
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th scope="col-1">Số hóa đơn</th>
                         <th scope="col-1">Mã khách hàng</th>
                         <th scope="col-1">Số món</th>
@@ -47,7 +47,7 @@
                         <td class="text-end col-2" ><?php echo $row['Thoigiangiaodon'];?></td>
                     </tr>
                     <?php
-                     }
+                        }
                     }
                     // b4: đóng kết nối
                     mysqli_close($conn);
