@@ -78,7 +78,7 @@
                                     <?php
                                     //? mở kết nối
                                     include '../config/constants.php';
-                                    $sql = "SELECT * FROM taikhoan where Trangthai = 0";
+                                    $sql = "SELECT * FROM taikhoan WHERE Trangthai = 0";
                                     $result = mysqli_query($conn, $sql);
                                     //? xác thực
                                     if (mysqli_num_rows($result) > 0) {
