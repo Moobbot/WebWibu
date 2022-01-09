@@ -33,6 +33,13 @@ EXEC sp_grantdbaccess 'Quanly', 'QuanlyA'
 EXEC sp_grantdbaccess 'Nhanvien', 'NhanvienA'
 EXEC sp_grantdbaccess 'Khach', 'KhachhangA'
 --Tạo role
+--Tạo role quyền Quản lý
+EXEC  sp_addrole 'Wibu_Quanly';
+--Tạo role quyền Nhân viên
+EXEC sp_addrole 'Wibu_Nhanvien';
+--Tạo role quyền Khách hàng
+EXEC sp_addrole 'Wibu_Khach';
+
 --Phân quyền
 	--Cấp quyền role
 		--Cấp quyền role Wibu_Quanly
@@ -42,18 +49,17 @@ EXEC sp_grantdbaccess 'Khach', 'KhachhangA'
 		GRANT SELECT ON KHACHHANG TO Wibu_Quanly
 		GRANT SELECT ON DONDATHANG TO Wibu_Quanly
 		GRANT SELECT ON CHITIETDATHANG TO Wibu_Quanly
-		GRANT UPDATE[Mucgiagiam] ON CHITIETDATHANG TO Wibu_Quanly
+		GRANT UPDATE(Mucgiagiam) ON CHITIETDATHANG TO Wibu_Quanly
 		--Cấp quyền role Wibu_Nhanvien
 		GRANT SELECT ON DONDATHANG TO Wibu_Nhanvien
-		GRANT SELECT ON CHITIETDATHANG TO Wibu_Nhanvien
-		GRANT  UPDATE[Thoigiangiaohang] ON DONDATHANG TO Wibu_Nhanvien
-		GRANT  UPDATE[Thoigiangiaohang] ON DONDATHANG TO Wibu_Nhanvien
+		GRANT SELECT ON CHITIETDATHANG TO Wibu_Nhanvien;
+		GRANT  UPDATE(Thoigiangiaodon) ON DONDATHANG TO Wibu_Nhanvien;
+		GRANT  UPDATE(Thoigiangiaodon) ON DONDATHANG TO Wibu_Nhanvien;
 		--Cấp quyền role Wibu_Khach
 		GRANT INSERT ON CHITIETDATHANG TO Wibu_Khach
 	--Các quyền chung
 	GRANT SELECT ON LOAI TO PUBLIC
 	GRANT SELECT ON MONAN TO PUBLIC
-	GRANT INSERT ON TAIKHOAN TO PUBLIC
 	--Cấp quyền cho từng đối tượng
 		--Cấp quyền admin -- cấp tất cả quyền hệ thống cho admin
 			ALTER ROLE [db_owner] ADD member Wibu_admin;
