@@ -1,40 +1,6 @@
 <?php include 'header.php' ?>
 
 <body>
-    <!-- Start Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light border-bottom border-1 border-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <img src="https://raw.githubusercontent.com/Moobbot/WebWibu/main/assets/img/Logo.jpg" width="100"
-                height=auto alt="">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0 fs-3">
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="index.php"><i class="fas fa-home"></i>Trang
-                            chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="accounts.php">Tài khoản</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="#">Nhân viên</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="foods.php">Món ăn</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-color fw-bold" href="orders.php">Đơn hàng</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Nav -->
-
     <!-- Start Main -->
     <div class="container-fluid custom-background pb-5">
         <div class="container">
@@ -44,67 +10,48 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">S.N</th>
-                        <th scope="col">Tên món</th>
-                        <th scope="col">Giá</th>
-                        <th scope="col">Số lượng</th>
-                        <th scope="col">Tổng tiền</th>
-                        <th scope="col">Ngày đặt</th>
-                        <th scope="col">Tình trạng</th>
-                        <th scope="col">Tên khách</th>
-                        <th scope="col">Liên hệ</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Địa chỉ</th>
-                        <th scope="col">Chức năng</th>
+                        <th scope="col-1">Số hóa đơn</th>
+                        <th scope="col-1">Mã khách hàng</th>
+                        <th scope="col-1">Số món</th>
+                        <th scope="col-1">Số lượng</th>
+                        <th scope="col-2">Tổng tiền gốc</th>
+                        <th scope="col-1">Tổng tiền giảm</th>
+                        <th scope="col-2">Thành tiền</th>
+                        <th scope="col-1">Thời gian đặt đơn</th>
+                        <th scope="col-1">Thời gian </br>hẹn giao</th>
+                        <th scope="col-1">Thời gian giao đơn</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- b1: Kết nối database -->
+                    <?php
+                        include '../config/constants.php';
+                        // b2: Truy vấn sql
+                        $sql = "SELECT * FROM vw_Donhang_Thongke";
+                        // Lưu kết quả
+                        $result = mysqli_query($conn, $sql);
+                        if(mysqli_num_rows($result) > 0)
+                        {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
                     <tr class="align-middle">
-                        <th scope="row">1</th>
-                        <td>Mixed Pizza</td>
-                        <td>10.00</td>
-                        <td>2</td>
-                        <td>20.00</td>
-                        <td>2020-11-30 04:07:17</td>
-                        <td class="text-success">Delivered</td>
-                        <td>Jana Bush</td>
-                        <td>+1(562)101-2028</td>
-                        <td>tydujy@mailnator.com</td>
-                        <td>Minima iure ducimus</td>
-                        <td class="bg-success">Update Order</td>
+                        <th ><?php echo $row['Sohoadon'];?></th>
+                        <td class="text-center"><?php echo $row['Makhachhang'];?></td>
+                        <td class="text-end col-1"><?php echo $row['Somon'];?></td>
+                        <td class="text-end col-1"><?php echo $row['Soluong'];?></td>
+                        <td class="text-end col-1"><?php echo $row['Tongtiengoc'];?></td>
+                        <td class="text-end col-1"><?php echo $row['Tongtiengiam'];?></td>
+                        <td class="text-end col-1" ><?php echo $row['Thanhtien'];?></td>
+                        <td class="text-end col-2"><?php echo $row['Thoigiandatdon'];?></td>
+                        <td class="text-end col-2"><?php echo $row['Thoigianhengiao'];?></td>
+                        <td class="text-end col-2" ><?php echo $row['Thoigiangiaodon'];?></td>
                     </tr>
-                </tbody>
-                <tbody>
-                    <tr class="align-middle">
-                        <th scope="row">2</th>
-                        <td>Best Burger</td>
-                        <td>4.00</td>
-                        <td>4</td>
-                        <td>16.00</td>
-                        <td>2020-11-30 04:07:17</td>
-                        <td class="text-success">Delivered</td>
-                        <td>Kelly Dillard</td>
-                        <td>+1(562)101-2028</td>
-                        <td>fexekihor@mailnator.com</td>
-                        <td>Incidunt ipsum ad d</td>
-                        <td class="bg-success">Update Order</td>
-                    </tr>
-                </tbody>
-                <tbody>
-                    <tr class="align-middle">
-                        <th scope="row">3</th>
-                        <td>Sadeko Momo</td>
-                        <td>6.00</td>
-                        <td>3</td>
-                        <td>18.00</td>
-                        <td>2020-11-30 04:07:17</td>
-                        <td class="text-danger">Cancelled</td>
-                        <td>Bradley Farrell</td>
-                        <td>+1(562)101-2028</td>
-                        <td>tydujy@mailnator.com</td>
-                        <td>Minima iure ducimus</td>
-                        <td class="bg-success">Update Order</td>
-                    </tr>
+                    <?php
+                     }
+                    }
+                    // b4: đóng kết nối
+                    mysqli_close($conn);
+                    ?>
                 </tbody>
             </table>
         </div>
