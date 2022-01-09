@@ -12,9 +12,12 @@
                         <th>STT</th>
                         <th>Họ tên</th>
                         <th>Tên tài khoản</th>
+                        <th>Ngày sinh</th>
                         <th>Ngày bắt đầu làm việc</th>
                         <th>Địa chỉ</th>
                         <th>Điện thoại</th>
+                        <th>Lương</th>
+                        <th>Thưởng</th>
                         <th>Hành động</th>
                     </tr>
                 </thead>
@@ -24,7 +27,7 @@
                     //* B1: Gọi config
                     include '../config/constants.php';
                     //* B2: Truy vấn
-                    $sql = "SELECT manhanvien, hoten, tentaikhoan, ngaybatdaulamviec, diachi, dienthoai  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan  AND TAIKHOAN.Capdo = 2";
+                    $sql = "SELECT manhanvien, hoten, tentaikhoan, ngaybatdaulamviec, diachi, dienthoai, luong, ngaysinh, tienthuong  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan  AND TAIKHOAN.Capdo = 2";
 
                     //? lưu kết quả trả về $result
                     $result = mysqli_query($conn, $sql);
@@ -37,9 +40,12 @@
                                 <th scope="row"><?php echo $row['manhanvien']; ?></th>
                                 <td><?php echo $row['hoten']; ?></td>
                                 <td><?php echo $row['tentaikhoan']; ?></td>
+                                <td><?php echo $row['ngaysinh']; ?></td>
                                 <td><?php echo $row['ngaybatdaulamviec']; ?></td>
                                 <td><?php echo $row['diachi']; ?></td>
                                 <td><?php echo $row['dienthoai']; ?></td>
+                                <td class="text-end"><?php echo $row['luong']; ?></td>
+                                <td class="text-end"><?php echo $row['tienthuong']; ?></td>
                                 <td class="d-flex justify-content-evenly">
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
@@ -58,7 +64,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viênhân viên</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Thêm nhân viên</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -72,12 +78,12 @@
                                     <?php
                                     //? mở kết nối
                                     include '../config/constants.php';
-                                    $sql = "SELECT * FROM taikhoan";
+                                    $sql = "SELECT * FROM taikhoan where Trangthai = 0";
                                     $result = mysqli_query($conn, $sql);
                                     //? xác thực
                                     if (mysqli_num_rows($result) > 0) {
                                         while ($row = mysqli_fetch_assoc($result)) {
-                                            echo '<option value="' . $row['mataikhoan'] . '">' . $row['tentaikhoan'] . '</option>';
+                                            echo '<option value="' . $row['Mataikhoan'] . '">' . $row['Tentaikhoan'] . '</option>';
                                         }
                                     }
                                     mysqli_close($conn);
@@ -86,16 +92,28 @@
                                 <label>Tên tài khoản</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" placeholder="" required>
+                                <input type="date" class="form-control" id="birth" placeholder="" required>
+                                <label>Ngày sinh</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="start" placeholder="" required>
                                 <label>Ngày bắt đầu làm việc</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" placeholder="" required>
+                                <input type="text" class="form-control" id="addr" placeholder="" required>
                                 <label>Địa chỉ</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" placeholder="" required>
+                                <input type="text" class="form-control" id="phone" placeholder="" required>
                                 <label>Điện thoại</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="salary" placeholder="" required>
+                                <label>Lương</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="bonus" placeholder="" required>
+                                <label>Thưởng</label>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -116,20 +134,43 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-floating mb-3">
-                            <input type="Text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" id="name" placeholder="" required>
+                            <label>Họ và tên</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select id="id" class="form-select form-select-sm mb-3" required>
+                                <!-- Lấy dữ liệu từ database -->
+                                <?php
+                                //? mở kết nối
+                                include '../config/constants.php';
+                                $sql = "SELECT * FROM taikhoan where Trangthai = 0";
+                                $result = mysqli_query($conn, $sql);
+                                //? xác thực
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo '<option value="' . $row['Mataikhoan'] . '">' . $row['Tentaikhoan'] . '</option>';
+                                    }
+                                }
+                                mysqli_close($conn);
+                                ?>
+                            </select>
                             <label>Tên tài khoản</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" placeholder="">
-                            <label>Mật khẩu cũ</label>
+                            <input type="date" class="form-control" id="start" placeholder="" required>
+                            <label>Ngày bắt đầu làm việc</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" placeholder="">
-                            <label>Mật khẩu mới</label>
+                            <input type="text" class="form-control" id="addr" placeholder="" required>
+                            <label>Địa chỉ</label>
                         </div>
-                        <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="">
-                            <label for="floatingPassword">Xác nhận mật khẩu</label>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="phone" placeholder="" required>
+                            <label>Điện thoại</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="salary" placeholder="" required>
+                            <label>Lương</label>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -164,4 +205,47 @@
             alert("Cập nhật thành công!");
         }
     }
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#add').click(function() {
+            $id = $('#id').val();
+            $name = $('#name').val();
+            $addr = $('#addr').val();
+            $birth = $('#birth').val();
+            $phone = $('#phone').val();
+            $start = $('#start').val();
+            $salary = $('#salary').val();
+            $bonus = $('#bonus').val();
+
+            if ($id == "" || $name == "" || $addr == "" || $phone == "" || $start == "" || $salary == "" || $birth == "" || $bonus == "") {
+                alert("Vui lòng nhập đủ thông tin");
+            } else {
+                $.ajax({
+                    type: "post",
+                    url: "./process/add-emp.php",
+                    data: {
+                        id: $id,
+                        name: $name,
+                        addr: $addr,
+                        phone: $phone,
+                        start: $start,
+                        salary: $salary,
+                        birth: $birth,
+                        bonus: $bonus
+
+                    },
+                    success: function(response) {
+                        if (response == "success") {
+                            alert("Thêm tài khoản thành công");
+                            location.reload()
+                        } else {
+                            alert("Thêm thất bại");
+                        }
+                    }
+                });
+            }
+        })
+    });
 </script>

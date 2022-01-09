@@ -1,7 +1,7 @@
 <?php include 'header.php' ?>
 
 <!-- Start Main -->
-<div class="container-fluid custom-background" style="min-height: 85vh; height: auto; max-height: 100vh;">
+<div class="container-fluid custom-background" style="min-height: 85vh; height: auto; max-height: 200vh;">
     <div class="container pb-5">
         <h3 class="pt-5 pb-4 fw-bold">Quản lý món ăn</h3>
 
@@ -65,19 +65,19 @@
 
 
         <div class="container mt-4">
-            <table id="table_acc table-responsive-md" class="cell-border table-bordered">
+            <table id="table_acc" class="cell-border table-bordered table-responsive-md">
                 <thead>
                     <tr>
-                        <th class="text-center">STT</th>
-                        <th class="text-center">Loại</th>
-                        <th class="text-center">Tên món ăn</th>
-                        <th class="text-center">Hình ảnh</th>
-                        <th class="text-center">Mức giá</th>
-                        <th class="text-center">Số lượng</th>
-                        <!-- <th class="text-center">Mô tả</th> -->
-                        <th class="text-center">Ngày nhập</th>
-                        <th class="text-center">Hạn sử dụng</th>
-                        <th class="text-center">Chức năng</th>
+                        <th>STT</th>
+                        <th>Loại</th>
+                        <th>Tên món ăn</th>
+                        <th>Hình ảnh</th>
+                        <th>Mức giá</th>
+                        <th>Số lượng</th>
+                        <!-- <th>Mô tả</th> -->
+                        <th>Ngày nhập</th>
+                        <th>Hạn sử dụng</th>
+                        <th>Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,18 +95,17 @@
                         while ($row = mysqli_fetch_assoc($result)) :
                     ?>
                             <tr>
-                                <th class="col-1 text-center"><?php echo  $i; ?></th>
-                                <td class="col-1"><?php echo $row['tenloai']; ?></td>
-                                <td class="col-2"><?php echo $row['tenmonan']; ?></td>
-                                <td class="col-1"><img class="img-fluid" src="<?php echo $row['hinhanh'];?>" alt=""></td> 
-                                <!-- style="width: 6em; height: 9.72em;"></td> -->
-                                <td class="col-1 text-end"><?php echo $row['giathanhpham']; ?></td>
-                                <td class="col-1 text-center"><?php echo $row['soluong']; ?></td>
+                                <th><?php echo  $i; ?></th>
+                                <td><?php echo $row['tenloai']; ?></td>
+                                <td><?php echo $row['tenmonan']; ?></td>
+                                <td class="text-center"><img src="<?php echo $row['hinhanh']; ?>" alt="" style="height: 4em; width: 6em"></td>
+                                <td class="text-end"><?php echo $row['giathanhpham']; ?></td>
+                                <td class="text-end"><?php echo $row['soluong']; ?></td>
                                 <!-- <td style=""></?php echo $row['mota']; ?></td> -->
-                                <td class="col-1 text-center"><?php echo $row['ngaynhap']; ?></td>
-                                <td class="col-1 text-center"><?php echo $row['hansudung']; ?></td>
+                                <td class="text-center"><?php echo $row['ngaynhap']; ?></td>
+                                <td class="text-center"><?php echo $row['hansudung']; ?></td>
                                 <!-- <td class="d-flex justify-content-evenly"> -->
-                                <td class="col-1">
+                                <td class="text-center">
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
                                 </td>
