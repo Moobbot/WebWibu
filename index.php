@@ -8,14 +8,14 @@
         </div>
         <div class="tab-pane fade" id="pills-foodtop" role="tabpanel" aria-labelledby="pills-foodtop-tab">
             <h2 class="text-center py-3">Top những món ăn nổi bật nhất</h2>
-            <?php include('./Khachhang/foodtop.php') ?>
+            <?php include('./Khachhang/monannoibat.php') ?>
         </div>
         <div class="tab-pane fade" id="pills-listfood" role="tabpanel" aria-labelledby="pills-listfood-tab">
-            <?php include('./Khachhang/listfood.php') ?>
+            <?php include('./Khachhang/danhsachmonan.php') ?>
         </div>
-        <div class="tab-pane fade" id="pills-chitietmonan" role="tabpanel" aria-labelledby="pills-chitietmonan-tab">
-            <?php include('./Khachhang/chitietmonan.php') ?>
-        </div>
+        <!-- <div class="tab-pane fade" id="pills-chitietmonan" role="tabpanel" aria-labelledby="pills-chitietmonan-tab">
+            </?php include('./Khachhang/chitietmonan.php') ?>
+        </div> -->
     </div>
 </body>
 

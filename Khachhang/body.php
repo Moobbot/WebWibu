@@ -15,7 +15,7 @@
     <!-- Danh mục món -->
     <div class="d-flex align-items-start mt-2">
         <div class="col-lg-1 col-2" style="min-width: 208px;">
-            <div class="d-flex flex-column border" style="border-radius: 15%;">
+            <div class="d-flex flex-column border border-dark border-3" style="border-radius: 15%;">
                 <!-- Điều hướng -->
                 <a class="h4 text-dark text-decoration-none mt-2 ps-2" href="./">
                     <i class="fas fa-bars px-2"></i> Danh mục
@@ -27,28 +27,37 @@
                             aria-selected="true">Danh mục</button>
                     </li> -->
                     <?php
-                    $tenloaimon = array("Wagashi", "Dango", "Yokan", "Higashi", "Mochi", "Daifuku");
-                    $loaimon = count($tenloaimon);
-                    for ($i = 1; $i <= $loaimon; $i++) {
+                    //* B1: Gọi config
+                    include './config/constants.php';
+                    //* B2: Truy vấn và lưu kết quả
+                    $sql =  "SELECT Tenloai FROM LOAI";
+                    $result = mysqli_query($conn, $sql);
+                     //* B3: Phân tích sử lý kết quả
+                    if (mysqli_num_rows($result) > 0) :
+                        $i = 1;
+                        while ($row = mysqli_fetch_assoc($result)) :
                         $typefood = "v-pills-typefood" . (string)$i;
-
                     ?>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link red4 text-start ps-5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
+                        <button class="nav-link text-start ps-5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
                             data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
                             aria-controls=<?= $typefood ?> aria-selected="false">
                             <img src="./assets/img/mochi.png" class="me-2"
                                 style="width: 10%; height: 10%; border-radius: 50%; min-width: 1.375em;">
-                            <?= $tenloaimon[$i - 1] ?>
+                            <?= $row['Tenloai']; ?>
                         </button>
                     </li>
                     <?php
-                    }
+                    // }
+                        $i += 1;
+                        endwhile;
+                    endif;
                     ?>
                 </ul>
             </div>
+            <!-- Trang FB của cửa hàng -->
             <div class="my-3">
-                <h4 class="border ps-2 py-2" style="border-radius: 15%;"><i class="fas fa-bars px-2"></i> Fanpage
+                <h4 class="border border-dark border-3 ps-2 py-2" style="border-radius: 15%;"><i class="fas fa-bars px-2"></i> Fanpage
                 </h4>
                 <div class="fb-page" data-href="https://www.facebook.com/dongotvatrangmieng" data-tabs="timeline"
                     data-width="208" data-height="350" data-small-header="false" data-adapt-container-width="true"
@@ -60,24 +69,35 @@
             </div>
         </div>
         <div class="tab-content col ps-lg-5" id="v-pills-tabContent">
+            <!-- Menu món ăn -->
             <div class="tab-pane fade show active" id="v-pills-foodtop" role="tabpanel"
                 aria-labelledby="v-pills-foodtop-tab">
-                <div class="col-2 bg-hotpink h4 py-2 px-2" style="border-radius: 10%; min-width: 10em;">
-                    Món ăn nổi bật
+                <div class="col-2 bg-hotpink h3 py-2 px-2 border-bottom border-dark border-3 w-100">
+                    MENU
                 </div>
-                <?php include("./Khachhang/test.php") ?>
+                <?php include("./Khachhang/cacmonan.php") ?>
             </div>
+            
+            <!-- Trang loại món ăn -->
             <?php
-            $loaimon = 4;
-            for ($i = 1; $i <= $loaimon; $i++) {
-                $typefood = "v-pills-typefood" . (string)$i
-            ?>
-            <div class="tab-pane fade" id=<?= $typefood ?> role="tabpanel" aria-labelledby=<?= $typefood . "-tab" ?>>
-                <img src="./assets/img/mochi.png " class="me-2" style="width: 10%; height: 10%; border-radius: 50%;">
-                <h3 class="text-center"><?= $typefood ?></h3>
-            </div>
-            <?php
-            }
+            $sql =  "SELECT Tenloai FROM LOAI";
+            $result = mysqli_query($conn, $sql);
+             //* B3: Phân tích sử lý kết quả
+            if (mysqli_num_rows($result) > 0) :
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($result)) :
+                $typefood = "v-pills-typefood" . (string)$i;
+                ?>
+                <div class="tab-pane fade" id=<?= $typefood ?> role="tabpanel" aria-labelledby=<?= $typefood . "-tab" ?>>
+                    <img src="./assets/img/mochi.png " class="me-2" style="width: 10%; height: 10%; border-radius: 50%;">
+                    <h3 class="text-center">Danh sách các món thuộc loại <?= $row['Tenloai']; ?></h3>
+                </div>
+                <?php
+            $i += 1;
+            endwhile;
+        endif;
+            //* B4: đóng kết nối
+            mysqli_close($conn);
             ?>
         </div>
     </div>

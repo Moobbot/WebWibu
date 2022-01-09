@@ -1,6 +1,8 @@
 <section class="container vh-100 pt-5">
     <div class="row d-flex justify-content-xl-around mx-auto">
         <?php
+        // Lỗi kết nối
+            // mysqli_close($conn);
 // b1: kết nốt csdl
 include './config/constants.php';
 $sql = "SELECT * FROM monan";
