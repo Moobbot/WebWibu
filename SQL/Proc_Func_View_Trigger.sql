@@ -152,12 +152,12 @@ BEGIN
 END
 SELECT * FROM fn_Monan_Khachhang('0348123128')
 --5.2.5.	Hàm tính tổng tiền các đơn hàng của 1 khách hàng.
-CREATE FUNCTION fn_Donhang_Tongtien(@makhach INT)
+CREATE OR ALTER FUNCTION fn_Donhang_Tongtien(@makhach INT)
 RETURNS MONEY
 AS
 BEGIN
 	DECLARE @tongtien MONEY 
-	SET @tongtien = (select sum(Soluong*Giaban - Soluong*Giaban*Mucgiagiam) from CHITIETDATHANG
+	SET @tongtien = (SELECT SUM(Soluong*Giaban - Mucgiagiam) FROM CHITIETDATHANG
 	INNER JOIN DONDATHANG on DONDATHANG.Sohoadon = CHITIETDATHANG.Sohoadon
 	WHERE DONDATHANG.Sohoadon = @makhach)
 	RETURN @tongtien
