@@ -47,8 +47,8 @@
                     $result1 = mysqli_query($conn, $sql1);
                     if($result1 > 0){
                         // lấy mã tài khoản
-                        $sql2 = "SELECT FROM taikhoan WHERE Tentaikhoan = $username";
-                        $result2 = mysqli_query($conn, $sql1);
+                        $sql2 = "SELECT * FROM taikhoan WHERE Tentaikhoan = $username";
+                        $result2 = mysqli_query($conn, $sql2);
                         if($result2 > 0){
                             $row = mysqli_fetch_assoc($result2);
                             // inset thông tin với mã tk
@@ -68,7 +68,7 @@
                                 echo "không insert khách hàng";
                             }
                         }else{
-                            echo "không insert khách hàng";
+                            echo "không lấy mã";
                         }
                     }else{
                         echo "không insert tai khoản";
