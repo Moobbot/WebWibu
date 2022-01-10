@@ -14,10 +14,22 @@
                 $_SESSION['Level'] = $row['Capdo'];
                 header("Location:Admin/index.php");
             }else{
-                
+                // sai mật khẩu
+                ?>
+                <script>
+                    alert("Sai mật khẩu, quay lại trang chủ.");
+                        window.location = "index.php";
+                </script>
+                <?php
             }
         }else{
-            
+            // sau tài khoản
+            ?>
+                <script>
+                    alert("Sai tài khoản, quay lại trang chủ.");
+                        window.location = "index.php";
+                </script>
+                <?php
         }
     }
 ?>

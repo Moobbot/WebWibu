@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Password2">Xác nhận mật khẩu<span class="text-danger">*</span></label>
-                        <input type="password2" name="password2" class="form-control" id="Password2"
+                        <input type="password" name="password2" class="form-control" id="Password2"
                             placeholder="Enter Password">
                     </div>
                     <div class="mb-3">
@@ -40,7 +40,7 @@
                     <div class="mb-3">
                         <label for="sodienthoai">Số điện thoại<span class="text-danger">*</span></label>
                         <input type="tel" name="sodienthoai" class="form-control" id="sodienthoai"
-                            placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            placeholder="Enter your phone number">
                     </div>
                 </div>
                 <div class="modal-footer pt-4">
