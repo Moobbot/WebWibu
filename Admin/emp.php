@@ -27,7 +27,7 @@
                     //* B1: Gọi config
                     include '../config/constants.php';
                     //* B2: Truy vấn
-                    $sql = "SELECT manhanvien, hoten, tentaikhoan, ngaybatdaulamviec, diachi, dienthoai, luong, ngaysinh, tienthuong  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan  AND TAIKHOAN.Capdo = 2";
+                    $sql = "SELECT manhanvien, hoten, tentaikhoan, ngaybatdaulamviec, diachi, dienthoai, luong, ngaysinh, tienthuong, nhanvien.mataikhoan  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan  AND TAIKHOAN.Capdo = 2";
 
                     //? lưu kết quả trả về $result
                     $result = mysqli_query($conn, $sql);
@@ -48,7 +48,7 @@
                                 <td class="text-end"><?php echo $row['tienthuong']; ?></td>
                                 <td class="d-flex justify-content-evenly">
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                                    <button type="button" class="btn btn-danger del" id="<?php echo $row['mataikhoan'] ?>" name=" <?php echo $row['manhanvien'] ?>">Xóa</button>
                                 </td>
                             </tr>
                     <?php
@@ -194,12 +194,6 @@
 </script>
 
 <script>
-    function funcDel() {
-        if (confirm("Bạn có chắc muốn xoá tài khoản này không? dữ liệu sẽ không thể khôi phục.") == true) {
-            alert("Xoá thành công!");
-        }
-    }
-
     function funcUpd() {
         if (confirm("Bạn có chắc muốn thực hiện việc thay đổi thông tin này không?") == true) {
             location.reload()
@@ -248,5 +242,32 @@
                 });
             }
         })
+
+        // xoá tài khoản
+
+        $('.del').click(function() {
+            $delId = $(this).attr('name');
+            $accID = $(this).attr('id');
+
+            if (confirm("Bạn có chắc muốn tài khoản này không?")) {
+                //? nếu đồng ý
+                $.ajax({
+                    type: "post",
+                    url: "./process/del-emp.php",
+                    data: {
+                        delId: $delId,
+                        accId: $accID
+                    },
+                    success: function(response) {
+                        if (response == "success") {
+                            alert("Xoá thành công!")
+                            location.reload()
+                        } else if (response == 'error') {
+                            alert("Xoá thất bại")
+                        }
+                    }
+                });
+            } else return false;
+        });
     });
 </script>
