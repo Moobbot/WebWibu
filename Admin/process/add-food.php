@@ -1,14 +1,13 @@
 <?php
-$loaiMon = $_POST['loaiMon'];
-$tenMon = $_POST['tenMon'];
-$soLuong = $_POST['soLuong'];
-$donGia = $_POST['donGia'];
-$moTa = $_POST['moTa'];
+$loai = $_POST['loai'];
+$ten = $_POST['ten'];
+$sl = $_POST['sl'];
+$gia = $_POST['gia'];
 $hsd = $_POST['hsd'];
 
 include 'C:\xampp\htdocs\WebWibu\config\constants.php';
-$sql = "INSERT INTO `monan`(`Tenmonan`, `Maloai`, `Mota`, `Soluong`, `Giathanhpham`, `Ngaynhap`, `Hansudung`)
-                    VALUES ('$tenMon', $loaiMon, '$moTa', $soLuong, $donGia, CURRENT_DATE ,'$hsd')";
+$sql = "INSERT INTO `monan`(`Tenmonan`, `Maloai`, `Soluong`, `Giathanhpham`, `Hansudung`)
+                    VALUES ('$ten', $loai, $sl, $gia,'$hsd')";
 $result = mysqli_query($conn, $sql);
 if ($result > 0) {
     echo "success";
