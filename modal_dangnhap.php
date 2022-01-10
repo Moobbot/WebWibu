@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Login Form -->
-            <form action="">
+            <form>
                 <div class="modal-header">
                     <h5 class="modal-title">Đăng nhập</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="modal-footer pt-4">
-                    <button type="button" class="btn btn-success mx-auto w-100">Đăng nhập</button>
+                    <button type="submit" class="btn btn-success mx-auto w-100" name = "btn-dangnhap" id = "btn-dangnhap">Đăng nhập</button>
                 </div>
                 <p class="text-center">Không có tài khoản, <a href="#">Đăng ký</a></p>
             </form>
