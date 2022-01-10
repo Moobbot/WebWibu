@@ -18,6 +18,7 @@
                     <th>Mật khẩu</th>
                     <th>Họ tên</th>
                     <th>Ngày tạo</th>
+                    <th>Trạng thái</th>
                     <th class="col-2">Hành động</th>
                 </tr>
             </thead>
@@ -27,7 +28,8 @@
                 //* B1: Gọi config
                 include '../config/constants.php';
                 //* B2: Truy vấn
-                $sql = "SELECT taikhoan.mataikhoan, tentaikhoan, matkhau,hoten, ngaytao  FROM taikhoan, nhanvien WHERE taikhoan.mataikhoan = nhanvien.mataikhoan AND TAIKHOAN.Capdo = 2";
+                $sql = "SELECT taikhoan.mataikhoan, tentaikhoan, matkhau,hoten, ngaytao, Trangthai  FROM taikhoan
+                        LEFT JOIN nhanvien ON taikhoan.mataikhoan = nhanvien.mataikhoan WHERE TAIKHOAN.Capdo = 2";
                 // $sql = "SELECT mataikhoan, tentaikhoan, matkhau, hoten, ngaybatdaulamviec, diachi, dienthoai  FROM vw_nhanvien_thongtin as a, vw_nhanvien_thongtin as b  WHERE a.mataikhoan = b.mataikhoan";
 
                 // Lưu kết quả trả về $result
@@ -40,49 +42,15 @@
                 ?>
                         <tr>
                             <!-- <th class="col-1"></?php echo $row['mataikhoan']; ?></th> -->
-                            <th><?php echo $i; ?></th>
-                            <td><?php echo $row['tentaikhoan']; ?></td>
-                            <td><?php echo $row['matkhau']; ?></td>
-                            <td><?php echo $row['hoten']; ?></td>
-                            <td><?php echo $row['ngaytao']; ?></td>
+                            <th><?= $i; ?></th>
+                            <td><?= $row['tentaikhoan']; ?></td>
+                            <td><?= $row['matkhau']; ?></td>
+                            <td><?= $row['hoten']; ?></td>
+                            <td><?= $row['ngaytao']; ?></td>
+                            <td class="col-1 text-center"><?= $row['Trangthai']; ?></td>
                             <td class="d-flex justify-content-evenly">
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                                <button type="button" class="btn btn-danger del" name="<?php echo $row['mataikhoan'] ?>">Xóa</button>
-                            </td>
-                        </tr>
-                <?php
-                        $i += 1;
-                    endwhile;
-                endif;
-                //* B4: đóng kết nối
-                // mysqli_close($conn);
-                ?>
-
-                <?php
-                // include '../config/constants.php';
-
-                //* B2: Truy vấn
-                $sql2 = "SELECT mataikhoan, tentaikhoan, matkhau, ngaytao  FROM taikhoan WHERE trangthai = 0";
-                // $sql = "SELECT mataikhoan, tentaikhoan, matkhau, hoten, ngaybatdaulamviec, diachi, dienthoai  FROM vw_nhanvien_thongtin as a, vw_nhanvien_thongtin as b  WHERE a.mataikhoan = b.mataikhoan";
-
-                // Lưu kết quả trả về $result
-                $result2 = mysqli_query($conn, $sql2);
-                //* B3: Phân tích sử lý kết quả
-                if (mysqli_num_rows($result2) > 0) :
-                    // endif;
-                    while ($row = mysqli_fetch_assoc($result2)) :
-                ?>
-                        <tr>
-                            <!-- <th class=" col-1"></?php echo $row['mataikhoan']; ?>
-                                    </th> -->
-                            <th><?php echo $i; ?></th>
-                            <td><?php echo $row['tentaikhoan']; ?></td>
-                            <td><?php echo $row['matkhau']; ?></td>
-                            <td></td>
-                            <td><?php echo $row['ngaytao']; ?></td>
-                            <td class="d-flex justify-content-evenly">
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                                <button type="button" class="btn btn-danger del" name="<?php echo $row['mataikhoan'] ?>">Xóa</button>
+                                <button type="button" class="btn btn-danger del" name="<?= $row['mataikhoan'] ?>">Xóa</button>
                             </td>
                         </tr>
                 <?php
