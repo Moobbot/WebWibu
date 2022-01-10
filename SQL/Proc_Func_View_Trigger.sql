@@ -428,7 +428,7 @@ GO
 --Không bán đồ ăn quá hạn.
 --Số lượng đặt lớn hơn 0.
 --Số lượng bán không được nhiều hơn số lượng có trong kho.
---Giá bán >= 150% giá thành phẩm.
+--Giá bán = 150% giá thành phẩm.
 --Mức giá giảm không quá 25%* (Giá bán * Số lượng bán).
 --Thỏa mãn điều kiện cập nhật Số lượng trong kho = Số lương tồn – Số lượng bán.
 CREATE OR ALTER TRIGGER tg_Up_Chitietdathang
@@ -457,14 +457,25 @@ BEGIN
 									IF (@Soluongban > @Sl_Kho) PRINT N'Số lượng trong kho không đủ. Còn' + Convert(varchar(5), @Sl_Kho)
 									ELSE
 										BEGIN
-											DECLARE @Giaban float = (SELECT Giaban FROM INSERTED)
-											DECLARE @Giagoc float = (SELECT Soluong FROM MONAN WHERE Mamonan = @mamon)
+											DECLARE @Giagoc float = (SELECT Giathanhpham FROM MONAN WHERE Mamonan = @mamon)
+											DECLARE @Giaban float = 1.5*@Giagoc
+											DECLARE @Giagiam float = (SELECT Mucgiagiam FROM INSERTED)
+											DECLARE @Tonggiahang float = @Giaban * @Soluongban
+											IF(@Giagiam > 0.25 * @Tonggiahang) PRINT N'Mức giá giảm không quá 25%* (Giá bán * Số lượng bán)'
+											ELSE
+												BEGIN
+													INSERT INTO CHITIETDATHANG SELECT * FROM INSERTED
+													UPDATE CHITIETDATHANG SET Giaban = @Giaban WHERE Mamon = @mamon
+													UPDATE MONAN SET SOLUONG = (@Sl_Kho - @Soluongban) WHERE Mamonan = @mamon
+												END
 										END
 								END
 						END
 				END
 		END
 END
+
+
 
 INSERT INTO ChiTietDatHang VALUES
 (1, 1, 15000, 5, 0)
