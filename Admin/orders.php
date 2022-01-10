@@ -18,7 +18,7 @@
                         <th scope="col-1">Tổng tiền giảm</th>
                         <th scope="col-2">Thành tiền</th>
                         <th scope="col-1">Thời gian đặt đơn</th>
-                        <th scope="col-1">Thời gian </br>hẹn giao</th>
+                        <th scope="col-1">Thời gian hẹn giao</th>
                         <th scope="col-1">Thời gian giao đơn</th>
                     </tr>
                 </thead>
@@ -35,16 +35,23 @@
                             while ($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <tr class="align-middle">
-                        <th ><?php echo $row['Sohoadon'];?></th>
-                        <td class="text-center"><?php echo $row['Makhachhang'];?></td>
+                        <th class="text-center col-1"><?php echo $row['Sohoadon'];?></th>
+                        <td class="text-center col-1"><?php echo $row['Makhachhang'];?></td>
                         <td class="text-end col-1"><?php echo $row['Somon'];?></td>
                         <td class="text-end col-1"><?php echo $row['Soluong'];?></td>
                         <td class="text-end col-1"><?php echo $row['Tongtiengoc'];?></td>
                         <td class="text-end col-1"><?php echo $row['Tongtiengiam'];?></td>
                         <td class="text-end col-1" ><?php echo $row['Thanhtien'];?></td>
-                        <td class="text-end col-2"><?php echo $row['Thoigiandatdon'];?></td>
-                        <td class="text-end col-2"><?php echo $row['Thoigianhengiao'];?></td>
-                        <td class="text-end col-2" ><?php echo $row['Thoigiangiaodon'];?></td>
+                        <td class="text-center col-2"><?php echo $row['Thoigiandatdon'];?></td>
+                        <td class="text-center col-2"><?php echo $row['Thoigianhengiao'];?></td>
+                        <td class="text-center col-2" ><?php echo $row['Thoigiangiaodon'];?></td>
+                        <?php if ($row['Thoigiangiaodon'] = 0) {
+                            ?>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="Giaodon">Giao đơn</button>
+                            </div>
+                        <?php
+                            }?>
                     </tr>
                     <?php
                         }

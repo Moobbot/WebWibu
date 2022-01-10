@@ -90,17 +90,16 @@
                                     }
                                     mysqli_close($conn);
                                     ?>
-                                </select>
+                                </select> 
                                 <label>Tên tài khoản</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="date" class="form-control" id="birth" placeholder="" required>
                                 <label>Ngày sinh</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="start" placeholder="" required>
+                            <!-- <div class="form-floating mb-3">
                                 <label>Ngày bắt đầu làm việc</label>
-                            </div>
+                            </div> -->
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="addr" placeholder="" required>
                                 <label>Địa chỉ</label>
@@ -112,11 +111,12 @@
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control" id="salary" placeholder="" required>
                                 <label>Lương</label>
+                                <input type="hidden" class="form-control" id="start" placeholder="" value= <?= date('Y-m-d');?>>
+                                <input type="hidden" class="form-control" id="bonus" placeholder="" value = 0>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="bonus" placeholder="" required>
+                            <!-- <div class="form-floating mb-3">
                                 <label>Thưởng</label>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" id="add">Đồng ý</button>
