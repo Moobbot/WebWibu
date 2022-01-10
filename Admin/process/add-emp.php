@@ -14,7 +14,10 @@ $sql = "INSERT INTO `nhanvien`(`Hoten`, `Ngaysinh`, `Ngaybatdaulamviec`, `Diachi
                         VALUES ('$name', '$birth', '$start' , '$addr', '$phone', '$salary', '$bonus', '$id')";
 $result = mysqli_query($conn, $sql);
 if ($result > 0) {
-    echo "success";
+    $sql2 = "UPDATE `taikhoan` SET `Trangthai`='1' WHERE mataikhoan = $id";
+    if (mysqli_query($conn, $sql2)) {
+        echo "success";
+    }
 } else {
     echo "error";
 }

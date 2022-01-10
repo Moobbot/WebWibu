@@ -31,13 +31,13 @@
 
                     //? lưu kết quả trả về $result
                     $result = mysqli_query($conn, $sql);
-
+                    $i = 1;
                     //* B3: Phân tích sử lý kết quả
                     if (mysqli_num_rows($result) > 0) :
                         while ($row = mysqli_fetch_assoc($result)) :
                     ?>
                             <tr>
-                                <th scope="row"><?php echo $row['manhanvien']; ?></th>
+                                <th scope="row"><?php echo $i; ?></th>
                                 <td><?php echo $row['hoten']; ?></td>
                                 <td><?php echo $row['tentaikhoan']; ?></td>
                                 <td><?php echo $row['ngaysinh']; ?></td>
@@ -52,6 +52,7 @@
                                 </td>
                             </tr>
                     <?php
+                            $i++;
                         endwhile;
                     endif;
                     //* B4: đóng kết nối
