@@ -54,7 +54,38 @@
                         $i += 1;
                     endwhile;
                 endif;
+                //* B4: đóng kết nối
 
+                ?>
+
+                <?php
+                //* B2: Truy vấn
+                $sql = "SELECT mataikhoan, tentaikhoan, matkhau, ngaytao  FROM taikhoan WHERE trangthai = 0";
+                // $sql = "SELECT mataikhoan, tentaikhoan, matkhau, hoten, ngaybatdaulamviec, diachi, dienthoai  FROM vw_nhanvien_thongtin as a, vw_nhanvien_thongtin as b  WHERE a.mataikhoan = b.mataikhoan";
+
+                // Lưu kết quả trả về $result
+                $result = mysqli_query($conn, $sql);
+                //* B3: Phân tích sử lý kết quả
+                if (mysqli_num_rows($result) > 0) :
+                    // endif;
+                    while ($row = mysqli_fetch_assoc($result)) :
+                ?>
+                        <tr>
+                            <!-- <th class="col-1"></?php echo $row['mataikhoan']; ?></th> -->
+                            <th><?php echo $i; ?></th>
+                            <td><?php echo $row['tentaikhoan']; ?></td>
+                            <td><?php echo $row['matkhau']; ?></td>
+                            <td></td>
+                            <td><?php echo $row['ngaytao']; ?></td>
+                            <td class="d-flex justify-content-evenly">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                            </td>
+                        </tr>
+                <?php
+                        $i += 1;
+                    endwhile;
+                endif;
                 //* B4: đóng kết nối
                 mysqli_close($conn);
                 ?>
