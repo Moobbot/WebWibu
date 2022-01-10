@@ -1,5 +1,11 @@
-<?php include("./header.php")?>
-
+<?php 
+session_start();
+// xủ lý session
+if(!isset($_SESSION['LoginOK']) OR $_SESSION['Level'] == '3'){
+    header("Location:../index.php");
+}
+include("./header.php")
+?>
     <div class="container-fluid custom-background pb-5" style="min-height:85vh; height: auto; max-height: 90vh;">
         <div class="container py-5">
             <h3 class="pb-4 fw-bold">Thông tin cửa hàng</h3>
