@@ -20,24 +20,39 @@
                         <!-- <div class="row"> -->
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingFoodName" placeholder="">
-                                <label for="floatingFoodName">Tên món</label>
+                                <select id="loai" class="form-select form-select-sm mb-3" required>
+                                    <!-- Lấy dữ liệu từ database -->
+                                    <?php
+                                    //? mở kết nối
+                                    include '../config/constants.php';
+                                    $sql = "SELECT * FROM loai";
+                                    $result = mysqli_query($conn, $sql);
+                                    //? xác thực
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                            echo '<option value="' . $row['Maloai'] . '">' . $row['Tenloai'] . '</option>';
+                                        }
+                                    }
+                                    mysqli_close($conn);
+                                    ?>
+                                </select>
+                                <label>Loại</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingThanhPhan" placeholder="">
-                                <label for="floatingThanhPhan">Thành phần</label>
+                                <input type="text" class="form-control" id="ten" placeholder="">
+                                <label>Tên món</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingDonGia" placeholder="">
-                                <label for="floatingDonGia">Đơn giá</label>
+                                <input type="text" class="form-control" id="gia" placeholder="">
+                                <label>Giá thành phẩm</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingSoLuong" placeholder="">
-                                <label for="floatingSoLuong">Số lượng</label>
+                                <input type="number" class="form-control" id="sl" placeholder="">
+                                <label>Số lượng</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" aria-label="With textarea"></textarea>
-                                <label for="floatingInput">Mô tả</label>
+                                <input type="date" class="form-control" id="hsd" placeholder="">
+                                <label>Hạn sử dụng</label>
                             </div>
                         </div>
 
@@ -54,7 +69,7 @@
                         <!-- </div> -->
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="funcAddSuccess()">Đồng ý</button>
+                            <button type="button" class="btn btn-primary" id="add">Đồng ý</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
                         </div>
                     </div>
@@ -72,7 +87,7 @@
                         <th>Loại</th>
                         <th>Tên món ăn</th>
                         <th>Hình ảnh</th>
-                        <th>Mức giá</th>
+                        <th>Giá thành phẩm</th>
                         <th>Số lượng</th>
                         <!-- <th>Mô tả</th> -->
                         <th>Ngày nhập</th>
@@ -107,7 +122,7 @@
                                 <!-- <td class="d-flex justify-content-evenly"> -->
                                 <td class="text-center">
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#passchange">Sửa</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete" onclick="funcDel()">Xóa</button>
+                                    <button type="button" class="btn btn-danger del" name="<?php echo $row['mamonan'] ?>">Xóa</button>
                                 </td>
                             </tr>
                     <?php
@@ -188,12 +203,6 @@
 </script>
 
 <script>
-    function funcDel() {
-        if (confirm("Bạn có chắc muốn xoá món ăn này không? dữ liệu sẽ không thể khôi phục.") == true) {
-            alert("Xoá thành công!");
-        }
-    }
-
     function funcUpd() {
         if (confirm("Bạn có chắc muốn cập món ăn này không?") == true) {
             location.reload()
@@ -205,4 +214,65 @@
         location.reload()
         alert("Thêm món ăn thành công!")
     }
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#add').click(function() {
+            $loai = $('#loai').val();
+            $ten = $('#ten').val();
+            $gia = $('#gia').val();
+            $sl = $('#sl').val();
+            $hsd = $('#hsd').val();
+
+            if ($loai == "" || $ten == "" || $gia == "" || $sl == "" || $hsd == "") {
+                alert("Vui lòng nhập đủ thông tin");
+            } else {
+                $.ajax({
+                    type: "post",
+                    url: "./process/add-food.php",
+                    data: {
+                        loai: $loai,
+                        ten: $ten,
+                        gia: $gia,
+                        sl: $sl,
+                        hsd: $hsd,
+                    },
+                    success: function(response) {
+                        if (response == "success") {
+                            alert("Thêm món ăn thành công");
+                            location.reload()
+                        } else {
+                            alert("Thêm thất bại");
+                        }
+                    }
+                });
+            }
+        });
+
+        // xoá tài khoản
+
+        $('.del').click(function() {
+            $delId = $(this).attr('name');
+            if (confirm("Bạn có chắc muốn món này không?")) {
+                //? nếu đồng ý
+                $.ajax({
+                    type: "post",
+                    url: "./process/del-food.php",
+                    data: {
+                        delId: $delId,
+                    },
+                    success: function(response) {
+                        if (response == "success") {
+                            alert("Xoá món ăn thành công!")
+                            location.reload()
+                        } else if (response == 'error') {
+                            alert("Xoá món ăn thất bại")
+                        }
+                    }
+                });
+            } else return false;
+        });
+
+    });
 </script>

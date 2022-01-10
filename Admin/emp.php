@@ -249,7 +249,7 @@
             $delId = $(this).attr('name');
             $accID = $(this).attr('id');
 
-            if (confirm("Bạn có chắc muốn tài khoản này không?")) {
+            if (confirm("Bạn có chắc muốn nhân viên này không?")) {
                 //? nếu đồng ý
                 $.ajax({
                     type: "post",
@@ -260,10 +260,10 @@
                     },
                     success: function(response) {
                         if (response == "success") {
-                            alert("Xoá thành công!")
+                            alert("Xoá nhân viên thành công!")
                             location.reload()
                         } else if (response == 'error') {
-                            alert("Xoá thất bại")
+                            alert("Xoá nhân viên thất bại")
                         }
                     }
                 });

@@ -227,10 +227,10 @@
                     },
                     success: function(response) {
                         if (response == "success") {
-                            alert("Xoá thành công!")
+                            alert("Xoá tài khoản thành công!")
                             location.reload()
                         } else if (response == 'error') {
-                            alert("Xoá thất bại")
+                            alert("Xoá tài khoản thất bại")
                         }
                     }
                 });
