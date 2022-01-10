@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Login Form -->
-            <form>
+            <form action ="proc_dangky.php" method = "POST">
                 <div class="modal-header">
                     <h5 class="modal-title">Đăng ký</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -28,6 +28,10 @@
                     <div class="mb-3">
                         <label for="hoten">Họ Tên<span class="text-danger">*</span></label>
                         <input type="text" name="hoten" class="form-control" id="hoten" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="diachi">Địa chỉ<span class="text-danger">*</span></label>
+                        <input type="text" name="diachi" class="form-control" id="diachi" placeholder="Enter your house">
                     </div>
                     <div class="mb-3">
                         <label for="email">Email<span class="text-danger">*</span></label>
