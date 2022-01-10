@@ -106,9 +106,7 @@ INSERT INTO MonAn(Tenmonan, Maloai, Hinhanh, Mota, Soluong, Giathanhpham, Hansud
 (N'Mochi nhân kem sầu riêng','1', '', N'Các tín đồ của sầu riêng chắc chắn không thể bỏ qua món bánh mochi nhân kem sầu riêng này đâu nha. Nhân sầu riêng ngọt lịm, béo bùi, thơm lừng hòa quyện với phần kem tươi mát lạnh được bọc bên ngoài là lớp vỏ bánh dẻo, mịn thật ngon làm sao! Cắn 1 miếng là cảm nhận ngay được hương vị tuyệt hảo của chiếc bánh này sẽ khiến bạn vấn vương mãi trên đầu lưỡi không thôi.'
 ,10, 15000, '2022-01-15');
 GO
-
 --select * from MonAn
-
 INSERT INTO DonDatHang(Makhachhang,Manhanvien,Thoigiandatdon,Thoigianhengiao,Thoigiangiaodon,Noigiaohang)
 VALUES
 (1, 1, '2022-01-01', '2022-01-04','2022-01-04', N'Hà Nội'),
@@ -133,64 +131,173 @@ VALUES
 (6, 2, '2022-01-07', '2022-01-09','2022-01-09', N'Hà Nội'),
 (1, 1, GETDATE(), DATEADD(day, 1, GETDATE()),GETDATE(), N'Quảng Ninh');
 GO
-
 --select * from DonDatHang
-INSERT INTO ChiTietDatHang VALUES
-(1, 1, 15000, 5, 0),
-(1, 2, 17000, 3, 0),
-(1, 3, 17000, 3, 0),
-(2, 1, 15000, 5, 0),
-(2, 2, 17000, 2, 0),
-(2, 5, 25000, 4, 0),
-(3, 1, 15000, 8, 0),
-(3, 2, 17000, 3, 0),
-(3, 5, 25000, 6, 0),
-(4, 1, 15000, 7, 0),
-(4, 2, 17000, 4, 0),
-(4, 3, 20000, 6, 0),
-(5, 5, 25000, 10, 0),
-(5, 1, 15000, 2, 0),
-(6, 1, 15000, 8, 0),
-(7, 1, 15000, 9, 0),
-(8, 1, 15000, 12, 0),
-(8, 3, 20000, 8, 0),
-(9, 1, 15000, 7, 0),
-(10, 1, 15000, 4, 0),
-(11, 1, 15000, 5, 0),
-(12, 2, 17000, 6, 0),
-(12, 3, 20000, 7, 0),
-(13, 1, 15000, 8, 0),
-(13, 2, 17000, 12, 0),
-(13, 5, 25000, 9, 0),
-(14, 1, 15000, 8, 0),
-(14, 2, 17000, 4, 0),
-(14, 3, 20000, 5, 0),
-(14, 5, 25000, 7, 0),
-(15, 1, 15000, 8, 0),
-(15, 2, 17000, 9, 0),
-(15, 3, 20000, 12, 0),
-(16, 1, 15000, 9, 0),
-(16, 2, 17000, 2, 0),
-(16, 3, 20000, 4, 0),
-(16, 5, 25000, 4, 0),
-(17, 1, 15000, 2, 0),
-(17, 2, 17000, 4, 0),
-(17, 3, 20000, 2, 0),
-(18, 1, 15000, 5, 0),
-(18, 2, 17000, 2, 0),
-(18, 3, 20000, 6, 0),
-(19, 1, 15000, 3, 0),
-(19, 2, 17000, 2, 0),
-(19, 3, 20000, 1, 0),
-(20, 1, 15000, 3, 0),
-(20, 2, 17000, 5, 0),
-(20, 3, 20000, 7, 0),
-(20, 5, 25000, 8, 0),
-(21, 1, 15000, 8, 0),
-(21, 2, 17000, 9, 0),
-(21, 3, 20000, 8, 0),
-(21, 5, 25000, 6, 0),
-(7, 3, 15000, 5, 0);
+--Chạy trigger tg_Up_Chitietdathang tắt update số lượng trước
+delete from CHITIETDATHANG
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(1, 1, 5, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(1, 2, 3, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(1, 3, 3, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(2, 1, 5, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(2, 2, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(2, 5, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(3, 1, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(3, 2, 3, 0); 
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(3, 5, 6, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(4, 1, 7, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(4, 2, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(4, 3, 6, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(5, 5, 10, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(5, 1, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(6, 1, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(7, 1, 9, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(8, 1, 12, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(8, 3, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(9, 1, 7, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(10, 1, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(11, 1, 5, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(12, 2, 6, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(12, 3, 7, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(13, 1, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(13, 2, 12, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(13, 5, 9, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(14, 1, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(14, 2, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(14, 3, 5, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(14, 5, 7, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(15, 1, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(15, 2, 9, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(15, 3, 12, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(16, 1, 9, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(16, 2, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(16, 3, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(16, 5, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(17, 1, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(17, 2, 4, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(17, 3, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(18, 1, 5, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(18, 2, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(18, 3, 6, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(19, 1, 3, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(19, 2, 2, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(19, 3, 1, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(20, 1, 3, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(20, 2, 5, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(20, 3, 7, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(20, 5, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(21, 1, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(21, 2, 9, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(21, 3, 8, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(21, 5, 6, 0);
+GO
+INSERT INTO ChiTietDatHang (Sohoadon, Mamon, Soluong, Mucgiagiam)
+VALUES(7, 3, 5, 0);
 
 GO
 
