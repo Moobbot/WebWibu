@@ -459,20 +459,6 @@ BEGIN
 										BEGIN
 											DECLARE @Giaban float = (SELECT Giaban FROM INSERTED)
 											DECLARE @Giagoc float = (SELECT Soluong FROM MONAN WHERE Mamonan = @mamon)
-
-											IF (@Giaban < (1.5 * @Giagoc)) PRINT N'Giá bán >= 150% giá thành phẩm'
-											ELSE
-												BEGIN
-													DECLARE @Giagiam float = (SELECT Mucgiagiam FROM INSERTED)
-													DECLARE @Tonggiahang float = @Giaban * @Soluongban
-
-													IF(@Giagiam > 0.25 * @Tonggiahang) PRINT N'Mức giá giảm không quá 25%* (Giá bán * Số lượng bán)'
-													ELSE
-														BEGIN
-															INSERT INTO CHITIETDATHANG SELECT * FROM INSERTED
-															UPDATE MONAN SET SOLUONG = (@Sl_Kho - @Soluongban) WHERE Mamonan = @mamon
-														END
-												END
 										END
 								END
 						END
