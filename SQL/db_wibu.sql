@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2022 at 02:37 PM
+-- Generation Time: Jan 10, 2022 at 04:35 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -233,7 +233,18 @@ INSERT INTO `monan` (`Mamonan`, `Tenmonan`, `Maloai`, `Hinhanh`, `Mota`, `Soluon
 (3, 'Mochi trà xanh nhân kem', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-tra-xanh-nhan-kem-thumbnail.jpg', 'Bột trà xanh thần thánh sao có thể vắng mặt trong công thức để làm ra một món bánh mochi chuẩn vị Nhật này chứ. Chiếc bánh với phần kem trà xanh thơm lừng, mát lạnh, beo béo ăn cùng lớp vỏ bánh mochi dẻo ngon lại còn ngọt thơm hấp dẫn cực kỳ! Vào những ngày nắng nóng, oi bức mùa hè mà được thưởng thức 1 chiếc bánh mochi kem trà xanh thì còn gì bằng.', 4, 12000, '2022-01-09', '2022-04-30'),
 (4, 'Mochi nhân kem vani', 1, 'https://cdn.tgdd.vn/2020/08/CookRecipe/Avatar/banh-mochi-nhan-kem-huong-vani-thumbnail.jpg', 'Với hình dáng xinh xắn, tròn tròn, nhỏ nhỏ cùng lớp vỏ ngoài mịn, dẻo kết hợp cùng lớp nhân kem vani mát lạnh, ngọt béo, chiếc bánh mochi này có thể chiều lòng vị giác của bạn hết mực đấy! Đặc biệt hơn cả đó là lớp bánh bông lan mềm, xốp, nhẹ như mây nằm bên trong đem lại sự thú vị và cực kì lạ miệng khi ăn. Được thưởng thức chiếc bánh mochi nhân kem vani này thì còn gì bằng phải không nào?', 10, 10000, '2022-01-09', '2022-04-30'),
 (5, 'Mochi nhân kem dâu tây phô mai', 1, 'https://cdn.tgdd.vn/2020/12/CookRecipe/Avatar/banh-mochi-nhan-kem-dau-tay-pho-mai-thumbnail-2.jpg', 'Vẻ ngoài ngọt ngào, đáng yêu với màu hồng nhẹ nhàng dễ dàng đánh gục bất cứ ai ngay lần nhìn đầu tiên. Nhân kem phô mai béo ngậy hòa quyện cùng kem dâu tây chua chua ngọt ngọt, thơm ngon cùng lớp socola trắng ngọt dịu. Tất cả tạo nên món bánh mochi nhân kem dâu tây phô mai cực lôi cuốn, ngon miệng. Bạn có thể làm món bánh xinh xắn này để tặng cho bạn bè người thân trong những dịp lễ hay ngày đặc biệt đấy!', 10, 15000, '2022-01-09', '2022-04-30'),
-(6, 'Mochi nhân kem sầu riêng', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-nhan-kem-sau-rieng-thumbnail.jpg', 'Các tín đồ của sầu riêng chắc chắn không thể bỏ qua món bánh mochi nhân kem sầu riêng này đâu nha. Nhân sầu riêng ngọt lịm, béo bùi, thơm lừng hòa quyện với phần kem tươi mát lạnh được bọc bên ngoài là lớp vỏ bánh dẻo, mịn thật ngon làm sao! Cắn 1 miếng là cảm nhận ngay được hương vị tuyệt hảo của chiếc bánh này sẽ khiến bạn vấn vương mãi trên đầu lưỡi không thôi.', 10, 15000, '2022-01-09', '2022-01-15');
+(6, 'Mochi nhân kem sầu riêng', 1, 'https://cdn.tgdd.vn/2020/07/CookRecipe/Avatar/banh-mochi-nhan-kem-sau-rieng-thumbnail.jpg', 'Các tín đồ của sầu riêng chắc chắn không thể bỏ qua món bánh mochi nhân kem sầu riêng này đâu nha. Nhân sầu riêng ngọt lịm, béo bùi, thơm lừng hòa quyện với phần kem tươi mát lạnh được bọc bên ngoài là lớp vỏ bánh dẻo, mịn thật ngon làm sao! Cắn 1 miếng là cảm nhận ngay được hương vị tuyệt hảo của chiếc bánh này sẽ khiến bạn vấn vương mãi trên đầu lưỡi không thôi.', 10, 15000, '2022-01-09', '2022-01-15'),
+(7, 'Bánh mochi nhân kem xoài', 1, 'https://cdn.tgdd.vn/2020/07/CookProduct/20-1200x676-3.jpg', 'Một chiếc bánh mochi nhân kem lạnh, ngọt ngào, tươi mát, làm bạn say mê đây rồi.\r\n\r\nNhân kem xoài mát lạnh, chua chua ngọt ngọt, thơm phức được bọc bên ngoài là lớp vỏ bánh nếp hấp dẻo, mềm mịn thật hấp dẫn. Chỉ bấy nhiêu thôi cũng đủ khiến bạn muốn thưởng thức ngay rồi phải không nào?', 50, 100000, '2022-01-10', '2022-02-18'),
+(8, 'Bánh mochi nhân kem dâu tằm', 1, 'https://cdn.tgdd.vn/2020/07/CookProduct/20-1200x676-2.jpg', 'Gấp đôi dâu tằm cho những người yêu thích hương vị của loại quả này trong bánh mochi nhân kem dâu tằm dưới đây sẽ khiến bạn thích mê đó!\r\n\r\nVỏ bánh nếp được hấp vừa tới, dẻo dẻo thơm mùi dâu tằm quyện cùng lớp nhân kem sữa béo ngậy xen lẫn vị mứt dâu tằm chua chua ngọt ngọt kích thích vị giác vô cùng.\r\n\r\nThưởng thức ngay cùng 1 tách trà ấm nóng vào ngày mưa thì ấm áp biết bao!', 20, 35000, '2022-01-10', '2022-03-18'),
+(9, 'Bánh mochi nhân kem oreo', 1, 'https://cdn.tgdd.vn/2020/07/CookProduct/21-1200x676-3.jpg', 'Bánh oreo thơm ngon, hấp dẫn nay đã cũng góp mặt trong công thức làm bánh mochi rồi đây. Bánh mochi nhân kem oreo độc lạ, thơm ngon dưới đây bạn nhất định phải xem qua một lần nhé!\r\n\r\nNhân kem oreo mát lạnh, ngọt béo lẫn một ít vụn bánh giòn giòn được bọc trong lớp vỏ bánh mochi bắt mắt màu xanh của hoa đậu biếc dẻo, mịn, dai dai.\r\n\r\nTất cả tạo nên món bánh tráng miệng thơm ngon, hấp dẫn lấy lòng bạn ngay miếng đầu tiên đó!', 15, 40000, '2022-01-10', '2022-03-20'),
+(10, 'Bánh mochi nhân đậu đen', 1, 'https://cdn.tgdd.vn/2020/12/CookProduct/MOCHI-NHAN-DAU-DEN---cach-goi-nhan-sieu-de-dang-ai-lam-cung-dep--Zui-Vao-Bep-10-25-screenshot-1200x676.jpg', 'Một người anh em vô cùng thân thiết của bánh mochi đậu đỏ chính là bánh mochi đậu đen, cũng không kém gì đâu nha.\r\n\r\nSự kết hợp của nhân đậu đen mịn, ngọt dịu, béo béo bùi bùi cắn vào ngập đến chân răng, phủ bên ngoài là ăn cùng lớp nếp dẻo mềm thì còn tuyệt vời hơn nữa.\r\n\r\nPha ngay 1 tách trà nóng và thưởng thức món bánh mochi này cùng gia đình mình nhé!', 20, 35000, '2022-01-10', '2022-03-18'),
+(11, 'Bánh mochi nhân đậu xanh', 1, 'https://cdn.tgdd.vn/2020/07/CookProduct/1200-1200x676-9.jpg', 'Nếu bạn yêu thích chiếc bánh mochi truyền thống nhân đậu đỏ thì cũng không thể bỏ qua 1 phiên bản khác của nó chính là bánh mochi đậu xanh thơm ngon.\r\n\r\nNhân đậu xanh quyện cùng mùi lá dứa thơm ngất ngây lại còn bùi, béo ngậy nằm gọn bên trong lớp vỏ bánh mochi dẻo dai, mịn màng tuyệt vời hơn bao giờ hết.', 15, 40000, '2022-01-10', '2022-03-20'),
+(12, 'Bánh mochi nhân khoai lang', 1, 'https://cdn.tgdd.vn/2020/12/CookProduct/3-1200x676-3.jpg', 'Sẽ là 1 thiếu sót nếu các fan của mochi không biết đến món bánh mochi nhân khoai lang này đấy.\r\n\r\nChiếc bánh không những lôi cuốn bởi vẻ ngoài màu xanh nước biển của hoa đậu biếc bắt mắt mà còn sở hữu lớp nhân khoai lang vàng ươm, bùi béo, ngậy thơm sẽ khiến bạn không thể rời mắt.\r\n\r\nThực hiện ngay và mang đi chia sẻ cùng bạn bè, người thân cùng tận hưởng hương vị tuyệt vời này nhé!', 10, 15000, '2022-01-09', '2022-01-15'),
+(13, 'Bánh mochi nhân dâu tây', 1, 'https://cdn.tgdd.vn/Files/2020/02/06/1234833/cach-lam-banh-mochi-dau-tay-thom-ngon-cho-valentine-ngot-ngao-2-760x367.jpg', 'Dâu tây chứa nhiều vitamin và dưỡng chất tốt cho cơ thể kết hợp cùng đậu đỏ chứa nhiều hàm lượng chống oxy hóa tạo nên món bánh mochi nhân dâu tây hấp dẫn.\r\n\r\nBạn chỉ cần bọc lớp nhân đậu đỏ bên ngoài quả dâu tây tươi rồi bao lại lại bằng lớp bột nếp hấp chín là hoàn thành món bánh rồi.\r\n\r\nCắn 1 cái là cảm nhận ngay được sự \"tấn công\" vị giác đến từ lớp vỏ bánh dẻo, mịn, kế đến là đậu đỏ béo, bùi, ngọt lịm và cuối cùng là quả dâu tây mọng nước, chua chua ngọt ngọt kích thích vị giác cực kỳ!', 50, 40000, '2022-01-10', '2022-04-18'),
+(14, 'Dango', 2, 'http://www.monnhatban.com/system/images/W1siZiIsIjIwMTYvMDYvMjMvMTQvNDgvMTgvODkyLzMuanBnIl0sWyJwIiwidGh1bWIiLCI3MDB4NDY2XHUwMDNlIl1d/3.jpg?sha=9f7545894cf7b76b', 'Dango hay còn gọi với một cái tên Việt hóa là bánh trôi, còn nếu ai thích sự hoa mĩ trong cách gọi thì có thể gọi món ăn này bằng một cái tên mỹ miều là “Đoàn tử”. Dango hay còn gọi là bánh trôi, khác rất nhiều với viên chè trôi nước ở Việt Nam, mặc dù cùng có một cái tên “bánh trôi” và hình thái gần giống nhau nhưng bánh trôi Nhật Bản lại mang trong mình một hương vị vô cùng khác biệt và lạ lẫm đối với người Việt. Chắc hẳn nếu không một lần được thưởng thức qua món ăn đặc trưng này thì bạn cũng không thể hình dung ra được hương vị của món ăn rất được ưa chuộng ở đất nước hoa anh đào này là như thế nào.', 20, 35000, '2022-01-10', '2022-03-18'),
+(15, 'Dango nhiều màu', 2, 'http://www.monnhatban.com/system/images/W1siZiIsIjIwMTYvMDYvMjMvMTQvNDgvMTgvNzI4LzQuanBnIl0sWyJwIiwidGh1bWIiLCI3MDB4NDY2XHUwMDNlIl1d/4.jpg?sha=ef287be57c124d96', 'Dango là một món ăn truyền thống và phổ biến của Nhật Bản được biết đến như là đã có mặt từ rất lâu trên đất nước hoa Anh Đào. Nhưng bởi dĩ thời gian không làm nổi tiếng món ăn này và cũng cũng không được xem như là một điểm nhấn văn hóa ẩm thực của người Nhật là bởi vì Dango chỉ được xem như là một món ăn vặt, không phải là thực đơn chính trong các bữa ăn Nhật Bản. Cũng như kẹo hồ lô của Trung Hoa hay một món ăn vặt bình thường khác - Dango cũng chỉ là một món ăn bình dị góp phần tô điểm cho văn hóa ẩm thực Nhật Bản mà thôi.', 15, 40000, '2022-01-10', '2022-03-20'),
+(16, 'Neri Yokan', 3, 'https://vanhoanhatban2018.files.wordpress.com/2017/09/y11.jpg', 'Yokan bắt nguồn từ Trung Quốc, gọi là chè dương canh. Sau đó Nhật Bản đã cải tiến và biến nó trở thành món điểm tâm bình dân. Thực tế, chè dương canh của Trung Quốc là món canh được nấu bằng thiệt dê sau đó để đông lạnh mới ăn. Vào thời Đường, chè dương canh theo Thiền Tông truyền đến Nhật Bản. Nó được giới thiệu đến Nhật bởi một phật tử tên là Zen ở thời kì Kamakura và Muromachi khoảng năm 1191 A.D. Bởi vì Phật giáo cấm sát sinh, tăng nhân không được ăn thịt, họ bắt đầu thay thế đậu đỏ và bột mỳ để nấu. Khoảng năm 1800 A.D vào thời kì Edo bột rau câu được đưa vào sử dụng. Sự biến đổi này là cơ sở cho Yokan ngày hôm nay.  Yokan có thể giữ trong khoảng thời gian rất dài mà không cần giữ lạnh khi dùng.', 20, 50000, '2022-01-10', '2022-03-18'),
+(17, 'Mizu Yokan', 3, 'https://vanhoanhatban2018.files.wordpress.com/2017/09/y5.jpg', '“Mizu” có nghĩa là nước và được làm từ rất nhiều nước theo đúng nghĩa của nó. Mizzu Yokan thường được ướp lạnh và ăn trong mùa hè.\r\nNgoài nguyên liệu là bột đậu đỏ, Yokan cũng có thể được làm từ bột đậu trắng. Loại Yokan này có sữa và trong đục với hương vị nhẹ hơn so với bột đậu đỏ. Như vậy, nó có thể thay đổi hương vị và màu sắc bằng cách sử dụng màu trà xanh.', 15, 40000, '2022-01-10', '2022-03-20');
 
 -- --------------------------------------------------------
 
@@ -579,7 +590,8 @@ ALTER TABLE `loai`
 --
 ALTER TABLE `monan`
   ADD PRIMARY KEY (`Mamonan`),
-  ADD UNIQUE KEY `Tenmonan` (`Tenmonan`);
+  ADD UNIQUE KEY `Tenmonan` (`Tenmonan`),
+  ADD KEY `Maloai` (`Maloai`);
 
 --
 -- Indexes for table `nhanvien`
@@ -622,7 +634,7 @@ ALTER TABLE `loai`
 -- AUTO_INCREMENT for table `monan`
 --
 ALTER TABLE `monan`
-  MODIFY `Mamonan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Mamonan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `nhanvien`
@@ -659,6 +671,12 @@ ALTER TABLE `dondathang`
 --
 ALTER TABLE `khachhang`
   ADD CONSTRAINT `khachhang_ibfk_1` FOREIGN KEY (`Mataikhoan`) REFERENCES `taikhoan` (`Mataikhoan`);
+
+--
+-- Constraints for table `monan`
+--
+ALTER TABLE `monan`
+  ADD CONSTRAINT `monan_ibfk_1` FOREIGN KEY (`Maloai`) REFERENCES `loai` (`Maloai`);
 
 --
 -- Constraints for table `nhanvien`

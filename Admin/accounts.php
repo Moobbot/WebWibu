@@ -12,7 +12,7 @@
     <div class="container pb-5" style="min-height: 65vh; height: auto; max-height: 105vh;">
         <table id="table_acc" class="cell-border table-bordered  table-responsive-md">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th>STT</th>
                     <th class="col-2">Tên tài khoản</th>
                     <th>Mật khẩu</th>
