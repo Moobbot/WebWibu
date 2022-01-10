@@ -7,7 +7,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <!-- Login Form -->
-            <form action="">
+            <form action = "proc_dangnhap.php" method = "POST">
                 <div class="modal-header">
                     <h5 class="modal-title">Đăng nhập</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -26,12 +26,12 @@
                     </div>
                     <div class="mb-3">
                         <input class="form-check-input" type="checkbox" value="" id="remember" required>
-                        <label class="form-check-label" for="remember">Ghi nhớ</label>
-                        <a href="#" class="float-end">Quên mật khẩu</a>
+                        <label class="form-check-label" for="remember">Đồng ý với <a href="#">điều khoản và dịch vụ</a> </label>
+                        <a href="#" class="float-end">Quên mật khẩu</a> 
                     </div>
                 </div>
                 <div class="modal-footer pt-4">
-                    <button type="button" class="btn btn-success mx-auto w-100">Đăng nhập</button>
+                    <button type="submit" class="btn btn-success mx-auto w-100" name = "btn-dangnhap" id = "btn-dangnhap">Đăng nhập</button>
                 </div>
                 <p class="text-center">Không có tài khoản, <a href="#">Đăng ký</a></p>
             </form>
