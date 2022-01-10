@@ -4,6 +4,7 @@
         //* B1: Gọi config
         include './config/constants.php';
         //* B2: Truy vấn và lưu kết quả
+        //*Todo: Cần lấy những món ăn bán top 10
         $sql =  "SELECT Mamonan, Tenmonan, Hinhanh, Giathanhpham FROM MONAN";
         $result = mysqli_query($conn, $sql);
          //* B3: Phân tích sử lý kết quả
