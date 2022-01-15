@@ -59,7 +59,7 @@ BEGIN
 END
 select * from DONDATHANG
 EXEC sp_Monan_Donhang_Ngay '2021-08-03'
-----5.1.7.	Thủ tục lấy ra thông tin và tổng số lượng món ăn được đặt theo (tháng, năm)
+--5.1.7.	Thủ tục lấy ra thông tin và tổng số lượng món ăn được đặt theo (tháng, năm)
 CREATE PROC sp_Monan_Donhang_ThangNam(@thang int, @nam int)
 AS
 BEGIN
@@ -78,7 +78,7 @@ SELECT * FROM dbo.CHITIETDATHANG
 EXEC sp_monan_donhang_thangnam '10', '2021'
 GO
 
-----5.1.8.	Thủ tục tìm đơn hàng theo số điện thoại của khách hàng
+--5.1.8.	Thủ tục tìm đơn hàng theo số điện thoại của khách hàng
 CREATE PROC sp_Donhang_Khachhang (@dienthoai varchar(12))
 AS
 BEGIN
@@ -91,7 +91,7 @@ SELECT * FROM dbo.KHACHHANG;
 SELECT * FROM dbo.DONDATHANG;
 GO
 
-----5.1.9.	Thủ tục thay đổi số lượng trong chi tiết đơn đặt hàng
+--5.1.9.	Thủ tục thay đổi số lượng trong chi tiết đơn đặt hàng
 
 CREATE PROC sp_Chitietdathang_Update_Soluong(@shd int, @mamon int,@soluong int)
 AS
@@ -475,7 +475,7 @@ BEGIN
 		END
 END
 
-
+GO
 
 INSERT INTO ChiTietDatHang VALUES
 (1, 1, 15000, 5, 0)

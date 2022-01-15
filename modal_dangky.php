@@ -47,6 +47,7 @@
                     <button type="submit" class="btn btn-success mx-auto w-100" name="btn-dangky" , id="btn-dangky">Đăng
                         ký</button>
                 </div>
+                <!-- //!Bị lỗi -->
                 <p class="text-center">Đã có tài khoản, <button type="submit" class="btn p-0 mb-1 text-success"
                         name="btn-dangnhap" id="btn-dangnhap">Đăng nhập</button></p>
             </form>
