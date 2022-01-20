@@ -19,7 +19,7 @@
         </div>
     </div>
 </section>
-
+<!-- //!Lỗi về giao diện -->
 <div class="container" style="min-height: 91vh;">
     <div class="row pt-3">
         <div class="col-md-6">
@@ -102,7 +102,7 @@
         <h2 class="mb-4">Chi tiết sản phẩm</h2>
     </div>
     <!-- mô tả -->
-    <div class="row mt-4">
+    <div class="row mt-4" style="text-align: justify;">
         <p>
             Đứng đầu danh sách những loại bánh mochi thơm ngon của Nhật Bản phải kể đến chính là bánh mochi giọt nước
             khiến bao người mê mẩn với vẻ ngoài đẹp mắt.

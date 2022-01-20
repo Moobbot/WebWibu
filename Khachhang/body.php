@@ -10,18 +10,18 @@
         </div>
     </div>
 </section>
-<section class="container-fluid bg-wood d-flex" style="min-height: 100vh;">
+<section class="container-fluid bg-me d-flex" style="min-height: 100vh;">
     <!-- <div class="row"> -->
     <!-- //* Danh mục món -->
     <div class="d-flex align-items-start mt-2">
         <div class="col-lg-1 col-2" style="min-width: 208px;">
-            <div class="d-flex flex-column border border-dark border-3" style="border-radius: 15%;">
+            <div class="d-flex flex-column border border-dark border-3 bg-wood mt-3" style="border-radius: 15%;">
                 <!-- //*Điều hướng -->
                 <a class="h4 text-dark text-decoration-none mt-2 ps-2" href="./">
                     <i class="fas fa-bars px-2"></i> Danh mục
                 </a>
                 <!-- //* Loại món ăn -->
-                <ul class=" nav nav-pills mb-2 align-items-center h5" id="pills-tab" role="tablist">
+                <ul class=" nav nav-pills mb-2 align-items-center" id="pills-tab" role="tablist">
                     <?php
                     //* B1: Gọi config
                     include './config/constants.php';
@@ -35,7 +35,7 @@
                         $typefood = "v-pills-typefood" . (string)$i;
                     ?>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link text-start ps-5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
+                        <button class="nav-link text-start ps-5 text-black h5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
                             data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
                             aria-controls=<?= $typefood ?> aria-selected="false">
                             <img src="./assets/img/mochi.png" class="me-2"

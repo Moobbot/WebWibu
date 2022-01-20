@@ -17,6 +17,9 @@ body {
     background: url('../assets/img/wibu.jpg');
 }
 
-.bg-wood {
+.bg-me {
+    background-color: #f0c888;
+}
+.bg-wood{
     background: url('../assets/img/nengo.jpg') center / cover no-repeat !important;
 }
