@@ -24,11 +24,6 @@
                         <input type="password" name="password" class="form-control" id="Password"
                             placeholder="Enter Password">
                     </div>
-                    <div class="mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="remember" required>
-                        <label class="form-check-label" for="remember">Đồng ý với <a href="#">điều khoản và dịch vụ</a> </label>
-                        <a href="#" class="float-end">Quên mật khẩu</a> 
-                    </div>
                 </div>
                 <div class="modal-footer pt-4">
                     <button type="submit" class="btn btn-success mx-auto w-100" name = "btn-dangnhap" id = "btn-dangnhap">Đăng nhập</button>

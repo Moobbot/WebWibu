@@ -1,7 +1,7 @@
 <footer class="bd-footer py-3" style="background-color: #ffc0cb6e;">
     <div class="container py-2">
         <p class="text-center h4">
-            Designed By <a href="https://github.com/Moobbot/WebWibu">Wibu</a>
+            Thiết kế bởi<a href="https://github.com/Moobbot/WebWibu">Wibu</a>
         </p>
     </div>
 </footer>
