@@ -195,6 +195,25 @@
 </script>
 
 <script>
+    $('#table_emp').DataTable({
+        "language": {
+            "infoFiltered": "(được lọc từ _MAX_ bản ghi )",
+            "info": "Hiển thị trang _PAGE_ trong tổng _PAGES_ trang",
+            "infoEmpty": "Không có dữ liệu",
+            "lengthMenu": "Hiển thị _MENU_ dữ liệu",
+            "loadingRecords": "Đang tải...",
+            "paginate": {
+                "first": "Đầu tiên",
+                "last": "Cuối cùng",
+                "next": "Sau",
+                "previous": "Trước"
+            },
+            "search": "Tìm kiếm:"
+        }
+    })
+</script>
+
+<script>
     function funcUpd() {
         if (confirm("Bạn có chắc muốn thực hiện việc thay đổi thông tin này không?") == true) {
             location.reload()
