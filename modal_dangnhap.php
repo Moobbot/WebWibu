@@ -1,7 +1,6 @@
 <!-- <button type="button" class="btn btn-success d-table my-5 mx-auto" data-bs-toggle="modal" data-bs-target="#ModalForm">
     Bootstrap Modal Form
 </button> -->
-<!-- //!Trạng thái tài khoản 0 vẫn đăng nhập được -->
 <!-- Modal Login -->
 <div class="modal fade" id="ModalLogin" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

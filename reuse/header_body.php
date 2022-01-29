@@ -2,9 +2,8 @@
     <div class="col-lg-11">
         <header
             class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between border-bottom">
-            <a class="navbar-brand" href="./">
-                <img src="./assets/img/Logo.jpg" class="img-fluid" alt="Logo-WowFood"
-                    style="width: 120px; height: 60px;">
+            <a class="navbar-brand" href="./">                    
+                <img src="./assets/img/Logo.jpg" alt="Logo-WowFood" style="width: 10.3em; height: 5em;">
             </a>
 
             <!-- Điều hướng -->
