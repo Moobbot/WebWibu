@@ -28,15 +28,15 @@
                     //* B2: Truy vấn và lưu kết quả
                     $sql =  "SELECT Tenloai FROM LOAI";
                     $result = mysqli_query($conn, $sql);
-                     //* B3: Phân tích sử lý kết quả
+                    //* B3: Phân tích sử lý kết quả
                     if (mysqli_num_rows($result) > 0) :
                         $i = 1;
                         while ($row = mysqli_fetch_assoc($result)) :
-                        $typefood = "v-pills-typefood" . (string)$i;
+                            $typefood = "v-pills-typefood" . (string)$i;
                     ?>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link text-start ps-5 text-black h5" id=<?= $typefood . "-tab" ?> data-bs-toggle="pill"
-                            data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
+                        <button class="nav-link text-start ps-5 text-black h5" id=<?= $typefood . "-tab" ?>
+                            data-bs-toggle="pill" data-bs-target=<?= "#" . $typefood ?> type="button" role="tab"
                             aria-controls=<?= $typefood ?> aria-selected="false">
                             <img src="./assets/img/mochi.png" class="me-2"
                                 style="width: 10%; height: 10%; border-radius: 50%; min-width: 1.375em;">
@@ -44,8 +44,8 @@
                         </button>
                     </li>
                     <?php
-                    // }
-                        $i += 1;
+                            // }
+                            $i += 1;
                         endwhile;
                     endif;
                     ?>
@@ -62,7 +62,7 @@
                     data-width="202" data-height="350" data-small-header="false" data-adapt-container-width="true"
                     data-hide-cover="false" data-show-facepile="true">
                     <blockquote cite="https://www.facebook.com/dongotvatrangmieng" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/dongotvatrangmieng">Đồ ngọt - Món tráng miệng</a>
+                        <a href="https://www.facebook.com/dongotvatrangmieng">Đồ ngọt - Món tráng miệng</a>
                     </blockquote>
                 </div>
             </div>
@@ -76,25 +76,25 @@
                 </div>
                 <?php include("./Khachhang/cacmonan.php") ?>
             </div>
-            
+
             <!-- Trang loại món ăn -->
             <?php
             $sql =  "SELECT Tenloai FROM LOAI";
             $result = mysqli_query($conn, $sql);
-             //* B3: Phân tích sử lý kết quả
+            //* B3: Phân tích sử lý kết quả
             if (mysqli_num_rows($result) > 0) :
                 $i = 1;
                 while ($row = mysqli_fetch_assoc($result)) :
-                $typefood = "v-pills-typefood" . (string)$i;
-                ?>
-                <div class="tab-pane fade" id=<?= $typefood ?> role="tabpanel" aria-labelledby=<?= $typefood . "-tab" ?>>
-                    <img src="./assets/img/mochi.png " class="me-2" style="width: 10%; height: 10%; border-radius: 50%;">
-                    <h3 class="text-center">Danh sách các món thuộc loại <?= $row['Tenloai']; ?></h3>
-                </div>
-                <?php
-            $i += 1;
-            endwhile;
-        endif;
+                    $typefood = "v-pills-typefood" . (string)$i;
+            ?>
+            <div class="tab-pane fade" id=<?= $typefood ?> role="tabpanel" aria-labelledby=<?= $typefood . "-tab" ?>>
+                <img src="./assets/img/mochi.png " class="me-2" style="width: 10%; height: 10%; border-radius: 50%;">
+                <h3 class="text-center">Danh sách các món thuộc loại <?= $row['Tenloai']; ?></h3>
+            </div>
+            <?php
+                    $i += 1;
+                endwhile;
+            endif;
             //* B4: đóng kết nối
             mysqli_close($conn);
             ?>
